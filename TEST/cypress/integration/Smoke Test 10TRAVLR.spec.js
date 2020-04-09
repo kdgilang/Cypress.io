@@ -2,9 +2,7 @@
 
 describe('Smoke Test 10Travlr', () => {
 
-    describe('Accessing Homepage', () => {
-
-        it('Close Pop-Up Message', () => {
+it('Accessing Homepage', () => {
 
         cy.visit('https://www.10travlr.com.au')
 
@@ -24,47 +22,102 @@ describe('Smoke Test 10Travlr', () => {
 
         cy.get('.t-btn-inverted').click()
 
-        })
     })
 })
 
-        describe('Login', () => {
             
-            it('Login Button', () => {
-            cy.get('.t-navbar-top-right-menus-list-item-link').click()
-        })
+    it('Header & Footer Details', () => {
 
-            it('Input Email & Password', () => {
+        cy.get('.t-navbar-top-left-burger > .t-icon').click()
+        cy.wait(2000)
 
-            cy.get('#email').type('julian.travlr@gmail.com')
-            cy.get('#password').type('qwertyuiop1234567890')
+        cy.get(':nth-child(1) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon').click()
 
-            cy.wait(3000)
+        cy.wait(2000)
 
-            cy.get('#btn-submit > b').click()
+        cy.get(':nth-child(2) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon').click()
 
-            cy.visit('https://www.10travlr.com.au/')
+        cy.wait(2000)
+
+        cy.get(':nth-child(3) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon').click()
+
+        cy.wait(2000)
+
+        cy.get(':nth-child(4) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon').click()
+
+        cy.wait (2000)
+
+        cy.get(':nth-child(5) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon').click()
+
+        cy.wait(2000)
+
+        cy.get(':nth-child(6) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon').click()
+
+        cy.wait(2000)
+
+        cy.get('.t-navbar-sidebar-header-icon > .t-icon').scrollIntoView()
+
+        cy.get('.t-navbar-sidebar-header-icon > .t-icon').click()
+
+        cy.get('footer').scrollIntoView()
+
+        cy.wait(3000)
+
+        cy.visit('https://www.10travlr.com.au/')
+        .location('pathname')
+        .should('eq', '/')
+
+        cy.wait(5000)
+
+        cy.get('.intercom-tour-frame').then ( $element => {
+
+            const $body = $element.contents().find('body')
+    
+            let stripe = cy.wrap($body)
+    
+            stripe.find('.intercom-1o29jst').click()
+
+        cy.get('.privy-dismiss-content').click()
+        
+    })
+})
+
+
+    it('Accessing Shortlists', () => {
+
+        cy.get('.t-cards-wrapper > :nth-child(1) > .t-card-title > .t-card-title-content > .title').scrollIntoView()
+
+        cy.wait(3000)
+
+        cy.visit('https://www.10travlr.com.au/shortlists')
             .location('pathname')
-            .should('eq', '/')
-
-            cy.get('.intercom-tour-frame').then ( $element => {
-
-                const $body = $element.contents().find('body')
-    
-                let stripe = cy.wrap($body)
-    
-                stripe.find('.intercom-1o29jst').click()
+            .should('eq', '/shortlists')
 
         cy.get('.privy-dismiss-content').click()
 
-        })
+        cy.get('.t-btn-inverted').click()
+
+        cy.wait(3000)
+
+        cy.visit('https://www.10travlr.com.au/')
+            .location('pathname')
+            .should('eq', '/')
+
+        cy.wait(5000)
+
+        cy.get('.intercom-tour-frame').then ( $element => {
+
+            const $body = $element.contents().find('body')
+    
+            let stripe = cy.wrap($body)
+    
+            stripe.find('.intercom-1o29jst').click()
+        
     })
 })
-    
-describe('Header Details', () => {
 
-    it('Discover', () => {
-
+    it('Accessing Discover', () => {
+        
         cy.get('.t-navbar-top-left-burger > .t-icon').click()
         
         cy.wait(3000)
@@ -81,167 +134,31 @@ describe('Header Details', () => {
             .location('pathname')
             .should('eq', '/')
 
-            cy.wait(3000)
-
-            cy.get('.intercom-tour-frame').then ( $element => {
-
-                const $body = $element.contents().find('body')
-    
-                let stripe = cy.wrap($body)
-    
-                stripe.find('.intercom-1o29jst').click()
-
-        cy.get('.privy-dismiss-content').click()
-
-    })
-})
-
-    it('Flight', () => {
-
-        cy.get('.t-navbar-top-left-burger > .t-icon').click()
-
-        cy.wait(3000)
-
-        cy.visit('https://www.10travlr.com.au/flights')
-            .location('pathname')
-            .should('eq', '/flights')
-
-        cy.wait(3000)
-
-        cy.get('.t-btn-inverted').click()
-
-            cy.visit('https://www.10travlr.com.au/')
-            .location('pathname')
-            .should('eq', '/')
-
-            cy.wait(3000)
-
-            cy.get('.intercom-tour-frame').then ( $element => {
-
-                const $body = $element.contents().find('body')
-    
-                let stripe = cy.wrap($body)
-    
-                stripe.find('.intercom-1o29jst').click()
-
-        cy.get('.privy-dismiss-content').click()
-
-    })
-})
-
-    it('Accommodation', () => {
-
-        cy.get('.t-navbar-top-left-burger > .t-icon').click()
-
-        cy.wait(3000)
-
-        cy.visit('https://www.10travlr.com.au/accommodation')
-            .location('pathname')
-            .should('eq', '/accommodation')
-
-        cy.wait(3000)
-
-            cy.visit('https://www.10travlr.com.au/')
-            .location('pathname')
-            .should('eq', '/')
-
-            cy.wait(3000)
-
-            cy.get('.intercom-tour-frame').then ( $element => {
-
-                const $body = $element.contents().find('body')
-    
-                let stripe = cy.wrap($body)
-    
-                stripe.find('.intercom-1o29jst').click()
-
-        cy.get('.privy-dismiss-content').click()
-
-        cy.wait(3000)
-
-        cy.get('.t-btn-inverted').click()
-
-    })
-})
-
-it('Activities', () => {
-
-    cy.get('.t-navbar-top-left-burger > .t-icon').click()
-
-    cy.wait(3000)
-
-    cy.visit('https://www.10travlr.com.au/activities')
-        .location('pathname')
-        .should('eq', '/activities')
-
-        cy.wait(3000)
-
-        cy.get('.t-btn-inverted').click()
-
-        cy.visit('https://www.10travlr.com.au/')
-        .location('pathname')
-        .should('eq', '/')
-
-        cy.wait(3000)
+        cy.wait(5000)
 
         cy.get('.intercom-tour-frame').then ( $element => {
 
             const $body = $element.contents().find('body')
-
+    
             let stripe = cy.wrap($body)
-
+    
             stripe.find('.intercom-1o29jst').click()
 
-    cy.get('.privy-dismiss-content').click()
+        cy.get('.privy-dismiss-content').click()
 
     })
 })
 
-it('Deals & Offers', () => {
 
-    cy.get('.t-navbar-top-left-burger > .t-icon').click()
+    it('Accessing Trips', () => {
 
-    cy.wait(3000)
-
-    cy.visit('https://www.10travlr.com.au/deals-and-offers')
-        .location('pathname')
-        .should('eq', '/deals-and-offers')
+        cy.get('.t-cards-wrapper > :nth-child(2) > .t-card-title > .t-card-title-content > .title').scrollIntoView()
 
         cy.wait(3000)
 
-        cy.get('.t-btn-inverted').click()
-
-        cy.visit('https://www.10travlr.com.au/')
+        cy.visit('https://www.10travlr.com.au/trips')
         .location('pathname')
-        .should('eq', '/')
-
-        cy.wait(3000)
-
-        cy.get('.intercom-tour-frame').then ( $element => {
-
-            const $body = $element.contents().find('body')
-
-            let stripe = cy.wrap($body)
-
-            stripe.find('.intercom-1o29jst').click()
-
-    cy.get('.privy-dismiss-content').click()
-
-            })
-        })
-    })
-
-    describe('Footer Details', () => {
-
-        it('Claim Your Listing', () => { 
-            
-            cy.get('footer').scrollIntoView()
-            
-            cy.wait(3000)
-
-            cy.visit('https://www.10travlr.com.au/claim-listing')
-                .location('pathname')
-                .should('eq', '/claim-listing')
+        .should('eq', '/trips')
 
         cy.wait(3000)
 
@@ -249,43 +166,247 @@ it('Deals & Offers', () => {
             .location('pathname')
             .should('eq', '/')
 
-        cy.wait(3000)
+        cy.wait(5000)
 
         cy.get('.intercom-tour-frame').then ( $element => {
 
             const $body = $element.contents().find('body')
-
+    
             let stripe = cy.wrap($body)
-
+    
             stripe.find('.intercom-1o29jst').click()
 
         cy.get('.privy-dismiss-content').click()
         
+        cy.get('.t-btn-inverted').click()
+
+    })
+})
+
+    it('Accessing Articles', () => {
+
+        cy.get('.c-home-articles > .t-container > .c-card > .c-section-title-button > .section-title-button__header > .section-title-button__wrapper-action > .t-btn-default').scrollIntoView()
+
+        cy.wait(3000)
+
+        cy.visit('https://www.10travlr.com.au/articles')
+        .location('pathname')
+        .should('eq', '/articles')
+
+        cy.wait(3000)
+
+        cy.visit('https://www.10travlr.com.au/')
+            .location('pathname')
+            .should('eq', '/')
+
+        cy.wait(5000)
+
+        cy.get('.intercom-tour-frame').then ( $element => {
+
+            const $body = $element.contents().find('body')
+    
+            let stripe = cy.wrap($body)
+    
+            stripe.find('.intercom-1o29jst').click()
+
+        cy.get('.privy-dismiss-content').click()
+        
+        cy.get('.t-btn-inverted').click()
+
+    })
+})
+
+
+    it('Accessing Activities', () =>{
+
+        cy.get('.t-navbar-top-left-burger > .t-icon').click()
+
+        cy.wait(3000)
+
+        cy.visit('https://www.10travlr.com.au/activities')
+            .location('pathname')
+            .should('eq', '/activities')
+
         cy.wait(3000)
 
         cy.get('.t-btn-inverted').click()
+
+        cy.visit('https://www.10travlr.com.au/')
+            .location('pathname')
+            .should('eq', '/')
+
+        cy.wait(3000)
+
+        cy.get('.intercom-tour-frame').then ( $element => {
+
+            const $body = $element.contents().find('body')
+
+            let stripe = cy.wrap($body)
+
+            stripe.find('.intercom-1o29jst').click()
+
+        cy.get('.privy-dismiss-content').click()
+
+    })
+})
+
+
+    it('Accessing Deals & Offers', () => {
+
+        cy.get('.t-navbar-top-left-burger > .t-icon').click()
+
+        cy.wait(3000)
+
+        cy.visit('https://www.10travlr.com.au/deals-and-offers')
+            .location('pathname')
+            .should('eq', '/deals-and-offers')
+
+        cy.wait(3000)
+
+        cy.get('.t-btn-inverted').click()
+
+        cy.visit('https://www.10travlr.com.au/')
+            .location('pathname')
+            .should('eq', '/')
+
+        cy.wait(3000)
+
+        cy.get('.intercom-tour-frame').then ( $element => {
+
+            const $body = $element.contents().find('body')
+
+            let stripe = cy.wrap($body)
+
+            stripe.find('.intercom-1o29jst').click()
+
+        cy.get('.privy-dismiss-content').click()
+
+    })
+})
+
+
+    it('Accessing Health & Beauty', () => {
+
+        cy.get('.t-navbar-top-left-burger > .t-icon').click()
+
+        cy.wait(2000)
+
+        cy.get(':nth-child(5) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon').click()
+
+        cy.wait(2000)
+
+        cy.visit('https://www.10travlr.com.au/deals-and-offers/search?category=Health%20%26%20Beauty')
+            .location('pathname')
+            .should('eq', '/deals-and-offers/search')
+
+        cy.wait(3000)
+
+        cy.get('.t-btn-inverted').click()
+
+        cy.visit('https://www.10travlr.com.au/')
+            .location('pathname')
+            .should('eq', '/')
+
+        cy.wait(3000)
+
+        cy.get('.intercom-tour-frame').then ( $element => {
+
+            const $body = $element.contents().find('body')
+
+            let stripe = cy.wrap($body)
+
+            stripe.find('.intercom-1o29jst').click()
+
+        cy.get('.privy-dismiss-content').click()
+
+    })
+})
+
+
+    it('Accessing Events', () => {
+
+        cy.visit('https://www.10travlr.com.au/events')
+            .location('pathname')
+            .should('eq', '/events')
+
+        cy.wait(3000)
+
+
+        cy.visit('https://www.10travlr.com.au/')
+            .location('pathname')
+            .should('eq', '/')
+
+        cy.wait(3000)
+
+        cy.get('.intercom-tour-frame').then ( $element => {
+
+            const $body = $element.contents().find('body')
+
+            let stripe = cy.wrap($body)
+
+            stripe.find('.intercom-1o29jst').click()
+
+        cy.get('.privy-dismiss-content').click()
+    
+    })
+})
+
+
+    it('Accessing Venue', () => {
+
+        cy.visit('https://www.10travlr.com.au/venue')
+
+    })
+
+    it('Login', () => {
+
+        cy.get('#email').type('julian.travlr@gmail.com')
+
+        cy.get('#password').type('qwertyuiop1234567890', {log:false})
+
+        cy.get('#btn-submit').click()
+
+        cy.wait(3000)
+
+        cy.visit('https://www.10travlr.com.au/')
+            .location('pathname')
+            .should('eq', '/')
+
+        cy.wait(5000)
+
+        cy.get('.intercom-tour-frame').then ( $element => {
+
+            const $body = $element.contents().find('body')
+
+            let stripe = cy.wrap($body)
+
+            stripe.find('.intercom-1o29jst').click()
+
+        cy.get('.privy-dismiss-content').click()
+
         })
     })
 
-        it('Manage Booking', () => { 
+    
+    it('Accessing My Bookings & Deals', () => { 
             
-            cy.get('footer').scrollIntoView()
+        cy.get('.t-navbar-top-right-menus-list-item-link-myaccount').click()
+        
+        cy.wait(3000)
 
-            cy.wait(3000)
+        cy.get(':nth-child(2) > .footer-list > :nth-child(3) > .t-supplementary-text').click()
 
-            cy.get(':nth-child(2) > .footer-list > :nth-child(3) > .t-supplementary-text').click()
-
-            cy.get('#email').type('julian.travlr@gmail.com')
+        cy.get('#email').type('julian.travlr@gmail.com')
             
-            cy.get('#password').type('qwertyuiop1234567890')
+        cy.get('#password').type('qwertyuiop1234567890',{log:false})
             
-            cy.get('#btn-submit').click()
+        cy.get('#btn-submit').click()
 
-            cy.visit('https://www.10travlr.com.au/booking-management')
+        cy.visit('https://www.10travlr.com.au/booking-management')
             .location('pathname')
             .should('eq', '/booking-management')
 
-            cy.wait(3000)
+        cy.wait(3000)
 
         cy.visit('https://www.10travlr.com.au/')
             .location('pathname')
@@ -301,13 +422,9 @@ it('Deals & Offers', () => {
 
 })
 
-    it('Terms', () => { 
-            
-        cy.get('footer').scrollIntoView()
+    it('Accessing My Shortlists', () => {
 
-        cy.wait(3000)
-
-        cy.get(':nth-child(2) > .footer-list > :nth-child(5) > .t-supplementary-text')
+        cy.visit('https://www.10travlr.com.au/my/shortlist')
 
         cy.wait(3000)
 
@@ -315,26 +432,35 @@ it('Deals & Offers', () => {
             .location('pathname')
             .should('eq', '/')
 
-            cy.wait(5000)
+        cy.wait(3000)
 
-            cy.get('.intercom-tour-frame').then ( $element => {
+        cy.get('.intercom-tour-frame').then ( $element => {
 
-                const $body = $element.contents().find('body')
+            const $body = $element.contents().find('body')
+
+            let stripe = cy.wrap($body)
+
+            stripe.find('.intercom-1o29jst').click()
+
+        cy.get('.privy-dismiss-content').click()
     
-                let stripe = cy.wrap($body)
+    })
+})
+
+
+
+
+
+
+
+
     
-                stripe.find('.intercom-1o29jst').click()
-
-            cy.get('.privy-dismiss-content').click()
-            
-            cy.wait(3000)
     
-            cy.get('.t-btn-inverted').click()
-            
-            })
-
-        })
-
+    
+    
+    
+    
+    
     
     
     
@@ -345,6 +471,418 @@ it('Deals & Offers', () => {
     
     
     })
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//     cy.get('.t-navbar-top-right-menus-list-item-link').click()
+    //     })
+
+    // it('Input Email & Password', () => {
+
+    //     cy.get('#email').type('julian.travlr@gmail.com')
+    //     cy.get('#password').type('qwertyuiop1234567890', {log:false})
+
+    //     cy.wait(3000)
+
+    //     cy.get('#btn-submit > b').click()
+
+        
+
+    //     })
+    // })
+
+
+    
+
+// describe('Header Details', () => {
+
+//     it('Discover', () => {
+
+        
+
+//     })
+// })
+
+//     it('Flight', () => {
+
+//         cy.get('.t-navbar-top-left-burger > .t-icon').click()
+
+//         cy.wait(3000)
+
+//         cy.visit('https://www.10travlr.com.au/flights')
+//             .location('pathname')
+//             .should('eq', '/flights')
+
+//         cy.wait(3000)
+
+//         cy.get('.t-btn-inverted').click()
+
+//         cy.visit('https://www.10travlr.com.au/')
+//             .location('pathname')
+//             .should('eq', '/')
+
+//         cy.wait(3000)
+
+//         cy.get('.intercom-tour-frame').then ( $element => {
+
+//             const $body = $element.contents().find('body')
+    
+//             let stripe = cy.wrap($body)
+    
+//             stripe.find('.intercom-1o29jst').click()
+
+//         cy.get('.privy-dismiss-content').click()
+
+//     })
+// })
+
+//     it('Accommodation', () => {
+
+//         cy.get('.t-navbar-top-left-burger > .t-icon').click()
+
+//         cy.wait(3000)
+
+//         cy.visit('https://www.10travlr.com.au/accommodation')
+//             .location('pathname')
+//             .should('eq', '/accommodation')
+
+//         cy.wait(3000)
+
+//             cy.visit('https://www.10travlr.com.au/')
+//             .location('pathname')
+//             .should('eq', '/')
+
+//         cy.wait(3000)
+
+//         cy.get('.intercom-tour-frame').then ( $element => {
+
+//             const $body = $element.contents().find('body')
+    
+//             let stripe = cy.wrap($body)
+    
+//             stripe.find('.intercom-1o29jst').click()
+
+//         cy.get('.privy-dismiss-content').click()
+
+//         cy.wait(3000)
+
+//         cy.get('.t-btn-inverted').click()
+
+//     })
+// })
+
+//     it('Activities', () => {
+
+        
+
+//     it('Deals & Offers', () => {
+
+        
+
+    
+// describe('Footer Details', () => {
+
+//     it('Claim Your Listing', () => { 
+            
+//         cy.get('footer').scrollIntoView()
+            
+//         cy.wait(3000)
+
+//         cy.visit('https://www.10travlr.com.au/claim-listing')
+//             .location('pathname')
+//             .should('eq', '/claim-listing')
+
+//         cy.wait(3000)
+
+//         cy.visit('https://www.10travlr.com.au/')
+//             .location('pathname')
+//             .should('eq', '/')
+
+//         cy.wait(3000)
+
+//         cy.get('.intercom-tour-frame').then ( $element => {
+
+//             const $body = $element.contents().find('body')
+
+//             let stripe = cy.wrap($body)
+
+//             stripe.find('.intercom-1o29jst').click()
+
+//         cy.get('.privy-dismiss-content').click()
+        
+//         cy.wait(3000)
+
+//         cy.get('.t-btn-inverted').click()
+        
+//     })
+// })
+
+    
+    
+
+    
+//     it('Terms', () => { 
+            
+//         cy.get('footer').scrollIntoView()
+
+//         cy.wait(3000)
+
+//         cy.visit('https://www.10travlr.com.au/pages/terms-3')
+//             .location('pathname')
+//             .should('eq', '/pages/terms-3')
+
+//         cy.wait(3000)
+
+//         cy.visit('https://www.10travlr.com.au/')
+//             .location('pathname')
+//             .should('eq', '/')
+
+//         cy.wait(5000)
+
+//         cy.get('.intercom-tour-frame').then ( $element => {
+
+//             const $body = $element.contents().find('body')
+    
+//             let stripe = cy.wrap($body)
+    
+//             stripe.find('.intercom-1o29jst').click()
+
+//         cy.get('.privy-dismiss-content').click()
+            
+//         cy.wait(3000)
+    
+//         cy.get('.t-btn-inverted').click()
+            
+//     })
+// })
+
+
+//     it('Refund Policy', () => { 
+            
+//         cy.get('footer').scrollIntoView()
+
+//         cy.wait(3000)
+
+//         cy.visit('https://www.10travlr.com.au/pages/refund-policy-5')
+//         .location('pathname')
+//         .should('eq', '/pages/refund-policy-5')
+
+//         cy.wait(3000)
+
+//         cy.visit('https://www.10travlr.com.au/')
+//         .location('pathname')
+//         .should('eq', '/')
+
+//         cy.wait(5000)
+
+//         cy.get('.intercom-tour-frame').then ( $element => {
+
+//             const $body = $element.contents().find('body')
+
+//             let stripe = cy.wrap($body)
+
+//             stripe.find('.intercom-1o29jst').click()
+
+//         cy.get('.privy-dismiss-content').click()
+        
+//         cy.wait(3000)
+
+//         cy.get('.t-btn-inverted').click()
+
+//     })
+// })
+
+
+//     it('FAQ', () => { 
+            
+//         cy.get('footer').scrollIntoView()
+
+//         cy.wait(3000)
+
+//         cy.get(':nth-child(2) > .footer-list > :nth-child(2) > .t-supplementary-text').click()
+
+//         cy.wait(5000)
+
+//         cy.visit('https://www.10travlr.com.au/')
+//             .location('pathname')
+//             .should('eq', '/')
+
+//         cy.wait(5000)
+
+//         cy.get('.intercom-tour-frame').then ( $element => {
+
+//             const $body = $element.contents().find('body')
+
+//             let stripe = cy.wrap($body)
+
+//             stripe.find('.intercom-1o29jst').click()
+
+//         cy.get('.privy-dismiss-content').click()
+    
+//         cy.wait(3000)
+
+//         cy.get('.t-btn-inverted').click()
+
+//     })
+// })
+
+
+//     it('Privacy Policy', () => { 
+            
+//         cy.get('footer').scrollIntoView()
+        
+//         cy.wait(3000)
+        
+//         cy.visit('https://www.10travlr.com.au/pages/privacy-policy-1')
+//             .location('pathname')
+//             .should('eq', '/pages/privacy-policy-1')
+
+//         cy.wait(3000)
+        
+//         cy.visit('https://www.10travlr.com.au/')
+//             .location('pathname')
+//             .should('eq', '/')
+
+//         cy.wait(5000)
+
+//         cy.get('.intercom-tour-frame').then ( $element => {
+
+//             const $body = $element.contents().find('body')
+
+//             let stripe =    cy.wrap($body)
+
+//             stripe.find('.intercom-1o29jst').click()
+
+//         cy.get('.privy-dismiss-content').click()
+
+//         cy.wait(3000)
+
+//         cy.get('.t-btn-inverted').click()
+
+//     })
+// })
+
+
+//     it('DMCA', () => { 
+            
+//         cy.get('footer').scrollIntoView()
+    
+//         cy.wait(3000)
+    
+//         cy.visit('https://www.10travlr.com.au/pages/dmca-4')
+//             .location('pathname')
+//             .should('eq', '/pages/dmca-4')
+
+//         cy.wait(3000)
+    
+//         cy.visit('https://www.10travlr.com.au/')
+//             .location('pathname')
+//             .should('eq', '/')
+
+//         cy.wait(5000)
+
+//         cy.get('.intercom-tour-frame').then ( $element => {
+
+//             const $body = $element.contents().find('body')
+
+//             let stripe =    cy.wrap($body)
+
+//             stripe.find('.intercom-1o29jst').click()
+
+//         cy.get('.privy-dismiss-content').click()
+
+//         cy.wait(3000)
+
+//         cy.get('.t-btn-inverted').click()
+
+//     })
+// })
+
+
+//     it('Contact Us', () => { 
+            
+//         cy.get('footer').scrollIntoView()
+    
+//         cy.wait(3000)
+    
+//         cy.visit('https://www.10travlr.com.au/contact-us')
+//             .location('pathname')
+//             .should('eq', '/contact-us')
+
+//         cy.wait(3000)
+    
+//         cy.visit('https://www.10travlr.com.au/')
+//             .location('pathname')
+//             .should('eq', '/')
+
+//         cy.wait(5000)
+
+//         cy.get('.intercom-tour-frame').then ( $element => {
+
+//             const $body = $element.contents().find('body')
+
+//             let stripe =    cy.wrap($body)
+
+//             stripe.find('.intercom-1o29jst').click()
+
+//         cy.get('.privy-dismiss-content').click()
+
+//         cy.wait(3000)
+
+//         cy.get('.t-btn-inverted').click()
+
+//     })
+// })
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// })
 
 
 
@@ -394,4 +932,4 @@ it('Deals & Offers', () => {
 
 
 
-})
+// })
