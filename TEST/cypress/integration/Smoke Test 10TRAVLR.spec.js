@@ -560,9 +560,6 @@ it('Accessing My Shortlists', () => {
     .location('pathname')
     .should('eq', '/my/shortlist')
 
-    cy.get('.privy-dismiss-content')
-    .click()
-
     cy.wait(3000)
 
     cy.visit('https://www.10travlr.com.au/')
@@ -579,8 +576,8 @@ it('Accessing My Trips', () => {
     cy.get('#email')
     .type('julian.travlr@gmail.com')
             
-    cy.get('#password').
-    type('qwertyuiop1234567890',{log:false})
+    cy.get('#password')
+    .type('qwertyuiop1234567890',{log:false})
         
     cy.get('#btn-submit')
     .click()
@@ -734,19 +731,8 @@ it('Logout', () => {
 
     cy.wait(5000)
 
-    cy.get('.intercom-tour-frame').then ( $element => {
-
-        const $body = $element.contents().find('body')
-
-        let stripe = cy.wrap($body)
-
-        stripe.find('.intercom-1o29jst')
-        .click()
-
     cy.get('.privy-dismiss-content')
     .click()
-
-    })
 
 })
 
