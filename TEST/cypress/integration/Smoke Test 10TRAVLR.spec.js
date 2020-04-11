@@ -1,10 +1,9 @@
 /// <reference types="cypress" />
 
 describe('Smoke Test 10Travlr', () => {
-
+    
     it('Accessing Homepage', () => {
 
-        
         cy.visit('https://www.10travlr.com.au/')
             
         cy.wait(5000)
@@ -15,13 +14,16 @@ describe('Smoke Test 10Travlr', () => {
 
             let stripe = cy.wrap($body)
 
-            stripe.find('.intercom-1o29jst').click()
+            stripe.find('.intercom-1o29jst')
+            .click()
             
-        cy.get('.privy-dismiss-content').click()
+        cy.get('.privy-dismiss-content')
+        .click()
 
         cy.wait(5000)
 
-        cy.get('.t-btn-inverted').click()
+        cy.get('.t-btn-inverted')
+        .click()
 
         cy.get('.t-navbar-top-left-logo-image')
         .should('have.attr', 'src')
@@ -51,10 +53,11 @@ describe('Smoke Test 10Travlr', () => {
     })
 })
 
-            
-    it('Header & Footer Details', () => {
 
-        cy.get('.t-navbar-top-left-burger > .t-icon').click()
+it('Header & Footer Details', () => {
+
+        cy.get('.t-navbar-top-left-burger > .t-icon')
+        .click()
         cy.wait(2000)
 
         cy.get(':nth-child(1) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
@@ -93,11 +96,14 @@ describe('Smoke Test 10Travlr', () => {
 
         cy.wait(2000)
 
-        cy.get('.t-navbar-sidebar-header-icon > .t-icon').scrollIntoView()
+        cy.get('.t-navbar-sidebar-header-icon > .t-icon')
+        .scrollIntoView()
 
-        cy.get('.t-navbar-sidebar-header-icon > .t-icon').click()
+        cy.get('.t-navbar-sidebar-header-icon > .t-icon')
+        .click()
 
-        cy.get('footer').scrollIntoView()
+        cy.get('footer')
+        .scrollIntoView()
 
         cy.wait(3000)
 
@@ -113,9 +119,11 @@ describe('Smoke Test 10Travlr', () => {
     
             let stripe = cy.wrap($body)
     
-            stripe.find('.intercom-1o29jst').click()
+            stripe.find('.intercom-1o29jst')
+            .click()
 
-        cy.get('.privy-dismiss-content').click()
+        cy.get('.privy-dismiss-content')
+        .click()
         
     })
 })
@@ -132,7 +140,8 @@ describe('Smoke Test 10Travlr', () => {
             .location('pathname')
             .should('eq', '/shortlists')
 
-        cy.get('.privy-dismiss-content').click()
+        cy.get('.privy-dismiss-content')
+        .click()
 
         cy.wait(3000)
 
@@ -148,18 +157,21 @@ describe('Smoke Test 10Travlr', () => {
     
             let stripe = cy.wrap($body)
     
-            stripe.find('.intercom-1o29jst').click()
+            stripe.find('.intercom-1o29jst')
+            .click()
 
         cy.wait(5000)
 
-        cy.get('.t-btn-inverted').click()
+        cy.get('.t-btn-inverted')
+        .click()
         
     })
 })
 
     it('Accessing Discover', () => {
         
-        cy.get('.t-navbar-top-left-burger > .t-icon').click()
+        cy.get('.t-navbar-top-left-burger > .t-icon')
+        .click()
         
         cy.wait(3000)
 
@@ -181,13 +193,16 @@ describe('Smoke Test 10Travlr', () => {
     
             let stripe = cy.wrap($body)
     
-            stripe.find('.intercom-1o29jst').click()
+            stripe.find('.intercom-1o29jst')
+            .click()
 
-        cy.get('.privy-dismiss-content').click()
+        cy.get('.privy-dismiss-content')
+        .click()
         
         cy.wait(5000)
 
-        cy.get('.t-btn-inverted').click()
+        cy.get('.t-btn-inverted')
+        .click()
 
     })
 })
@@ -195,7 +210,8 @@ describe('Smoke Test 10Travlr', () => {
 
     it('Accessing Trips', () => {
 
-        cy.get('.t-cards-wrapper > :nth-child(2) > .t-card-title > .t-card-title-content > .title').scrollIntoView()
+        cy.get('.t-cards-wrapper > :nth-child(2) > .t-card-title > .t-card-title-content > .title')
+        .scrollIntoView()
 
         cy.wait(3000)
 
@@ -217,20 +233,24 @@ describe('Smoke Test 10Travlr', () => {
     
             let stripe = cy.wrap($body)
     
-            stripe.find('.intercom-1o29jst').click()
+            stripe.find('.intercom-1o29jst')
+            .click()
 
-        cy.get('.privy-dismiss-content').click()
+        cy.get('.privy-dismiss-content')
+        .click()
 
         cy.wait(5000)
         
-        cy.get('.t-btn-inverted').click()
+        cy.get('.t-btn-inverted')
+        .click()
 
     })
 })
 
     it('Accessing Articles', () => {
 
-        cy.get('.c-home-articles > .t-container > .c-card > .c-section-title-button > .section-title-button__header > .section-title-button__wrapper-action > .t-btn-default').scrollIntoView()
+        cy.get('.c-home-articles > .t-container > .c-card > .c-section-title-button > .section-title-button__header > .section-title-button__wrapper-action > .t-btn-default')
+        .scrollIntoView()
 
         cy.wait(3000)
 
@@ -252,13 +272,16 @@ describe('Smoke Test 10Travlr', () => {
     
             let stripe = cy.wrap($body)
     
-            stripe.find('.intercom-1o29jst').click()
+            stripe.find('.intercom-1o29jst')
+            .click()
 
-        cy.get('.privy-dismiss-content').click()
+        cy.get('.privy-dismiss-content')
+        .click()
 
         cy.wait(5000)
         
-        cy.get('.t-btn-inverted').click()
+        cy.get('.t-btn-inverted')
+        .click()
 
     })
 })
@@ -266,7 +289,8 @@ describe('Smoke Test 10Travlr', () => {
 
     it('Accessing Activities', () =>{
 
-        cy.get('.t-navbar-top-left-burger > .t-icon').click()
+        cy.get('.t-navbar-top-left-burger > .t-icon')
+        .click()
 
         cy.wait(3000)
 
@@ -276,11 +300,12 @@ describe('Smoke Test 10Travlr', () => {
 
         cy.wait(3000)
 
-        cy.get('.t-btn-inverted').click()
+        cy.get('.t-btn-inverted')
+        .click()
 
         cy.visit('https://www.10travlr.com.au/')
-            .location('pathname')
-            .should('eq', '/')
+        .location('pathname')
+        .should('eq', '/')
 
         cy.wait(5000)
 
@@ -290,9 +315,11 @@ describe('Smoke Test 10Travlr', () => {
 
             let stripe = cy.wrap($body)
 
-            stripe.find('.intercom-1o29jst').click()
+            stripe.find('.intercom-1o29jst')
+            .click()
 
-        cy.get('.privy-dismiss-content').click()
+        cy.get('.privy-dismiss-content')
+        .click()
 
     })
 })
@@ -300,7 +327,8 @@ describe('Smoke Test 10Travlr', () => {
 
     it('Accessing Deals & Offers', () => {
 
-        cy.get('.t-navbar-top-left-burger > .t-icon').click()
+        cy.get('.t-navbar-top-left-burger > .t-icon')
+        .click()
 
         cy.wait(3000)
 
@@ -322,13 +350,16 @@ describe('Smoke Test 10Travlr', () => {
 
             let stripe = cy.wrap($body)
 
-            stripe.find('.intercom-1o29jst').click()
+            stripe.find('.intercom-1o29jst')
+            .click()
 
-        cy.get('.privy-dismiss-content').click()
+        cy.get('.privy-dismiss-content')
+        .click()
 
         cy.wait(5000)
 
-        cy.get('.t-btn-inverted').click()
+        cy.get('.t-btn-inverted')
+        .click()
 
     })
 })
@@ -336,21 +367,23 @@ describe('Smoke Test 10Travlr', () => {
 
     it('Accessing Health & Beauty', () => {
 
-        cy.get('.t-navbar-top-left-burger > .t-icon').click()
+        cy.get('.t-navbar-top-left-burger > .t-icon')
+        .click()
 
         cy.wait(2000)
 
-        cy.get(':nth-child(5) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon').click()
+        cy.get(':nth-child(5) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
+        .click()
 
         cy.wait(2000)
 
         cy.visit('https://www.10travlr.com.au/deals-and-offers/search?category=Health%20%26%20Beauty')
-            .location('pathname')
-            .should('eq', '/deals-and-offers/search')
+        .location('pathname')
+        .should('eq', '/deals-and-offers/search')
 
         cy.visit('https://www.10travlr.com.au/')
-            .location('pathname')
-            .should('eq', '/')
+        .location('pathname')
+        .should('eq', '/')
 
         cy.wait(5000)
 
@@ -360,13 +393,16 @@ describe('Smoke Test 10Travlr', () => {
 
             let stripe = cy.wrap($body)
 
-            stripe.find('.intercom-1o29jst').click()
+            stripe.find('.intercom-1o29jst')
+            .click()
 
-        cy.get('.privy-dismiss-content').click()
+        cy.get('.privy-dismiss-content')
+        .click()
 
         cy.wait(5000)
 
-        cy.get('.t-btn-inverted').click()
+        cy.get('.t-btn-inverted')
+        .click()
 
     })
 })
@@ -393,9 +429,11 @@ describe('Smoke Test 10Travlr', () => {
 
             let stripe = cy.wrap($body)
 
-            stripe.find('.intercom-1o29jst').click()
+            stripe.find('.intercom-1o29jst')
+            .click()
 
-        cy.get('.privy-dismiss-content').click()
+        cy.get('.privy-dismiss-content')
+        .click()
     
     })
 })
@@ -416,8 +454,8 @@ describe('Smoke Test 10Travlr', () => {
               })
             
     cy.visit('https://www.10travlr.com.au/venue')
-        .location('pathname')
-        .should('eq', '/venue')
+    .location('pathname')
+    .should('eq', '/venue')
 })
 
     it('Login', () => {
@@ -426,8 +464,8 @@ describe('Smoke Test 10Travlr', () => {
         .click()
 
         cy.visit('https://www.10travlr.com.au/')
-            .location('pathname')
-            .should('eq', '/')
+        .location('pathname')
+        .should('eq', '/')
 
         cy.wait(5000)
 
@@ -437,87 +475,99 @@ describe('Smoke Test 10Travlr', () => {
             
             let stripe = cy.wrap($body)
             
-            stripe.find('.intercom-1o29jst').click()
+            stripe.find('.intercom-1o29jst')
+            .click()
             
-            cy.get('.privy-dismiss-content').click()
+        cy.get('.privy-dismiss-content')
+            .click()
 
         cy.get('.t-navbar-top-right-menus-list-item-link')
         .click()
 
         cy.wait(3000)
         
-        cy.get('#email').type('julian.travlr@gmail.com')
+        cy.get('#email')
+        .type('julian.travlr@gmail.com')
 
-        cy.get('#password').type('qwertyuiop1234567890', {log:false})
+        cy.get('#password')
+        .type('qwertyuiop1234567890', {log:false})
 
-        cy.get('#btn-submit').click()
+        cy.get('#btn-submit')
+        .click()
 
         cy.wait(3000)
 
         cy.visit('https://www.10travlr.com.au/')
-            .location('pathname')
-            .should('eq', '/')
+        .location('pathname')
+        .should('eq', '/')
 
         cy.wait(5000)
 
         })
-
 })
 
     
-    it('Accessing My Bookings & Deals', () => { 
+it('Accessing My Bookings & Deals', () => { 
 
-        cy.get('.t-navbar-top-right-menus-list-item-link')
-        .click()
+    cy.get('.t-navbar-top-right-menus-list-item-link')
+    .click()
 
         cy.get(':nth-child(1) > .t-navbar-top-right-menus-list-item-child-item-link')
         .click()
 
         cy.wait(3000)
 
-        cy.get('#email').type('julian.travlr@gmail.com')
+        cy.get('#email')
+        .type('julian.travlr@gmail.com')
             
-        cy.get('#password').type('qwertyuiop1234567890',{log:false})
+        cy.get('#password')
+        .type('qwertyuiop1234567890',{log:false})
             
-        cy.get('#btn-submit').click()
+        cy.get('#btn-submit')
+        .click()
 
         cy.visit('https://www.10travlr.com.au/booking-management')
-            .location('pathname')
-            .should('eq', '/booking-management')
+        .location('pathname')
+        .should('eq', '/booking-management')
 
         cy.wait(3000)
 
         cy.visit('https://www.10travlr.com.au/')
-            .location('pathname')
-            .should('eq', '/')
+        .location('pathname')
+        .should('eq', '/')
         
         cy.wait(5000)
 
-        cy.get('.privy-dismiss-content').click()
+        cy.get('.privy-dismiss-content')
+        .click()
 
 })
 
-    it('Accessing My Shortlists', () => {
+it('Accessing My Shortlists', () => {
 
-        cy.visit('https://www.10travlr.com.au/my/shortlist')
+    cy.visit('https://www.10travlr.com.au/my/shortlist')
 
-        cy.get('#email').type('julian.travlr@gmail.com')
+    cy.get('#email')
+    .type('julian.travlr@gmail.com')
             
-        cy.get('#password').type('qwertyuiop1234567890',{log:false})
+    cy.get('#password')
+    .type('qwertyuiop1234567890',{log:false})
             
-        cy.get('#btn-submit').click()
+    cy.get('#btn-submit')
+    .click()
 
-        cy.visit('https://www.10travlr.com.au/my/shortlist')
-            .location('pathname')
-            .should('eq', '/my/shortlist')
+    cy.visit('https://www.10travlr.com.au/my/shortlist')
+    .location('pathname')
+    .should('eq', '/my/shortlist')
 
-        cy.get('.privy-dismiss-content').click()
+    cy.get('.privy-dismiss-content')
+    .click()
 
-        cy.wait(3000)
+    cy.wait(3000)
 
-        cy.visit('https://www.10travlr.com.au/')
-            .location('pathname')
-            .should('eq', '/')
+    cy.visit('https://www.10travlr.com.au/')
+    .location('pathname')
+    .should('eq', '/')
     
 })
 
@@ -526,25 +576,29 @@ it('Accessing My Trips', () => {
 
     cy.visit('https://www.10travlr.com.au/my/trip')
 
-    cy.get('#email').type('julian.travlr@gmail.com')
+    cy.get('#email')
+    .type('julian.travlr@gmail.com')
             
-    cy.get('#password').type('qwertyuiop1234567890',{log:false})
+    cy.get('#password').
+    type('qwertyuiop1234567890',{log:false})
         
-    cy.get('#btn-submit').click()
+    cy.get('#btn-submit')
+    .click()
 
     cy.visit('https://www.10travlr.com.au/my/trip')
-        .location('pathname')
-        .should('eq', '/my/trip')
+    .location('pathname')
+    .should('eq', '/my/trip')
 
     cy.wait(3000)
 
     cy.visit('https://www.10travlr.com.au/')
-        .location('pathname')
-        .should('eq', '/')
+    .location('pathname')
+    .should('eq', '/')
 
     cy.wait(5000)
     
-    cy.get('.privy-dismiss-content').click()
+    cy.get('.privy-dismiss-content')
+    .click()
 
 })
 
@@ -553,25 +607,29 @@ it('Accessing My Articles', () => {
 
     cy.visit('https://www.10travlr.com.au/my/article')
 
-    cy.get('#email').type('julian.travlr@gmail.com')
+    cy.get('#email')
+    .type('julian.travlr@gmail.com')
             
-    cy.get('#password').type('qwertyuiop1234567890',{log:false})
+    cy.get('#password')
+    .type('qwertyuiop1234567890',{log:false})
         
-    cy.get('#btn-submit').click()
+    cy.get('#btn-submit')
+    .click()
 
     cy.visit('https://www.10travlr.com.au/my/article')
-        .location('pathname')
-        .should('eq', '/my/article')
+    .location('pathname')
+    .should('eq', '/my/article')
 
     cy.wait(3000)
 
     cy.visit('https://www.10travlr.com.au')
-        .location('pathname')
-        .should('eq', '/')
+    .location('pathname')
+    .should('eq', '/')
 
     cy.wait(5000)
 
-    cy.get('.privy-dismiss-content').click()
+    cy.get('.privy-dismiss-content')
+    .click()
 
 })
 
@@ -580,25 +638,29 @@ it('Accessing My Notification', () => {
 
     cy.visit('https://www.10travlr.com.au/my/notification')
 
-    cy.get('#email').type('julian.travlr@gmail.com')
+    cy.get('#email')
+    .type('julian.travlr@gmail.com')
             
-    cy.get('#password').type('qwertyuiop1234567890',{log:false})
+    cy.get('#password')
+    .type('qwertyuiop1234567890',{log:false})
         
-    cy.get('#btn-submit').click()
+    cy.get('#btn-submit')
+    .click()
 
     cy.visit('https://www.10travlr.com.au/my/notification')
-        .location('pathname')
-        .should('eq', '/my/notification')
+    .location('pathname')
+    .should('eq', '/my/notification')
 
     cy.wait(3000)
 
     cy.visit('https://www.10travlr.com.au')
-        .location('pathname')
-        .should('eq', '/')
+    .location('pathname')
+    .should('eq', '/')
 
     cy.wait(5000)
 
-    cy.get('.privy-dismiss-content').click()
+    cy.get('.privy-dismiss-content')
+    .click()
 
 })
 
@@ -625,7 +687,7 @@ it('Create A List', () => {
 })
 
 
-    it('Accessing Business Portal', () => {
+it('Accessing Business Portal', () => {
 
     cy.get('.t-navbar-top-right-menus-list-item-link-myaccount')
     .click()
@@ -638,48 +700,51 @@ it('Create A List', () => {
     cy.get('.mobile__header > .container-Common > .common__shortcut > .common__login > .common__login__link')
     .click()
 
-    cy.get('#email').type('julian.travlr@gmail.com')
+    cy.get('#email')
+    .type('julian.travlr@gmail.com')
             
-    cy.get('#password').type('qwertyuiop1234567890',{log:false})
+    cy.get('#password')
+    .type('qwertyuiop1234567890',{log:false})
         
-    cy.get('#btn-submit').click()
+    cy.get('#btn-submit')
+    .click()
 
     Cypress.on('uncaught:exception', (err, runnable) => {
-        throw err
-
-    })
+        throw err })
 
     cy.visit('https://www.10travlr.com.au/business_premium/test-test-test-1282692/overview')
-        .location('pathname')
-        .should('eq', '/business_premium/test-test-test-1282692/overview')
+    .location('pathname')
+    .should('eq', '/business_premium/test-test-test-1282692/overview')
 
 })
 
-    it('Logout', () => {
+it('Logout', () => {
 
-        cy.get('.mobile__header > .container-Common > .common__shortcut > .common__shortcut__profile > .dropdown > #shortcut__profile > .my__account__text')
+    cy.get('.mobile__header > .container-Common > .common__shortcut > .common__shortcut__profile > .dropdown > #shortcut__profile > .my__account__text')
+    .click()
+
+    cy.wait(3000)
+
+    cy.get('.mobile__header > .container-Common > .common__shortcut > .common__shortcut__profile > .dropdown > .dropdown-menu > [href="https://www.10travlr.com.au/signout"]')
+    .click()
+
+    cy.visit('https://www.10travlr.com.au')
+    .location('pathname')
+    .should('eq', '/')
+
+    cy.wait(5000)
+
+    cy.get('.intercom-tour-frame').then ( $element => {
+
+        const $body = $element.contents().find('body')
+
+        let stripe = cy.wrap($body)
+
+        stripe.find('.intercom-1o29jst')
         .click()
 
-        cy.wait(3000)
-
-        cy.get('.mobile__header > .container-Common > .common__shortcut > .common__shortcut__profile > .dropdown > .dropdown-menu > [href="https://www.10travlr.com.au/signout"]')
-        .click()
-
-        cy.visit('https://www.10travlr.com.au')
-        .location('pathname')
-        .should('eq', '/')
-
-        cy.wait(5000)
-
-        cy.get('.intercom-tour-frame').then ( $element => {
-
-            const $body = $element.contents().find('body')
-
-            let stripe = cy.wrap($body)
-
-            stripe.find('.intercom-1o29jst').click()
-
-        cy.get('.privy-dismiss-content').click()
+    cy.get('.privy-dismiss-content')
+    .click()
 
     })
 
@@ -687,19 +752,20 @@ it('Create A List', () => {
 
 it('Accessing Contact Us', () => { 
             
-    cy.get('footer').scrollIntoView()
+    cy.get('footer')
+    .scrollIntoView()
 
     cy.wait(3000)
 
     cy.visit('https://www.10travlr.com.au/contact-us')
-        .location('pathname')
-        .should('eq', '/contact-us')
+    .location('pathname')
+    .should('eq', '/contact-us')
 
     cy.wait(3000)
 
     cy.visit('https://www.10travlr.com.au/')
-        .location('pathname')
-        .should('eq', '/')
+    .location('pathname')
+    .should('eq', '/')
 
     cy.wait(5000)
 
@@ -709,49 +775,56 @@ it('Accessing Contact Us', () => {
 
         let stripe =    cy.wrap($body)
 
-        stripe.find('.intercom-1o29jst').click()
+        stripe.find('.intercom-1o29jst')
+        .click()
 
-    cy.get('.privy-dismiss-content').click()
+    cy.get('.privy-dismiss-content')
+    .click()
 
     cy.wait(3000)
 
-    cy.get('.t-btn-inverted').click()
+    cy.get('.t-btn-inverted')
+    .click()
 
     })
 })
 
 
-    it('Accessing Terms', () => { 
+it('Accessing Terms', () => { 
             
-        cy.get('footer').scrollIntoView()
+    cy.get('footer')
+    .scrollIntoView()
 
-        cy.wait(3000)
+    cy.wait(3000)
 
-        cy.visit('https://www.10travlr.com.au/pages/terms-3')
-            .location('pathname')
-            .should('eq', '/pages/terms-3')
+    cy.visit('https://www.10travlr.com.au/pages/terms-3')
+    .location('pathname')
+    .should('eq', '/pages/terms-3')
 
-        cy.wait(3000)
+    cy.wait(3000)
 
-        cy.visit('https://www.10travlr.com.au/')
-            .location('pathname')
-            .should('eq', '/')
+    cy.visit('https://www.10travlr.com.au/')
+    .location('pathname')
+    .should('eq', '/')
 
-        cy.wait(5000)
+    cy.wait(5000)
 
-        cy.get('.intercom-tour-frame').then ( $element => {
+    cy.get('.intercom-tour-frame').then ( $element => {
 
-            const $body = $element.contents().find('body')
+        const $body = $element.contents().find('body')
     
-            let stripe = cy.wrap($body)
+        let stripe = cy.wrap($body)
     
-            stripe.find('.intercom-1o29jst').click()
+        stripe.find('.intercom-1o29jst')
+        .click()
 
-        cy.get('.privy-dismiss-content').click()
+    cy.get('.privy-dismiss-content')
+    .click()
             
-        cy.wait(3000)
+    cy.wait(3000)
     
-        cy.get('.t-btn-inverted').click()
+    cy.get('.t-btn-inverted')
+    .click()
             
     })
 })
@@ -759,7 +832,8 @@ it('Accessing Contact Us', () => {
 
 it('Accessing DMCA', () => { 
             
-    cy.get('footer').scrollIntoView()
+    cy.get('footer')
+    .scrollIntoView()
 
     cy.wait(3000)
 
@@ -781,13 +855,16 @@ it('Accessing DMCA', () => {
 
         let stripe = cy.wrap($body)
 
-        stripe.find('.intercom-1o29jst').click()
+        stripe.find('.intercom-1o29jst')
+        .click()
 
-    cy.get('.privy-dismiss-content').click()
+    cy.get('.privy-dismiss-content')
+    .click()
     
     cy.wait(3000)
 
-    cy.get('.t-btn-inverted').click()
+    cy.get('.t-btn-inverted')
+    .click()
 
     })
 })
@@ -795,71 +872,76 @@ it('Accessing DMCA', () => {
 
 it('Accessing Refund Policy', () => { 
             
-        cy.get('footer').scrollIntoView()
+    cy.get('footer')
+    .scrollIntoView()
 
-        cy.wait(3000)
+    cy.wait(3000)
 
-        cy.visit('https://www.10travlr.com.au/pages/refund-policy-5')
-        .location('pathname')
-        .should('eq', '/pages/refund-policy-5')
+    cy.visit('https://www.10travlr.com.au/pages/refund-policy-5')
+    .location('pathname')
+    .should('eq', '/pages/refund-policy-5')
 
-        cy.wait(3000)
+    cy.wait(3000)
 
-        cy.visit('https://www.10travlr.com.au/')
-        .location('pathname')
-        .should('eq', '/')
+    cy.visit('https://www.10travlr.com.au/')
+    .location('pathname')
+    .should('eq', '/')
 
-        cy.wait(5000)
+    cy.wait(5000)
 
-        cy.get('.intercom-tour-frame').then ( $element => {
+    cy.get('.intercom-tour-frame').then ( $element => {
 
-            const $body = $element.contents().find('body')
+        const $body = $element.contents().find('body')
 
-            let stripe = cy.wrap($body)
+        let stripe = cy.wrap($body)
 
-            stripe.find('.intercom-1o29jst').click()
+        stripe.find('.intercom-1o29jst')
+        .click()
 
-        cy.get('.privy-dismiss-content').click()
+    cy.get('.privy-dismiss-content')
+    .click()
         
-        cy.wait(3000)
+    cy.wait(3000)
 
-        cy.get('.t-btn-inverted').click()
+    cy.get('.t-btn-inverted')
+    .click()
 
-        })
     })
+})
 
 
-    it('Accessing Privacy Policy', () => { 
+it('Accessing Privacy Policy', () => { 
             
-        cy.get('footer').scrollIntoView()
+    cy.get('footer')
+    .scrollIntoView()
 
-        cy.wait(3000)
+    cy.wait(3000)
 
-        cy.visit('https://www.10travlr.com.au/pages/privacy-policy-1')
-        .location('pathname')
-        .should('eq', '/pages/privacy-policy-1')
+    cy.visit('https://www.10travlr.com.au/pages/privacy-policy-1')
+    .location('pathname')
+    .should('eq', '/pages/privacy-policy-1')
 
-        cy.wait(3000)
+    cy.wait(3000)
 
-        cy.visit('https://www.10travlr.com.au/')
-        .location('pathname')
-        .should('eq', '/')
+    cy.visit('https://www.10travlr.com.au/')
+    .location('pathname')
+    .should('eq', '/')
 
-        cy.wait(5000)
+    cy.wait(5000)
 
-        cy.get('.intercom-tour-frame').then ( $element => {
+    cy.get('.intercom-tour-frame').then ( $element => {
 
-            const $body = $element.contents().find('body')
+        const $body = $element.contents().find('body')
 
-            let stripe = cy.wrap($body)
+        let stripe = cy.wrap($body)
 
-            stripe.find('.intercom-1o29jst').click()
+        stripe.find('.intercom-1o29jst').click()
 
-        cy.get('.privy-dismiss-content').click()
+    cy.get('.privy-dismiss-content').click()
         
-        cy.wait(3000)
+    cy.wait(3000)
 
-        cy.get('.t-btn-inverted').click()
+    cy.get('.t-btn-inverted').click()
 
         })
     })
