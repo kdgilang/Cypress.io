@@ -45,4 +45,21 @@ describe('Smoke Test 10Travlr', () => {
         cy.HealthAndBeauty()
 
     })
+
+    it('Accessing Events', () => { 
+        cy.Events()
+    })
+
+    it('Accessing Venue', () => {
+        cy.Venue()
+    })
+
+    it('Login', () => {
+        cy.Login()
+
+    })
+
+    it('Accessing Booking & Deals', () => {
+        cy.BookingAndDeals()
+    })
 })
