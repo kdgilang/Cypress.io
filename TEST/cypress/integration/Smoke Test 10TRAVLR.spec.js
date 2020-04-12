@@ -62,4 +62,8 @@ describe('Smoke Test 10Travlr', () => {
     it('Accessing Booking & Deals', () => {
         cy.BookingAndDeals()
     })
+
+    it('Accessing My Shortlists', () => {
+        cy.MyShortlists()
+    })
 })
