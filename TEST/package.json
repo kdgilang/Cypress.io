@@ -1,11 +1,12 @@
 {
-  "name": "TEST",
+  "name": "10travlr-package",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "10travlr": "cypress run --spec cypress/integration/10Travlr/**/*.spec.js --browser chrome"
+
+},
   "keywords": [],
   "author": "",
   "license": "ISC",

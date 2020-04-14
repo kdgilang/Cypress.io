@@ -9,7 +9,7 @@
 "blacklistHosts":null,
 "chromeWebSecurity":false,
 "modifyObstructiveCode":true,
-"integrationFolder":"cypress/integration",
+"integrationFolder":"cypress/integration/",
 "env":null,
 "pluginsFile":"cypress/plugins",
 "hosts":null,
