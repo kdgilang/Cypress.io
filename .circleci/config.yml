@@ -1,12 +1,12 @@
 version: 2.1
 orbs:
-  circleci-cli: circleci/circleci-cli@4.4.0
+  circleci-cli: circleci/circleci-cli@0.1.8
 jobs:
   build:
     docker:
-      - image: circleci/node:13
+      - image: circleci/node:10
 
-    working_directory: ~/TEST
+    working_directory: ~/repo
 
     steps:
       - checkout
