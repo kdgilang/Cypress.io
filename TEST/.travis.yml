@@ -1,15 +1,4 @@
-sudo: false
-
 language: node_js
 
 node_js:
   - node
-
-install:
-  - npm ci
-
-script:
-  - npm 10travlr
-
-notifications:
-  email: false
