@@ -1,10 +1,10 @@
 {
-  "name": "10travlr-package",
+  "name": "package",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run --spec cypress/integration/10Travlr/**/*.spec.js --browser chrome"
+    "test": "cypress run --spec cypress/integration/10Travlr/**/*.spec.js"
   },
   "keywords": [],
   "author": "",

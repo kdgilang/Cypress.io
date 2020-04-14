@@ -1,13 +1,13 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: cypress/base:8
-        environment:
-          ## this enables colors in the output
-          TERM: xterm
-    working_directory: ~/app
+    macos:
+      xcode: 11.3.0
+      
     steps:
+      # Commands will execute in macOS container
+      # with Xcode 11.3 installed
+      - run: xcodebuild -version
       - checkout
       - restore_cache:
           keys:
