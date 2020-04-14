@@ -9,7 +9,7 @@ install:
   - npm ci
 
 script:
-  - npm run 10travlr
+  - npm 10travlr
 
 notifications:
   email: false

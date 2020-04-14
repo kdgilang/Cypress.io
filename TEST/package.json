@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "10travlr": "cypress run --spec cypress/integration/10Travlr/**/*.spec.js --browser chrome"
-
-},
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "ci": "^1.0.0"
+  },
   "devDependencies": {
     "cypress": "^4.3.0",
     "cypress-terminal-report": "^1.2.0"
