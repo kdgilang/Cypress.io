@@ -220,16 +220,17 @@ Cypress.Commands.add('Events', () => {
 })
 
 Cypress.Commands.add('Venue', () => {
-    cy
-
-    .visit('/venue')
-    .get('#email').type('julian.travlr@gmail.com')
-    .get('#password').type('qwertyuiop1234567890', {log:false})
-    .get('#btn-submit').click()
-    Cypress.on('uncaught:exception', (err, runnable) => {
+    
+    cy.visit('/venue')
+    cy.get('#email').type('julian.travlr@gmail.com')
+    cy.get('#password').type('qwertyuiop1234567890', {log:false})
+    cy.get('#btn-submit').click()
+        Cypress.on('uncaught:exception', (err, runnable) => {
         throw err
     })
-    .visit('https://www.10travlr.com.au/venue').location('pathname')
+    cy
+
+    .visit('/venue').location('pathname')
     .should('eq', '/venue')
     .get('h3.m-t-0')
     .should('have.text','Add a venue')
