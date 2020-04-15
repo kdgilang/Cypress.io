@@ -35,7 +35,7 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      - run: npm cypress install
+      - run: npm install cypress
 
       # run tests!
       - run: npm test
