@@ -4,7 +4,7 @@ Cypress.Commands.add('Homepage', () => {
     .visit('/')
     .title()
     .should('eq', '10 Travlr - Experience the difference')
-    .get('.privy-dismiss-content').click()
+    // .get('.privy-dismiss-content').click()
     .wait(5000)
     .get('.intercom-tour-frame').then ( $element => {
         const $body = $element.contents().find('body')
@@ -81,7 +81,7 @@ Cypress.Commands.add('Shortlist',() => {
     .should('eq', '/shortlists')
     .get('h1.t-heading-2.t-color-grey-darkest')
     .should('contain', 'All Favourite Lists')
-    .get('.privy-dismiss-content').click()
+    // .get('.privy-dismiss-content').click()
     .get('.c-dropdown-checkboxes')
     .should('exist')
     .get('h2.t-heading-2.title.t-m-b-16')
@@ -111,7 +111,7 @@ Cypress.Commands.add('Trips', () => {
     .get('.t-navbar-top-left-logo-image').click()
     .visit('/').location('pathname')
     .should('eq','/')
-    .get('.privy-dismiss-content').click()
+    // .get('.privy-dismiss-content').click()
     .wait(5000)
     .get('.intercom-tour-frame').then ( $element => {
         const $body = $element.contents().find('body')
@@ -135,7 +135,7 @@ Cypress.Commands.add('Articles', () => {
 
     .visit('/').location('pathname')
     .should('eq','/')
-    .get('.privy-dismiss-content').click()
+    // .get('.privy-dismiss-content').click()
     .wait(5000)
     .get('.intercom-tour-frame').then ( $element => {
         const $body = $element.contents().find('body')
@@ -244,7 +244,7 @@ Cypress.Commands.add('Login', () => {
     cy
 
     .visit('/')
-    .get('.privy-dismiss-content').click()
+    // .get('.privy-dismiss-content').click()
     .wait(5000)
     .get('.intercom-tour-frame').then ( $element => {
         const $body = $element.contents().find('body')
@@ -297,7 +297,7 @@ Cypress.Commands.add('MyShortlists', () => {
     .get('#btn-submit').click()
     .visit('/my/shortlist').location('pathname')
     .should('eq', '/my/shortlist')
-    .get('.privy-dismiss-content').click()
+    // .get('.privy-dismiss-content').click()
     .get('.change__cover__btn > a')
     .should('exist')
     .get('.link__follow > .t-button-outline-secondary')
