@@ -18,7 +18,10 @@ jobs:
 
     working_directory: ~/repo
 
+    
+
     steps:
+
       - checkout
 
       # Download and cache dependencies
@@ -31,18 +34,14 @@ jobs:
       - run: npm install
 
       - save_cache:
-          paths:
-            - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-
-          cache:
-     paths:
-        - cache/Cypress
-  script:
-    - 'export CYPRESS_CACHE_FOLDER=../../cache/Cypress'
-    - 'npm ci'
-    - 'export CYPRESS_CACHE_FOLDER=cache/Cypress'
-    - 'npm run ci'
+          paths:
+            - "node_modules"
+            - "~/.cache/Cypress"
 
       # run tests!
       - run: npm test
+
+
+
+      
