@@ -6,11 +6,11 @@ workflows:
     jobs:
       - cypress/install:
           cache-key: >-
-            cache-{{ arch }}-{{ .Branch }}-{{ checksum "Cypress/package.json"
+            cache-{{ arch }}-{{ .Branch }}-{{ checksum "/Users/reposado/Cypress/package.json"
             }}
       - cypress/run:
           yarn: true
           cache-key: >-
-            cache-{{ arch }}-{{ .Branch }}-{{ checksum "Cypress/package.json"
+            cache-{{ arch }}-{{ .Branch }}-{{ checksum "/Users/reposado/Cypress/package.json"
             }}
-          working_directory: Cypress
+          working_directory: /Users/reposado/Cypress
