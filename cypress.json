@@ -1,5 +1,3 @@
-
-
 {
 
 "animationDistanceThreshold":5,
@@ -19,8 +17,6 @@
 "port":null,
 "projectId":null,
 "videosFolder":"cypress/videos",
-"reporter":"spec",
-"reporterOptions":null,
 "ignoreTestFiles":"*.hot-update.js",
 "testFiles":"**/*.*",
 "defaultCommandTimeout":4000,
@@ -39,7 +35,18 @@
 "watchForFileChanges":true,
 "waitForAnimations":true,
 "nodeVersion":"default",
-"experimentalGetCookiesSameSite":false
+"experimentalGetCookiesSameSite":false,
+"reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+        "reporterEnabled": "mochawesome",
+        "mochawesomeReporterOptions": {
+            "reportDir": "cypress/reports/mocha",
+            "quite": true,
+            "overwrite": false,
+            "html": false,
+            "json": true
+        }
+    }
 
 
 
