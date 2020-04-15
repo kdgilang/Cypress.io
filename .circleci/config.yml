@@ -1,16 +1,34 @@
-version: 2.1
-orbs:
-  cypress: cypress-io/cypress@1
+version: 2
+
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: circleci/node:8.9.1
+
+jobs:
+  test:
+    <<: *defaults  
+    steps:
+      - checkout
+
+      
+
+      - run: npm ci
+      - run:
+          name: Run tests
+          command: npm test
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
+
 workflows:
-  build:
+  version: 2
+  only_test:
     jobs:
-      - cypress/install:
-          cache-key: >-
-            cache-{{ arch }}-{{ .Branch }}-{{ checksum "/Users/reposado/Cypress/package.json"
-            }}
-      - cypress/run:
-          yarn: true
-          cache-key: >-
-            cache-{{ arch }}-{{ .Branch }}-{{ checksum "/Users/reposado/Cypress/package.json"
-            }}
-          working_directory: /Users/reposado/Cypress
+      - test
