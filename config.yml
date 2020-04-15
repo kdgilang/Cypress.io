@@ -1,12 +1,9 @@
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@1.5.1
+  workflows:
+  build:
+    jobs:
+      - cypress/run:
+          yarn: true
 
-jobs:
-  lint:
-    executor: cypress/base-10
-    steps:
-      - attach_workspace:
-          at: ~/
-      - run: npm run types
-      - run: npm run lint
