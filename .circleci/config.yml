@@ -17,8 +17,9 @@ jobs:
           - v1-dependencies-
 
       - run: npm install 
-      - run: cypress install
-          command: npm cypress install --save-dev
+      - run: 
+          name: cypress install
+          command: npm cypress install
       - run:
           name: Run tests
           command: npm test
