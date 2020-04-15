@@ -1,55 +1,8 @@
 version: 2.1
 orbs:
   node: circleci/node@2.0.2
-
+  
   jobs:
-  install-node-example:
-    docker:
-      - image: 'cimg/base:stable'
-    steps:
-      - checkout
-      - node/install:
-          install-yarn: true
-          node-version: latest
-      - run: node --version
-orbs:
-  node: circleci/node@x.y
-version: 2.1
-workflows:
-  test_my_app:
-    jobs:
-      - install-node-example
-
-      orbs:
-  node: circleci/node@x.y
-version: 2.1
-workflows:
-  matrix-tests:
-    jobs:
-      - node/test:
-          version: 13.11.0
-      - node/test:
-          version: 12.16.0
-      - node/test:
-          version: 10.19.0
-
-          orbs:
-  heroku: circleci/heroku@x.y
-  node: circleci/node@x.y
-version: 2.1
-workflows:
-  test-and-deploy:
-    jobs:
-      - node/test
-      - heroku/deploy-via-git:
-          filters:
-            branches:
-              only:
-                - master
-          requires:
-            - node/test
-
-            jobs:
   test:
     executor:
       name: node/default
