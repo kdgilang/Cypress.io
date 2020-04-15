@@ -35,5 +35,14 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
+          cache:
+     paths:
+        - cache/Cypress
+  script:
+    - 'export CYPRESS_CACHE_FOLDER=../../cache/Cypress'
+    - 'npm ci'
+    - 'export CYPRESS_CACHE_FOLDER=cache/Cypress'
+    - 'npm run ci'
+
       # run tests!
       - run: npm test
