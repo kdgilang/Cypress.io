@@ -7,6 +7,8 @@ jobs:
           ## this enables colors in the output
           TERM: xterm
     working_directory: ~/app
+    commands: 
+      - npm install cypress
     steps:
       - checkout
       - restore_cache:
@@ -17,8 +19,6 @@ jobs:
       - run:
           name: Install Dependencies
           command: npm ci
-      - cypress/install:
-        build: npm install cypress --save-dev
       - save_cache:
           key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
           # cache NPM modules and the folder with the Cypress binary
@@ -26,3 +26,4 @@ jobs:
             - ~/.npm
             - ~/.cache
       - run: yarn run 10travlr
+  
