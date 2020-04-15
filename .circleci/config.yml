@@ -1,34 +1,14 @@
 version: 2
-
-defaults: &defaults
-  working_directory: ~/repo
-  docker:
-    - image: circleci/node:8.9.1
-
 jobs:
-  test:
-    <<: *defaults  
+  build:
+    docker:
+      - image: circleci/node:12
+    working_directory: ~/repo
     steps:
       - checkout
-
-      
-
-      - run: npm ci
-      - run:
-          name: Run tests
-          command: npm test
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-
-      - persist_to_workspace:
-          root: ~/repo
-          paths: .
-
-workflows:
-  version: 2
-  only_test:
-    jobs:
-      - test
+      - add_ssh_keys:
+          fingerprints:
+            - 'FI:NG:ER:PR:INT' # deploy key added to dependency repo
+      - run: ssh-add -L # This shows that the key was successfully added
+      - run: npm ci # or `npm install` The failure is here
+      - run: npm test
