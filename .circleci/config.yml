@@ -5,6 +5,4 @@ workflows:
   build:
     jobs:
       - cypress/run:
-          post-steps:
-            - store_artifacts:
-                path: mochawesome-report
+          yarn: true
