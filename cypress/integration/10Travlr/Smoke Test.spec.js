@@ -1,4 +1,4 @@
-/// <reference types="cypress" />
+
 
 describe('Smoke Test 10Travlr', () => {
     it('Accessing Homepage', () => {
