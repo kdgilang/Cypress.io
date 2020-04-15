@@ -16,15 +16,8 @@ jobs:
           - v1-dependencies-{{ checksum "package.json" }}
           - v1-dependencies-
 
-      - run: 
-        name: halo
-        command: npm ci
-        
-          - run: 
-          name: cypress install
-          command: npm install cypress
-      
-          - run:
+      - run: npm install
+      - run:
           name: Run tests
           command: npm test
 
