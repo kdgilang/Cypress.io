@@ -19,7 +19,7 @@ jobs:
       - run: npm install 
       - run: 
           name: cypress install
-          command: npm cypress install
+          command: npm install cypress
       - run:
           name: Run tests
           command: npm test
