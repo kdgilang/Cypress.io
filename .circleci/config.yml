@@ -18,10 +18,7 @@ jobs:
 
     working_directory: ~/repo
 
-    
-
     steps:
-
       - checkout
 
       # Download and cache dependencies
@@ -34,10 +31,11 @@ jobs:
       - run: npm install
 
       - save_cache:
-          key: v1-dependencies-{{ checksum "package.json" }}
           paths:
-            - "node_modules"
-            - "~/.cache/Cypress"
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run: npm cypress install
 
       # run tests!
       - run: npm test
