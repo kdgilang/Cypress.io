@@ -1,29 +1,22 @@
-version: 2
-jobs:
+version: 2.1
+orbs:
+  cypress: cypress-io/cypress@1
+workflows:
   build:
-    docker:
-      - image: cypress/base:8
-        environment:
-          ## this enables colors in the output
-          TERM: xterm
-    working_directory: ~/app
-    commands: 
-      - npm install cypress
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
-            - v1-deps-{{ .Branch }}
-            - v1-deps
-      - run:
-          name: Install Dependencies
-          command: npm ci
-      - save_cache:
-          key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
-          # cache NPM modules and the folder with the Cypress binary
-          paths:
-            - ~/.npm
-            - ~/.cache
-      - run: yarn run 10travlr
-  
+    jobs:
+      - cypress/install
+      - cypress/run:
+          name: Chrome
+          requires:
+            - cypress/install
+          executor: cypress/browsers-chrome73-ff68
+          start: npm start
+          wait-on: http://localhost:3000
+          record: true
+          group: chrome
+          browser: chrome
+      - cypress/run:
+          name: Firefox
+          requires:
+            - cypress/install
+          executor: cypress/browsers-chrome73-ff68
