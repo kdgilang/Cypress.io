@@ -7,4 +7,4 @@ workflows:
       - cypress/run:
           executor: cypress/browsers-chrome69
           browser: chrome
-          # command: npm run 10travlr
+          command: npm run 10travlr
