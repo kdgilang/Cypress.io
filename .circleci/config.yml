@@ -1,8 +1,16 @@
 version: 2.1
 orbs:
-  node: circleci/node@2.0.2
-
-    steps:
-      - checkout
-      - node/install-packages
-      - npm run test
+  cypress: cypress-io/cypress@1
+workflows:
+  build:
+    jobs:
+      - cypress/install:
+          cache-key: >-
+            cache-{{ arch }}-{{ .Branch }}-{{ checksum "frontend/package.json"
+            }}
+      - cypress/run:
+          yarn: true
+          cache-key: >-
+            cache-{{ arch }}-{{ .Branch }}-{{ checksum "frontend/package.json"
+            }}
+          working_directory: frontend
