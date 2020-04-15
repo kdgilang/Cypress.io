@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "10travlr": "cypress run --spec cypress/integration/10Travlr/**/*.spec.js"
+    "10travlr": "cypress run --spec cypress/integration/10Travlr/**/*.spec.js --headless --browser chrome"
   },
   "keywords": [],
   "author": "",
