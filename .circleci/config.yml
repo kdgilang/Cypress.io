@@ -5,5 +5,5 @@ workflows:
   build:
     jobs:
       - cypress/run:
-           build: npm run test
+           build: "npm run build"
            record: true
