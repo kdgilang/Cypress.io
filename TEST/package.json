@@ -13,7 +13,7 @@
     "ci": "^1.0.0"
   },
   "devDependencies": {
-    "cypress": "^4.3.0",
-    "cypress-terminal-report": "^1.2.0"
+    "cypress": "^4.4.0",
+    "cypress-terminal-report": "^1.2.1"
   }
 }
