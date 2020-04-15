@@ -17,15 +17,19 @@ jobs:
           - v1-dependencies-
 
       - run: 
+        name: halo
         command: npm ci
-      - save_cache:
+      
+        - save_cache:
           paths:
             - $HOME/.npm
           key: node_modules-2-{{ checksum "package.json" }}-{{ checksum "package-lock.json"}}
-      - run: 
+      
+          - run: 
           name: cypress install
           command: npm install cypress
-      - run:
+      
+          - run:
           name: Run tests
           command: npm test
 
