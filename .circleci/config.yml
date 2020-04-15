@@ -1,10 +1,12 @@
-version: 2.1
-orbs:
-  cypress: cypress-io/cypress@1
-workflows:
-  build:
-    jobs:
-      - cypress/run:
-          command: npm run 10travlr
-          executor: cypress/browsers-chrome69
-          browser: chrome
+cypress-e2e-chrome:
+  image: cypress/browsers:chrome62
+  stage: test
+  script:    
+    - chrome --version
+    - npm install --save-dev cypress
+    - $(npm bin)/cypress run  --record --key a-beautiful-key --browser chrome
+  artifacts:
+    expire_in: 1 week
+    paths:
+    - cypress/screenshots
+    - cypress/videos
