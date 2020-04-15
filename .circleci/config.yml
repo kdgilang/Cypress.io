@@ -1,7 +1,4 @@
-# Javascript Node 8 simple CircleCI 2.0 configuration file
-# Eduardo San Martin Morote
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-# Put this file in a .circleci/ folder
+
 version: 2
 
 
