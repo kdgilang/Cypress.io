@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "report": "node_modules/.bin/mocha --reporter mocha-circleci-reporter test/*.js",
+    "scripts": "cypress run --browser chrome",
+    "generate-report": "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
+    "posttest": "npm run combine-reports && npm run generate-report",
     "test": "npm run scripts || npm run posttest"
   },
   "keywords": [],
