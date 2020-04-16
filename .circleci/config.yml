@@ -37,24 +37,18 @@ jobs:
       # run tests!
       - run: npm test
 
-      version: 2
-jobs:
-  build:
-    docker:
-      - image: gcc:8.1.0
-    working_directory: ~/work
-    steps:
-      - checkout
-      - run: make
-      - run: |
-          # tell the operating system to remove the file size limit on core dump files 
-          ulimit -c unlimited
-          ./dump
+
       - run:
+          name: mocha reporter
           command: |
-            mkdir -p /tmp/core_dumps
-            cp core.* /tmp/core_dumps
-          when: on_fail
+            cd reports
+            yarn test:record
+
+      - store_test_results:
+          path: /Users/reposado/Cypress/cypress/reports
       - store_artifacts:
-          path: /tmp/core_dumps
+          path: /Users/reposado/Cypress/cypress/reports
+      - store_artifacts:
+          path: /Users/reposado/Cypress/cypress/reports
+
       
