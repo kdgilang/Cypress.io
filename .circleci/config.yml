@@ -42,13 +42,10 @@ jobs:
           name: mocha reporter
           command: |
             cd cypress/reports
-            yarn test:record
 
       - store_test_results:
-          path: /Users/reposado/Cypress/cypress/reports
+          path: cypress/reports/mocha
       - store_artifacts:
-          path: /Users/reposado/Cypress/cypress/reports
-      - store_artifacts:
-          path: /Users/reposado/Cypress/cypress/reports
+          path: cypress/reports/mocha
 
       
