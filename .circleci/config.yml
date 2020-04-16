@@ -41,7 +41,7 @@ jobs:
       - run:
           name: mocha reporter
           command: |
-            cd /root/repo/cypress/reports/mocha/mochawesome.json
+            cd cypress/reports
 
       - store_test_results:
           path: /Users/reposado/Cypress/cypress/reports/mocha
