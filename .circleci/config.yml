@@ -44,8 +44,8 @@ jobs:
             cd /Users/reposado/Cypress/cypress/reports/mocha
 
       - store_test_results:
-          path: cypress/reports/mocha
+          path: Users/reposado/Cypress/cypress/reports/mocha
       - store_artifacts:
-          path: cypress/reports/mocha
+          path: Users/reposado/Cypress/cypress/reports/mocha
 
       
