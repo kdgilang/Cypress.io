@@ -15,10 +15,6 @@ jobs:
       # - image: circleci/mongo:3.4.4
 
     working_directory: ~/repo
-    
-    machine:
-      environment:
-        MOCHA_FILE: "$CIRCLE_TEST_REPORTS/test-results.xml"
 
       
 
@@ -43,3 +39,7 @@ jobs:
 
       # run tests!
       - run: npm test
+
+      - machine:
+          environment:
+            MOCHA_FILE: "$CIRCLE_TEST_REPORTS/test-results.xml"
