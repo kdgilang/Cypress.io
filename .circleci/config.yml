@@ -29,9 +29,7 @@ jobs:
 
       - run: npm install cypress
 
-      name: Install Chromedriver latest version
-          command: |
-            npm install --save chromium
+      - run: npm install --save chromium
 
       - save_cache:
           paths:
