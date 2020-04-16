@@ -25,13 +25,13 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-          name: Install Chromedriver latest version
-          command: |
-            brew cask install google-chrome
-
       - run: npm install
 
       - run: npm install cypress
+
+      name: Install Chromedriver latest version
+          command: |
+            npm install --save chromium
 
       - save_cache:
           paths:
