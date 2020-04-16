@@ -4,12 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean-reports": "rm -rf cypress/reports",
-    "test": "npx cypress run",
-    "merge-report": "npx mochawesome-merge --reportDir cypress/reports/separate-reports cypress/reports/mochawesome.json",
-    "generate-report": "npx mochawesome-report-generator --reportDir cypress/reports cypress/reports/mochawesome.json",
-    "after:tests": "npm run merge-report; npm run generate-report",
-    "cypress": "npm run clean-reports; npm run test; npm run after:tests"
+    
   },
   "keywords": [],
   "author": "",
