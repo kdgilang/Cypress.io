@@ -6,7 +6,6 @@
   "scripts": {
     "circle": "cypress run --record --key 8368f5b2-842d-4d6f-b6e9-f631879e3aa9 --browser chrome ",
     "test": "npm run circle"
-
   },
   "keywords": [],
   "author": "",
@@ -21,6 +20,7 @@
   },
   "devDependencies": {
     "cypress": "^4.4.0",
+    "cypress-slack-reporter": "^0.5.5",
     "cypress-terminal-report": "^1.2.1"
   }
 }
