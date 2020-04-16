@@ -6,7 +6,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: cypress/base:13.6.0
+      - image: cypress/browsers:chrome80
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
