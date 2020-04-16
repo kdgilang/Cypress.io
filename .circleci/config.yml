@@ -41,11 +41,11 @@ jobs:
       - run:
           name: mocha reporter
           command: |
-            cd cypress/reports
+            cd /Users/reposado/Cypress/cypress/reports/mocha
 
       - store_test_results:
-          path: /Users/reposado/Cypress/cypress/reports/mocha
+          path: cypress/reports/mocha
       - store_artifacts:
-          path: /Users/reposado/Cypress/cypress/reports/mocha
+          path: cypress/reports/mocha
 
       
