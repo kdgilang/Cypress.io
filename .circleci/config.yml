@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: cypress/base:8
+      - image: cypress/browsers:chrome69
         environment:
           ## this enables colors in the output
           TERM: xterm
@@ -23,4 +23,4 @@ jobs:
           paths:
             - ~/.npm
             - ~/.cache
-      - run: $(npm bin)/cypress run --record --key 8368f5b2-842d-4d6f-b6e9-f631879e3aa9
+      - run: npm run test

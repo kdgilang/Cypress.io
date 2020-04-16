@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    
+    "circle": "cypress run --record --key 8368f5b2-842d-4d6f-b6e9-f631879e3aa9 --browser chrome ",
+    "test": "npm run circle"
+
   },
   "keywords": [],
   "author": "",
@@ -12,14 +14,13 @@
   "dependencies": {
     "ci": "^1.0.0",
     "cypress-multi-reporters": "^1.2.4",
+    "mocha": "^7.1.1",
     "mochawesome": "^6.1.0",
     "mochawesome-merge": "^4.0.3",
     "mochawesome-report-generator": "^5.1.0"
   },
   "devDependencies": {
     "cypress": "^4.4.0",
-    "cypress-terminal-report": "^1.2.1",
-    "mocha": "^7.1.1",
-    "mocha-circleci-reporter": "0.0.3"
+    "cypress-terminal-report": "^1.2.1"
   }
 }
