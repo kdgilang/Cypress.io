@@ -7,6 +7,7 @@ jobs:
     docker:
       # specify the version you desire here
       - image: cypress/browsers:chrome69
+      
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -37,15 +38,8 @@ jobs:
       # run tests!
       - run: npm test
 
-
-      - run:
-          name: mocha reporter
-          command: |
-            cd cypress/reports/mocha
-
-      - store_test_results:
-          path: Users/reposado/Cypress/cypress/reports/mocha
-      - store_artifacts:
-          path: Users/reposado/Cypress/cypress/reports/mocha
+  machine:
+    environment:
+      MOCHA_FILE: "$CIRCLE_TEST_REPORTS/test-results.xml"
 
       
