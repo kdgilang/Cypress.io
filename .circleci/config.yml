@@ -41,7 +41,7 @@ jobs:
       - run:
           name: mocha reporter
           command: |
-            cd reports
+            cd cypress/reports
             yarn test:record
 
       - store_test_results:
