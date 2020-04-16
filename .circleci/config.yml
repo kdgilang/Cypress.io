@@ -1,45 +1,26 @@
-
 version: 2
-
-
 jobs:
   build:
     docker:
-      # specify the version you desire here
-      - image: cypress/browsers:chrome69
-      
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
-    working_directory: ~/repo
-
-      
-
+      - image: cypress/base:8
+        environment:
+          ## this enables colors in the output
+          TERM: xterm
+    working_directory: ~/app
     steps:
       - checkout
-
-      # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-
-      - run: npm install
-
-      - run: npm install cypress
-
+            - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+            - v1-deps-{{ .Branch }}
+            - v1-deps
+      - run:
+          name: Install Dependencies
+          command: npm ci
       - save_cache:
+          key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+          # cache NPM modules and the folder with the Cypress binary
           paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-
-      # run tests!
-      - run: npm test
-
-machine:
-  environment:
-    MOCHA_FILE: "$CIRCLE_TEST_REPORTS/test-results.xml"
+            - ~/.npm
+            - ~/.cache
+      - run: $(npm bin)/cypress run --record --key <8368f5b2-842d-4d6f-b6e9-f631879e3aa9>

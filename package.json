@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "report": "node_modules/.bin/mocha --reporter mocha-circleci-reporter test/*.js",
-    "scripts": "cypress run --browser chrome",
-    "generate-report": "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
-    "posttest": "npm run combine-reports && npm run generate-report",
-    "test": "npm run scripts || npm run posttest"
+    "clean-reports": "rm -rf cypress/reports",
+    "test": "npx cypress run",
+    "merge-report": "npx mochawesome-merge --reportDir cypress/reports/separate-reports cypress/reports/mochawesome.json",
+    "generate-report": "npx mochawesome-report-generator --reportDir cypress/reports cypress/reports/mochawesome.json",
+    "after:tests": "npm run merge-report; npm run generate-report",
+    "cypress": "npm run clean-reports; npm run test; npm run after:tests"
   },
   "keywords": [],
   "author": "",
