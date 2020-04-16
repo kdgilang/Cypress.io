@@ -37,10 +37,12 @@ jobs:
       # run tests!
       - run: npm test
 
-      post-steps:
-            - store_artifacts:
-                path: mochawesome-report
+      
+      - store_artifacts:
+          path: /tmp/artifact-1
+          destination: artifact-file
 
-
+      - store_artifacts:
+          path: /tmp/artifacts
 
       
