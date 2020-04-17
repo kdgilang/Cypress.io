@@ -12,4 +12,5 @@ Background:
   Scenario: Authorized
     Given I am a user
     When I enter valid details
-    Then I should be granted access   
+    Then I should be granted access 
+  
