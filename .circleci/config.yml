@@ -41,7 +41,7 @@ jobs:
       - run:
           when: always
           name: Running cypress tests
-          command: make test-record
+          command: yarn cypress run --record --key 8368f5b2-842d-4d6f-b6e9-f631879e3aa9
       - run:
           when: always
           name: Generate MochaAwesome Reports
