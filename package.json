@@ -47,7 +47,8 @@
     "@slack/types": "^1.0.0",
     "@slack/webhook": "^5.0.0",
     "commander": "^4.0.0",
-    "del": "^5.1.0"
+    "del": "^5.1.0",
+    "lint": "^0.7.0"
   },
   "peerDependencies": {
     "mochawesome": ">= 3.1.2",
@@ -55,7 +56,7 @@
     "mochawesome-report-generator": ">= 3.1.5"
   },
   "devDependencies": {
-    "@commitlint/cli": "8.3.5",
+    "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "8.3.4",
     "@cypress/webpack-preprocessor": "4.1.5",
     "@types/bluebird": "3.5.30",
@@ -69,8 +70,7 @@
     "cypress-cucumber-preprocessor": "1.12.0",
     "cypress-multi-reporters": "1.2.4",
     "dotenv": "8.2.0",
-    "husky": "4.2.5",
-    "jest": "25.3.0",
+    "jest": "^25.3.0",
     "jest-junit": "10.0.0",
     "jest-stare": "1.27.0",
     "lint-staged": "10.1.3",
