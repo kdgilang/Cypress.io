@@ -67,3 +67,5 @@ describe('Smoke Test 10Travlr', () => {
         cy.MyShortlists()
     })
 })
+
+    
