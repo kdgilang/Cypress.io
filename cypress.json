@@ -12,7 +12,7 @@
   "hosts": null,
   "screenshotsFolder": "cypress/screenshots",
   "numTestsKeptInMemory": 50,
-  "supportFile": "cypress/support",
+  "supportFile": "cypress/support/index.ts",
   "port": null,
   "projectId": "gfhvad",
   "videosFolder": "cypress/videos",
@@ -39,5 +39,6 @@
   "reporterOptions": {
     "configFile": "reporterOpts.json"
   }
+  
 }
 
