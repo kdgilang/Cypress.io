@@ -1,0 +1,405 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 14,
+    "passes": 1,
+    "pending": 0,
+    "failures": 13,
+    "start": "2020-04-16T08:23:53.754Z",
+    "end": "2020-04-16T08:24:46.035Z",
+    "duration": 52281,
+    "testsRegistered": 14,
+    "passPercent": 7.142857142857142,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "340e46d7-ccfa-4a6e-bb96-1b45794ce0dd",
+      "title": "",
+      "fullFile": "cypress/integration/10Travlr/Smoke Test.spec.js",
+      "file": "cypress/integration/10Travlr/Smoke Test.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "340c59c4-346f-4dff-a748-e8dde4363167",
+          "title": "Smoke Test 10Travlr",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Accessing Homepage",
+              "fullTitle": "Smoke Test 10Travlr Accessing Homepage",
+              "timedOut": null,
+              "duration": 44011,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.Homepage();",
+              "err": {},
+              "uuid": "ba6779e7-b62d-4e1f-b46d-135597271740",
+              "parentUUID": "340c59c4-346f-4dff-a748-e8dde4363167",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Header & Footer Details",
+              "fullTitle": "Smoke Test 10Travlr Header & Footer Details",
+              "timedOut": null,
+              "duration": 637,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.Header();\ncy.Footer();",
+              "err": {
+                "message": "TypeError: cy.Header is not a function",
+                "estack": "TypeError: cy.Header is not a function\n    at Context.<anonymous> (https://www.10travlr.com.au/__cypress/tests?p=cypress/integration/10Travlr/Smoke%20Test.spec.js-264:7:12)",
+                "diff": null
+              },
+              "uuid": "f0a7c315-2a69-4adf-8bdf-3851ba10154a",
+              "parentUUID": "340c59c4-346f-4dff-a748-e8dde4363167",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Accessing Shortlists",
+              "fullTitle": "Smoke Test 10Travlr Accessing Shortlists",
+              "timedOut": null,
+              "duration": 548,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.Shortlist();",
+              "err": {
+                "message": "TypeError: cy.Shortlist is not a function",
+                "estack": "TypeError: cy.Shortlist is not a function\n    at Context.<anonymous> (https://www.10travlr.com.au/__cypress/tests?p=cypress/integration/10Travlr/Smoke%20Test.spec.js-264:11:12)",
+                "diff": null
+              },
+              "uuid": "1c0c238e-e4e2-487d-81af-85ffe1b9b5ca",
+              "parentUUID": "340c59c4-346f-4dff-a748-e8dde4363167",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Accessing Discover",
+              "fullTitle": "Smoke Test 10Travlr Accessing Discover",
+              "timedOut": null,
+              "duration": 546,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.Discover();",
+              "err": {
+                "message": "TypeError: cy.Discover is not a function",
+                "estack": "TypeError: cy.Discover is not a function\n    at Context.<anonymous> (https://www.10travlr.com.au/__cypress/tests?p=cypress/integration/10Travlr/Smoke%20Test.spec.js-264:14:12)",
+                "diff": null
+              },
+              "uuid": "83ba3bf9-545f-4d2a-909f-56fc29fd1d95",
+              "parentUUID": "340c59c4-346f-4dff-a748-e8dde4363167",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Accessing Trips",
+              "fullTitle": "Smoke Test 10Travlr Accessing Trips",
+              "timedOut": null,
+              "duration": 555,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.Trips();",
+              "err": {
+                "message": "TypeError: cy.Trips is not a function",
+                "estack": "TypeError: cy.Trips is not a function\n    at Context.<anonymous> (https://www.10travlr.com.au/__cypress/tests?p=cypress/integration/10Travlr/Smoke%20Test.spec.js-264:17:12)",
+                "diff": null
+              },
+              "uuid": "b3319a05-877c-41ec-b166-c0036dd346ab",
+              "parentUUID": "340c59c4-346f-4dff-a748-e8dde4363167",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Accessing Articles",
+              "fullTitle": "Smoke Test 10Travlr Accessing Articles",
+              "timedOut": null,
+              "duration": 583,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.Articles();",
+              "err": {
+                "message": "TypeError: cy.Articles is not a function",
+                "estack": "TypeError: cy.Articles is not a function\n    at Context.<anonymous> (https://www.10travlr.com.au/__cypress/tests?p=cypress/integration/10Travlr/Smoke%20Test.spec.js-264:20:12)",
+                "diff": null
+              },
+              "uuid": "30675cc5-5c2f-47e1-b7f2-5b085414d462",
+              "parentUUID": "340c59c4-346f-4dff-a748-e8dde4363167",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Accessing Activities",
+              "fullTitle": "Smoke Test 10Travlr Accessing Activities",
+              "timedOut": null,
+              "duration": 574,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.Activities();",
+              "err": {
+                "message": "TypeError: cy.Activities is not a function",
+                "estack": "TypeError: cy.Activities is not a function\n    at Context.<anonymous> (https://www.10travlr.com.au/__cypress/tests?p=cypress/integration/10Travlr/Smoke%20Test.spec.js-264:23:12)",
+                "diff": null
+              },
+              "uuid": "3d8f7d6a-3fc1-4d07-b933-13e7d8acf547",
+              "parentUUID": "340c59c4-346f-4dff-a748-e8dde4363167",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Accessing Deals & Offers",
+              "fullTitle": "Smoke Test 10Travlr Accessing Deals & Offers",
+              "timedOut": null,
+              "duration": 613,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.DealsAndOffers();",
+              "err": {
+                "message": "TypeError: cy.DealsAndOffers is not a function",
+                "estack": "TypeError: cy.DealsAndOffers is not a function\n    at Context.<anonymous> (https://www.10travlr.com.au/__cypress/tests?p=cypress/integration/10Travlr/Smoke%20Test.spec.js-264:26:12)",
+                "diff": null
+              },
+              "uuid": "6c5ea4da-049e-4bca-81af-57fec05b1cda",
+              "parentUUID": "340c59c4-346f-4dff-a748-e8dde4363167",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Accessing Health & Beauty",
+              "fullTitle": "Smoke Test 10Travlr Accessing Health & Beauty",
+              "timedOut": null,
+              "duration": 685,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.HealthAndBeauty();",
+              "err": {
+                "message": "TypeError: cy.HealthAndBeauty is not a function",
+                "estack": "TypeError: cy.HealthAndBeauty is not a function\n    at Context.<anonymous> (https://www.10travlr.com.au/__cypress/tests?p=cypress/integration/10Travlr/Smoke%20Test.spec.js-264:29:12)",
+                "diff": null
+              },
+              "uuid": "b403a5a7-eb09-4cb3-997d-8d0c14c81e21",
+              "parentUUID": "340c59c4-346f-4dff-a748-e8dde4363167",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Accessing Events",
+              "fullTitle": "Smoke Test 10Travlr Accessing Events",
+              "timedOut": null,
+              "duration": 546,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.Events();",
+              "err": {
+                "message": "TypeError: cy.Events is not a function",
+                "estack": "TypeError: cy.Events is not a function\n    at Context.<anonymous> (https://www.10travlr.com.au/__cypress/tests?p=cypress/integration/10Travlr/Smoke%20Test.spec.js-264:32:12)",
+                "diff": null
+              },
+              "uuid": "c8bf3366-bd44-40c2-ad64-7469e098ab2e",
+              "parentUUID": "340c59c4-346f-4dff-a748-e8dde4363167",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Accessing Venue",
+              "fullTitle": "Smoke Test 10Travlr Accessing Venue",
+              "timedOut": null,
+              "duration": 536,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.Venue();",
+              "err": {
+                "message": "TypeError: cy.Venue is not a function",
+                "estack": "TypeError: cy.Venue is not a function\n    at Context.<anonymous> (https://www.10travlr.com.au/__cypress/tests?p=cypress/integration/10Travlr/Smoke%20Test.spec.js-264:35:12)",
+                "diff": null
+              },
+              "uuid": "4fe4509e-a0bf-444f-8cdf-3603a3b94ba3",
+              "parentUUID": "340c59c4-346f-4dff-a748-e8dde4363167",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login",
+              "fullTitle": "Smoke Test 10Travlr Login",
+              "timedOut": null,
+              "duration": 487,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.Login();",
+              "err": {
+                "message": "TypeError: cy.Login is not a function",
+                "estack": "TypeError: cy.Login is not a function\n    at Context.<anonymous> (https://www.10travlr.com.au/__cypress/tests?p=cypress/integration/10Travlr/Smoke%20Test.spec.js-264:38:12)",
+                "diff": null
+              },
+              "uuid": "1f3655e1-2a9f-437e-b005-75d2e2eaa9e4",
+              "parentUUID": "340c59c4-346f-4dff-a748-e8dde4363167",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Accessing Booking & Deals",
+              "fullTitle": "Smoke Test 10Travlr Accessing Booking & Deals",
+              "timedOut": null,
+              "duration": 556,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.BookingAndDeals();",
+              "err": {
+                "message": "TypeError: cy.BookingAndDeals is not a function",
+                "estack": "TypeError: cy.BookingAndDeals is not a function\n    at Context.<anonymous> (https://www.10travlr.com.au/__cypress/tests?p=cypress/integration/10Travlr/Smoke%20Test.spec.js-264:41:12)",
+                "diff": null
+              },
+              "uuid": "284daf5b-1daf-43f2-af34-bba1ffc9cc35",
+              "parentUUID": "340c59c4-346f-4dff-a748-e8dde4363167",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Accessing My Shortlists",
+              "fullTitle": "Smoke Test 10Travlr Accessing My Shortlists",
+              "timedOut": null,
+              "duration": 538,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.MyShortlists();",
+              "err": {
+                "message": "TypeError: cy.MyShortlists is not a function",
+                "estack": "TypeError: cy.MyShortlists is not a function\n    at Context.<anonymous> (https://www.10travlr.com.au/__cypress/tests?p=cypress/integration/10Travlr/Smoke%20Test.spec.js-264:44:12)",
+                "diff": null
+              },
+              "uuid": "5f68413e-d5a3-4d95-af84-640f43160a08",
+              "parentUUID": "340c59c4-346f-4dff-a748-e8dde4363167",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ba6779e7-b62d-4e1f-b46d-135597271740"
+          ],
+          "failures": [
+            "f0a7c315-2a69-4adf-8bdf-3851ba10154a",
+            "1c0c238e-e4e2-487d-81af-85ffe1b9b5ca",
+            "83ba3bf9-545f-4d2a-909f-56fc29fd1d95",
+            "b3319a05-877c-41ec-b166-c0036dd346ab",
+            "30675cc5-5c2f-47e1-b7f2-5b085414d462",
+            "3d8f7d6a-3fc1-4d07-b933-13e7d8acf547",
+            "6c5ea4da-049e-4bca-81af-57fec05b1cda",
+            "b403a5a7-eb09-4cb3-997d-8d0c14c81e21",
+            "c8bf3366-bd44-40c2-ad64-7469e098ab2e",
+            "4fe4509e-a0bf-444f-8cdf-3603a3b94ba3",
+            "1f3655e1-2a9f-437e-b005-75d2e2eaa9e4",
+            "284daf5b-1daf-43f2-af34-bba1ffc9cc35",
+            "5f68413e-d5a3-4d95-af84-640f43160a08"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 51415,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.1.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/separate-reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
