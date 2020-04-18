@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run --spec cypress/integration/10travlr/**/*.spec.js --browser chrome --record --key 8368f5b2-842d-4d6f-b6e9-f631879e3aa9"
+    "test": "npx cypress run --spec cypress/integration/10travlr/**/*.spec.js --browser chrome --record --key 8368f5b2-842d-4d6f-b6e9-f631879e3aa9",
+    "10travlr": "npm run test"
   },
   "author": "",
   "license": "ISC",
