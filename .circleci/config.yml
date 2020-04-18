@@ -23,6 +23,11 @@ jobs:
           paths:
             - ~/.npm
             - ~/.cache
-      - run: npm run 10travlr
+      - run: 
+          name: Smoke-Test-10Travlr
+          command: npm run 10travlr
+      - run: 
+          name: Cypress-Test
+          command: npm run cypress-test
 
 
