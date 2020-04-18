@@ -23,6 +23,6 @@ jobs:
           paths:
             - ~/.npm
             - ~/.cache
-      - run: npm run 10travlr-1
+      - run: npm run 10travlr
 
 
