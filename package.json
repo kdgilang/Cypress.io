@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run --spec cypress/integration/10travlr/**/*.spec.js --browser chrome --record --key 8368f5b2-842d-4d6f-b6e9-f631879e3aa9",
-    "10travlr": "npm run test"
+    "smoke-test": "npx cypress run --spec cypress/integration/10travlr/**/*.spec.js --browser chrome --record --key 8368f5b2-842d-4d6f-b6e9-f631879e3aa9",
+    "10travlr-1": "npm run smoke-test",
+    "regression-test": "npx cypress run --spec cypress/integration/cypress.io/**/*.spec.js --browser chrome --record --key 8368f5b2-842d-4d6f-b6e9-f631879e3aa9",
+    "10travlr-2": "npm run regression-test"
   },
   "author": "",
   "license": "ISC",
