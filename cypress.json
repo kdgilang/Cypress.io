@@ -1,7 +1,7 @@
 {
     "animationDistanceThreshold":5,
     "fileServerFolder":"",
-    "baseUrl":"https://www.10travlr.com.au/",
+    "baseUrl":null,
     "fixturesFolder":"cypress/fixtures",
     "blacklistHosts":null,
     "chromeWebSecurity":true,

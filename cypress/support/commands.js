@@ -1,7 +1,7 @@
 Cypress.Commands.add('Homepage', () => {
     cy
     
-    .visit('/')
+    .visit('https://www.10travlr.com.au/')
     .title()
     .should('eq', '10 Travlr - Experience the difference')
     // .get('.privy-dismiss-content').click()
@@ -77,7 +77,7 @@ Cypress.Commands.add('Shortlist',() => {
 
     .get('.title').contains('Shortlist').scrollIntoView({easing:"linear"})
     .should('be.visible').click()
-    .visit('/shortlists').location('pathname')
+    .visit('https://www.10travlr.com.au/shortlists').location('pathname')
     .should('eq', '/shortlists')
     .get('h1.t-heading-2.t-color-grey-darkest')
     .should('contain', 'All Favourite Lists')
@@ -96,7 +96,7 @@ Cypress.Commands.add('Discover', () => {
     .should('be.visible').click()
     .get(':nth-child(1) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-title > div > span')
     .should('be.visible').click()
-    .visit('/pages/key-of-our-benefits-13/').location('pathname')
+    .visit('https://www.10travlr.com.au/pages/key-of-our-benefits-13/').location('pathname')
     .should('eq', '/pages/key-of-our-benefits-13/')
     .get('h1.t-m-b-32')
     .should('be.visible').and('have.text', '\n          One stop-shop travel platform\n        ')
@@ -109,7 +109,7 @@ Cypress.Commands.add('Trips', () => {
     cy
 
     .get('.t-navbar-top-left-logo-image').click()
-    .visit('/').location('pathname')
+    .visit('https://www.10travlr.com.au/').location('pathname')
     .should('eq','/')
     // .get('.privy-dismiss-content').click()
     .wait(5000)
@@ -133,7 +133,7 @@ Cypress.Commands.add('Trips', () => {
 Cypress.Commands.add('Articles', () => {
     cy
 
-    .visit('/').location('pathname')
+    .visit('https://www.10travlr.com.au/').location('pathname')
     .should('eq','/')
     // .get('.privy-dismiss-content').click()
     .wait(5000)
@@ -160,7 +160,7 @@ Cypress.Commands.add('Activities', () => {
     .should('be.visible').click()
     .get('.mobile__accordion__menu > :nth-child(4) > label')
     .should('be.visible').click()
-    .visit('/activities').location('pathname')
+    .visit('https://www.10travlr.com.au/activities').location('pathname')
     .should('eq', '/activities')
     .get('h1.t-heading-2')
     .should('have.text','Make the most of your travel')
@@ -180,7 +180,7 @@ Cypress.Commands.add('DealsAndOffers', () => {
     .should('be.visible').click()
     .get(':nth-child(5) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-title > div > span')
     .should('be.visible').click()
-    .visit('/deals-and-offers/').location('pathname')
+    .visit('https://www.10travlr.com.au/deals-and-offers/').location('pathname')
     .should('eq', '/deals-and-offers/')
     .get('form.t-form.t-top-form.t-form-inline')
     .should('exist').and('be.visible')
@@ -196,7 +196,7 @@ Cypress.Commands.add('HealthAndBeauty', () => {
     .get('.t-navbar-top-left-burger > .t-icon').click()
     .get(':nth-child(5) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon').click()
     .get(':nth-child(5) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-body > .t-navbar-sidebar-body-child > :nth-child(3) > .t-navbar-sidebar-body-child-item-link').click()
-    .visit('/deals-and-offers/search?category=Health%20%26%20Beauty').location('pathname')
+    .visit('https://www.10travlr.com.au/deals-and-offers/search?category=Health%20%26%20Beauty').location('pathname')
     .should('eq', '/deals-and-offers/search')
     .get('form.t-form')
     .should('be.visible')
@@ -210,7 +210,7 @@ Cypress.Commands.add('HealthAndBeauty', () => {
 Cypress.Commands.add('Events', () => {
     cy
 
-    .visit('/events').location('pathname')
+    .visit('https://www.10travlr.com.au/events').location('pathname')
     .should('eq', '/events')
     .get('.event-table')
     .should('exist')
@@ -221,7 +221,7 @@ Cypress.Commands.add('Events', () => {
 
 Cypress.Commands.add('Venue', () => {
     
-    cy.visit('/venue')
+    cy.visit('https://www.10travlr.com.au/venue')
     cy.get('#email').type('julian.travlr@gmail.com')
     cy.get('#password').type('qwertyuiop1234567890', {log:false})
     cy.get('#btn-submit').click()
@@ -230,7 +230,7 @@ Cypress.Commands.add('Venue', () => {
     })
     cy
 
-    .visit('/venue').location('pathname')
+    .visit('https://www.10travlr.com.au/venue').location('pathname')
     .should('eq', '/venue')
     .get('h3.m-t-0')
     .should('have.text','Add a venue')
@@ -244,7 +244,7 @@ Cypress.Commands.add('Venue', () => {
 Cypress.Commands.add('Login', () => {
     cy
 
-    .visit('/')
+    .visit('https://www.10travlr.com.au/')
     // .get('.privy-dismiss-content').click()
     .wait(5000)
     .get('.intercom-tour-frame').then ( $element => {
@@ -278,7 +278,7 @@ Cypress.Commands.add('BookingAndDeals', () => {
     .get('#email').type('julian.travlr@gmail.com')
     .get('#password').type('qwertyuiop1234567890', {log:false})
     .get('#btn-submit').click()
-    .visit('/booking-management').location('pathname')
+    .visit('https://www.10travlr.com.au/booking-management').location('pathname')
     .should('eq','/booking-management')
     .get('.block-intro-title')
     .should('have.text', '\n                  My Bookings & Deals\n                ')
@@ -296,7 +296,7 @@ Cypress.Commands.add('MyShortlists', () => {
     .get('#email').type('julian.travlr@gmail.com')
     .get('#password').type('qwertyuiop1234567890', {log:false})
     .get('#btn-submit').click()
-    .visit('/my/shortlist').location('pathname')
+    .visit('https://www.10travlr.com.au/my/shortlist').location('pathname')
     .should('eq', '/my/shortlist')
     // .get('.privy-dismiss-content').click()
     .get('.change__cover__btn > a')
