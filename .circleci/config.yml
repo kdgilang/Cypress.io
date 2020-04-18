@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  smoketest-10travlr:
+  build:
     docker:
       - image: cypress/included:4.3.0
         environment:
