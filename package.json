@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "smoke-test": "npx cypress run --spec cypress/integration/10travlr/**/*.spec.js --browser chrome --record --key 8368f5b2-842d-4d6f-b6e9-f631879e3aa9 --parallel",
-    "10travlr": "npm run smoke-test"
+    "smoke-test": "npx cypress run --spec cypress/integration/10travlr/**/*.spec.js --browser chrome --record --key 8368f5b2-842d-4d6f-b6e9-f631879e3aa9",
+    "10travlr": "npm run smoke-test",
+
+    "cypressio": "npx cypress run --spec cypress/integration/cypress.io/**/*.spec.js --browser chrome --record --key 8368f5b2-842d-4d6f-b6e9-f631879e3aa9",
+    "cypress-test": "npm run cypressio"
   },
   "author": "",
   "license": "ISC",
