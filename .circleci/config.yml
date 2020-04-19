@@ -26,6 +26,6 @@ jobs:
             - ~/.cache
       - run: 
           name: Cypress-Test
-          command: npm run cypress-test
+          command: npm run 10travlr
 
 

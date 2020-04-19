@@ -1,4 +1,4 @@
-Cypress.Commands.add('Homepage', () => {
+Cypress.Commands.add('homepage10travlr', () => {
     cy
     
     .visit('https://www.10travlr.com.au/')
