@@ -32,7 +32,7 @@
   "video": true,
   "taskTimeout": 60000,
   "videoCompression": 32,
-  "videoUploadOnPasses": true,
+  "videoUploadOnPasses": false,
   "watchForFileChanges": true,
   "waitForAnimations": true,
   "nodeVersion": "default",

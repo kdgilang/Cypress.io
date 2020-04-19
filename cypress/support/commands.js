@@ -102,17 +102,21 @@ Cypress.Commands.add('shortlist10travlr',() => {
 
 })
 
-Cypress.Commands.add('Discover', () => {
+Cypress.Commands.add('discover10travlr', () => {
     cy
+
+    .visit('https://www.10travlr.com.au/pages/key-of-our-benefits-13/').location('pathname')
+    .should('eq', '/pages/key-of-our-benefits-13/')
 
     .get('.t-navbar-top-left-burger > .t-icon')
     .should('be.visible').click()
+    
     .get(':nth-child(1) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-title > div > span')
     .should('be.visible').click()
-    .visit('https://www.10travlr.com.au/pages/key-of-our-benefits-13/').location('pathname')
-    .should('eq', '/pages/key-of-our-benefits-13/')
+    
     .get('h1.t-m-b-32')
     .should('be.visible').and('have.text', '\n          One stop-shop travel platform\n        ')
+    
     .get('.t-btn-default')
     .should('be.visible').and('have.text', '\n          sign up now\n        ')
 
