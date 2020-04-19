@@ -4,84 +4,82 @@ Cypress.Commands.add('homepage10travlr', () => {
     .visit('https://www.10travlr.com.au/')
     .title()
     .should('eq', '10 Travlr - Experience the difference')
+   
     // .get('.privy-dismiss-content').click()
-    .wait(5000)
     
     .get('.intercom-tour-frame').then ( $element => {
         const $body = $element.contents().find('body')
         let stripe = cy.wrap($body)
         stripe.find('.intercom-1o29jst').click()
 
-    .get('.t-btn-inverted').click()
+        .get('.t-btn-inverted').click()
 
-    .get('.t-navbar-top-left-logo-image')
-    .should('have.attr', 'src')
+        .get('.t-navbar-top-left-logo-image')
+        .should('have.attr', 'src')
 
-    .get('.t-navbar-top-right-menus-list-item-link')
-    .should('be.visible').and('contain', 'Login')
+        .get('.t-navbar-top-right-menus-list-item-link')
+        .should('be.visible').and('contain', 'Login')
 
-    .get('.t-hero-main-content-list-title-wrapper > .t-btn')
-    .should('be.visible').and('contain', 'Take a look')
+        .get('.t-hero-main-content-list-title-wrapper > .t-btn')
+        .should('be.visible').and('contain', 'Take a look')
 
-    .get('#headerSearchSuggestion')
-    .should('be.visible').and('have.attr', 'type')
+        .get('#headerSearchSuggestion')
+        .should('be.visible').and('have.attr', 'type')
 
-    .get(':nth-child(1) > .t-w-100 > .link-wrapper > .link-item')
-    .should('contain', 'Mix & Match Flights')
+        .get(':nth-child(1) > .t-w-100 > .link-wrapper > .link-item')
+        .should('contain', 'Mix & Match Flights')
 
-    .get(':nth-child(2) > .t-w-100 > .link-wrapper > .link-item')
-    .should('contain', 'Accommodation')
+        .get(':nth-child(2) > .t-w-100 > .link-wrapper > .link-item')
+        .should('contain', 'Accommodation')
 
-    .get(':nth-child(3) > .t-w-100 > .link-wrapper > .link-item')
-    .should('contain', 'Activities')
+        .get(':nth-child(3) > .t-w-100 > .link-wrapper > .link-item')
+        .should('contain', 'Activities')
 
-    .get(':nth-child(4) > .t-w-100 > .link-wrapper > .link-item')
-    .should('contain', 'Deals & Offers')
-    
-    .wait(3000)
+        .get(':nth-child(4) > .t-w-100 > .link-wrapper > .link-item')
+        .should('contain', 'Deals & Offers')
 
+        .get('.t-navbar-top-left-burger > .t-icon').click()
+
+        .get(':nth-child(1) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
+        .should('be.visible').click() 
+        
+        .get(':nth-child(2) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
+        .should('be.visible').click() 
+        
+        .get(':nth-child(3) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
+        .should('be.visible').click() 
+        
+        .get(':nth-child(4) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
+        .scrollIntoView()
+        .should('be.visible').click() 
+        
+        .get(':nth-child(5) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
+        .scrollIntoView()
+        .should('be.visible').click() 
+        
+        .get(':nth-child(6) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
+        .scrollIntoView()
+        .should('be.visible').click()
+        
+        .get('.t-navbar-sidebar-header-icon > .t-icon')
+        .scrollIntoView()
+        
+        .get('.t-navbar-sidebar-header-icon > .t-icon').click()
+
+        .get('footer').scrollIntoView({ easing: 'linear' })
+        
+        .get('h6.t-heading-5.t-m-b-26')
+        .should('have.text', '\n            Explore by location\n          \n            Other stuff\n          Subscribe')
+        
+        .get('button[type="submit"]')
+        .should('be.visible')
+        
+        .get('select[data-gtm-event="ev_footer_multicurrency"]')
+        .should('be.visible')  
     })
 
 })
-
-Cypress.Commands.add('Header', () => {
-    cy
-
-    .get('.t-navbar-top-left-burger > .t-icon').click()
-    .get(':nth-child(1) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
-    .should('be.visible').click() 
-    .get(':nth-child(2) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
-    .should('be.visible').click() 
-    .get(':nth-child(3) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
-    .should('be.visible').click() 
-    .get(':nth-child(4) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
-    .scrollIntoView()
-    .should('be.visible').click() 
-    .get(':nth-child(5) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
-    .scrollIntoView()
-    .should('be.visible').click() 
-    .get(':nth-child(6) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
-    .scrollIntoView()
-    .should('be.visible').click()
-    .wait(3000)
-    .get('.t-navbar-sidebar-header-icon > .t-icon')
-    .scrollIntoView()
-    .get('.t-navbar-sidebar-header-icon > .t-icon').click()
-
-})
-
-Cypress.Commands.add('Footer', () => {
-    cy
-
-    .get('footer').scrollIntoView({ easing: 'linear' })
-    .get('h6.t-heading-5.t-m-b-26')
-    .should('have.text', '\n            Explore by location\n          \n            Other stuff\n          Subscribe')
-    .get('button[type="submit"]')
-    .should('be.visible')
-    .get('select[data-gtm-event="ev_footer_multicurrency"]')
-    .should('be.visible')        
-
-})
+      
 
 Cypress.Commands.add('Shortlist',() => {
     cy
