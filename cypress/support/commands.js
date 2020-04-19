@@ -81,18 +81,22 @@ Cypress.Commands.add('homepage10travlr', () => {
 })
       
 
-Cypress.Commands.add('Shortlist',() => {
+Cypress.Commands.add('shortlist10travlr',() => {
     cy
 
     .get('.title').contains('Shortlist').scrollIntoView({easing:"linear"})
     .should('be.visible').click()
+
     .visit('https://www.10travlr.com.au/shortlists').location('pathname')
     .should('eq', '/shortlists')
+    
     .get('h1.t-heading-2.t-color-grey-darkest')
     .should('contain', 'All Favourite Lists')
+    
     // .get('.privy-dismiss-content').click()
     .get('.c-dropdown-checkboxes')
     .should('exist')
+    
     .get('h2.t-heading-2.title.t-m-b-16')
     .should('have.text','\n        Popular Shortlist\n      \n        Accommodation\n      \n        Eat and Drink\n      ')
 
