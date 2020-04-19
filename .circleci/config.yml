@@ -25,7 +25,7 @@ jobs:
             - ~/.npm
             - ~/.cache
       - run: 
-          name: 10 Travlr Production Smoke Testing
+          name:  10Travlr-Production-Smoke-Testing
           command: npm run 10travlr-production-smoke-test
 
 
