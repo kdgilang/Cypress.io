@@ -314,7 +314,7 @@ Cypress.Commands.add('bookingsanddeals10travlr', () => {
 Cypress.Commands.add('myshortlists10travlr', () => {
     cy
 
-    .visit('https://www.10travlr.com.au/my/shortlist').location('pathname')
+    .visit('https://www.10travlr.com.au/my/shortlist')
 
     .get('#email').type('julian.travlr@gmail.com')
     
