@@ -1,6 +1,6 @@
 context('Smoke-Test-10Travlr', () => {
     it('Accessing Shortlist', () => {
-        cy.shortlist10travr()
+        cy.shortlist10travlr()
             
     })
 })

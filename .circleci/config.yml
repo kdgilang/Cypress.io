@@ -24,7 +24,7 @@ jobs:
             - ~/.npm
             - ~/.cache
       - run: 
-          name: Cypress-Test
+          name: Smoke Test 10Travlr
           command: npm run 10travlr
 
 
