@@ -107,12 +107,6 @@ Cypress.Commands.add('discover10travlr', () => {
 
     .visit('https://www.10travlr.com.au/pages/key-of-our-benefits-13/').location('pathname')
     .should('eq', '/pages/key-of-our-benefits-13/')
-
-    .get('.t-navbar-top-left-burger > .t-icon')
-    .should('be.visible').click()
-    
-    .get(':nth-child(1) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-title > div > span')
-    .should('be.visible').click()
     
     .get('h1.t-m-b-32')
     .should('be.visible').and('have.text', '\n          One stop-shop travel platform\n        ')
@@ -293,13 +287,17 @@ Cypress.Commands.add('bookingsanddeals10travlr', () => {
     cy
 
     
-    .visit('https://www.10travlr.com.au/booking-management').location('pathname')
+    .visit('https://www.10travlr.com.au/booking-management')
     
     .get('#email').type('julian.travlr@gmail.com')
     
     .get('#password').type('qwertyuiop1234567890', {log:false})
     
-    cy.get('#btn-submit').click()
+    .get('#btn-submit').click()
+
+    .visit('https://www.10travlr.com.au/booking-management').location('pathname')
+    .should('eq','/booking-management')
+
     
     .get('.block-intro-title')
     .should('have.text', '\n                  My Bookings & Deals\n                ')
@@ -321,6 +319,9 @@ Cypress.Commands.add('myshortlists10travlr', () => {
     .get('#password').type('qwertyuiop1234567890', {log:false})
     
     .get('#btn-submit').click()
+
+    .visit('https://www.10travlr.com.au/my/shortlist').location('pathname')
+    should('eq','/my/shortlist')
     
     .get('.change__cover__btn > a')
     .should('exist')
