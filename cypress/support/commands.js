@@ -6,27 +6,38 @@ Cypress.Commands.add('homepage10travlr', () => {
     .should('eq', '10 Travlr - Experience the difference')
     // .get('.privy-dismiss-content').click()
     .wait(5000)
+    
     .get('.intercom-tour-frame').then ( $element => {
         const $body = $element.contents().find('body')
         let stripe = cy.wrap($body)
         stripe.find('.intercom-1o29jst').click()
+
     .get('.t-btn-inverted').click()
+
     .get('.t-navbar-top-left-logo-image')
     .should('have.attr', 'src')
+
     .get('.t-navbar-top-right-menus-list-item-link')
     .should('be.visible').and('contain', 'Login')
+
     .get('.t-hero-main-content-list-title-wrapper > .t-btn')
     .should('be.visible').and('contain', 'Take a look')
+
     .get('#headerSearchSuggestion')
     .should('be.visible').and('have.attr', 'type')
+
     .get(':nth-child(1) > .t-w-100 > .link-wrapper > .link-item')
     .should('contain', 'Mix & Match Flights')
+
     .get(':nth-child(2) > .t-w-100 > .link-wrapper > .link-item')
     .should('contain', 'Accommodation')
+
     .get(':nth-child(3) > .t-w-100 > .link-wrapper > .link-item')
     .should('contain', 'Activities')
+
     .get(':nth-child(4) > .t-w-100 > .link-wrapper > .link-item')
     .should('contain', 'Deals & Offers')
+    
     .wait(3000)
 
     })
