@@ -125,8 +125,9 @@ Cypress.Commands.add('discover10travlr', () => {
 Cypress.Commands.add('trips10travlr', () => {
     cy
 
-    cy.visit('https://www.10travlr.com.au/trips').location('pathname')
+    .visit('https://www.10travlr.com.au/trips').location('pathname')
     should('eq','/trips')
+    
     .get('h1.pb--10')
     .should('have.text', 'All Trips')
     
@@ -174,136 +175,161 @@ Cypress.Commands.add('activities10travlr', () => {
 
 })
 
-Cypress.Commands.add('DealsAndOffers', () => {
+Cypress.Commands.add('dealsoffers10travlr', () => {
     cy
 
-    .get('.t-navbar-top-left-burger > .t-icon')
-    .should('be.visible').click()
-    .get(':nth-child(5) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-title > div > span')
-    .should('be.visible').click()
     .visit('https://www.10travlr.com.au/deals-and-offers/').location('pathname')
     .should('eq', '/deals-and-offers/')
+    
     .get('form.t-form.t-top-form.t-form-inline')
     .should('exist').and('be.visible')
+    
     .get('.t-container')
     .should('exist').and('be.visible')
+    
     .get('h3.t-heading-3')
     .should('have.text', '\n          More Fiji accommodation offers\n        \n          Make the most of your Fiji holiday\n        ')
 })
 
-Cypress.Commands.add('HealthAndBeauty', () => {
+Cypress.Commands.add('healthandbeauty10travlr', () => {
     cy
 
-    .get('.t-navbar-top-left-burger > .t-icon').click()
-    .get(':nth-child(5) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon').click()
-    .get(':nth-child(5) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-body > .t-navbar-sidebar-body-child > :nth-child(3) > .t-navbar-sidebar-body-child-item-link').click()
     .visit('https://www.10travlr.com.au/deals-and-offers/search?category=Health%20%26%20Beauty').location('pathname')
     .should('eq', '/deals-and-offers/search')
+    
     .get('form.t-form')
     .should('be.visible')
+    
     .get('button[data-gtm-event="ev_deals_search_button"]').contains(' Search Deals ')
     .should('be.visible')
+    
     .get('.c-banner-humm')
     .should('exist')
 
 })
 
-Cypress.Commands.add('Events', () => {
+Cypress.Commands.add('events10travlr', () => {
     cy
 
     .visit('https://www.10travlr.com.au/events').location('pathname')
     .should('eq', '/events')
+    
     .get('.event-table')
     .should('exist')
+    
     .get('p.main__description')
     .should('exist')
 
 })
 
-Cypress.Commands.add('Venue', () => {
+Cypress.Commands.add('venue10travlr', () => {
     
-    cy.visit('https://www.10travlr.com.au/venue')
+    cy.visit('https://www.10travlr.com.au/venue').location('pathname')
+    .should('eq', '/venue')
+    
     cy.get('#email').type('julian.travlr@gmail.com')
+    
     cy.get('#password').type('qwertyuiop1234567890', {log:false})
+    
     cy.get('#btn-submit').click()
         Cypress.on('uncaught:exception', (err, runnable) => {
         throw err
     })
+    
     cy
 
-    .visit('https://www.10travlr.com.au/venue').location('pathname')
-    .should('eq', '/venue')
     .get('h3.m-t-0')
     .should('have.text','Add a venue')
+    
     .get('.form-item-row > :nth-child(2) > .form-control')
     .should('be.visible').and('exist')
+    
     .get('#content')
     .should('be.visible').and('exist')
 
 })
 
-Cypress.Commands.add('Login', () => {
+Cypress.Commands.add('login10travlr', () => {
     cy
 
     .visit('https://www.10travlr.com.au/')
+
     // .get('.privy-dismiss-content').click()
-    .wait(5000)
+
     .get('.intercom-tour-frame').then ( $element => {
         const $body = $element.contents().find('body')
         let stripe = cy.wrap($body)
         stripe.find('.intercom-1o29jst').click()
-    .get('.t-btn-inverted').click()
-    .get('.t-navbar-top-right-menus-list-item-link').click()
-    .get('#email').type('julian.travlr@gmail.com')
-    .get('#password').type('qwertyuiop1234567890', {log:false})
-    .get('img')
-    .should('have.attr','src')
-    .get('#email')
-    .should('be.visible')
-    .get('#password')
-    .should('be.visible')
-    .get(':nth-child(3) > .small')
-    .should('contain','Email')
-    .get(':nth-child(4) > .small')
-    .should('contain','Password')
-    .get('#btn-submit').click()
+    
+        .get('.t-btn-inverted').click()
+    
+        .get('.t-navbar-top-right-menus-list-item-link').click()
+    
+        .get('#email').type('julian.travlr@gmail.com')
+    
+        .get('#password').type('qwertyuiop1234567890', {log:false})
+    
+        .get('img')
+        .should('have.attr','src')
+    
+        .get('#email')
+        .should('be.visible')
+    
+        .get('#password')
+        .should('be.visible')
+    
+        .get(':nth-child(3) > .small')
+        .should('contain','Email')
+    
+        .get(':nth-child(4) > .small')
+        .should('contain','Password')
+        
+        .get('#btn-submit').click()
 
     })
 })
 
-Cypress.Commands.add('BookingAndDeals', () => {
+Cypress.Commands.add('bookingsanddeals10travlr', () => {
     cy
 
-    .get('.mobile__header > .container-Common > .common__shortcut > .common__shortcut__profile > .dropdown > #shortcut__profile > .my__account__text').click()
-    .get('.mobile__header > .container-Common > .common__shortcut > .common__shortcut__profile > .dropdown > .dropdown-menu > [href="https://www.10travlr.com.au/booking-management?view=active"]').click()
-    .get('#email').type('julian.travlr@gmail.com')
-    .get('#password').type('qwertyuiop1234567890', {log:false})
-    .get('#btn-submit').click()
+    
     .visit('https://www.10travlr.com.au/booking-management').location('pathname')
     .should('eq','/booking-management')
+    
+    .get('#email').type('julian.travlr@gmail.com')
+    
+    .get('#password').type('qwertyuiop1234567890', {log:false})
+    
+    cy.get('#btn-submit').click()
+    
     .get('.block-intro-title')
     .should('have.text', '\n                  My Bookings & Deals\n                ')
+    
     .get('#see-all > :nth-child(1) > :nth-child(1) > .block__booking__management > .empty__box > .empty__box__img')
     .should('have.attr','src')
+    
     .get('#see-all > :nth-child(1) > :nth-child(1) > .block__booking__management > .empty__box > .see-link > .see-link-a')
     .should('be.visible')
 })
 
-Cypress.Commands.add('MyShortlists', () => {
+Cypress.Commands.add('myshortlists10travlr', () => {
     cy
 
-    .get('.mobile__header > .container-Common > .common__shortcut > .common__shortcut__profile > .dropdown > #shortcut__profile > .my__account__text').click()
-    .get('.mobile__header > .container-Common > .common__shortcut > .common__shortcut__profile > .dropdown > .dropdown-menu > [href="https://www.10travlr.com.au/my/shortlist"]').click()
-    .get('#email').type('julian.travlr@gmail.com')
-    .get('#password').type('qwertyuiop1234567890', {log:false})
-    .get('#btn-submit').click()
     .visit('https://www.10travlr.com.au/my/shortlist').location('pathname')
     .should('eq', '/my/shortlist')
-    // .get('.privy-dismiss-content').click()
+
+    .get('#email').type('julian.travlr@gmail.com')
+    
+    .get('#password').type('qwertyuiop1234567890', {log:false})
+    
+    .get('#btn-submit').click()
+    
     .get('.change__cover__btn > a')
     .should('exist')
+    
     .get('.link__follow > .t-button-outline-secondary')
     .should('exist')
+    
     .get('.more')
     .should('be.visible')
     
