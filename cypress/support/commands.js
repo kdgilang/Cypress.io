@@ -122,29 +122,19 @@ Cypress.Commands.add('discover10travlr', () => {
 
 })
 
-Cypress.Commands.add('Trips', () => {
+Cypress.Commands.add('trips10travlr', () => {
     cy
-
-    .get('.t-navbar-top-left-logo-image').click()
-    .visit('https://www.10travlr.com.au/').location('pathname')
-    .should('eq','/')
-    // .get('.privy-dismiss-content').click()
-    .wait(5000)
-    .get('.intercom-tour-frame').then ( $element => {
-        const $body = $element.contents().find('body')
-        let stripe = cy.wrap($body)
-        stripe.find('.intercom-1o29jst').click()
-    .get('.t-btn-inverted').click()
-    .get('.title').contains('Trips').scrollIntoView({easing:"linear"})
-    .should('be.visible').click()
-    .get('h1.pb--10')
+    
+    .visit('https://www.10travlr.com.au/trips').location('pathname')
+    .should('eq','/trips')
     .should('have.text', 'All Trips')
+    
     .get('.form__search')
     .should('exist').and('be.visible')
+    
     .get('div.block__title__left')
     .should('have.text', 'Most Popular Trips\n                \n            ')
 
-    })
 })
 
 Cypress.Commands.add('Articles', () => {
