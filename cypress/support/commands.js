@@ -84,11 +84,11 @@ Cypress.Commands.add('homepage10travlr', () => {
 Cypress.Commands.add('shortlist10travlr',() => {
     cy
 
-    .get('.title').contains('Shortlist').scrollIntoView({easing:"linear"})
-    .should('be.visible').click()
-
     .visit('https://www.10travlr.com.au/shortlists').location('pathname')
     .should('eq', '/shortlists')
+
+    .get('.title').contains('Shortlist').scrollIntoView({easing:"linear"})
+    .should('be.visible').click()
     
     .get('h1.t-heading-2.t-color-grey-darkest')
     .should('contain', 'All Favourite Lists')
