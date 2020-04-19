@@ -1,3 +1,7 @@
+
+
+// Start-10Travlr-Production-Smoke-Testing
+
 Cypress.Commands.add('homepage10travlr', () => {
     cy
     
@@ -94,6 +98,7 @@ Cypress.Commands.add('shortlists10travlr',() => {
     .should('contain', 'All Favourite Lists')
     
     // .get('.privy-dismiss-content').click()
+    
     .get('.c-dropdown-checkboxes')
     .should('exist')
     
@@ -333,5 +338,7 @@ Cypress.Commands.add('myshortlists10travlr', () => {
     .should('be.visible')
     
 })
+
+// End-10Travlr-Production-Smoke-Testing
 
 
