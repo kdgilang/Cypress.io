@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "smoke-test": "npx cypress run --spec cypress/integration/10travlr/Accessing-Homepage.spec.js --browser chrome --record --key 3c997bd0-22e4-49b8-a81f-c5dbdb3b3364",
+    "smoke-test": "npx cypress run --spec cypress/integration/10travlr/Accessing-Shortlist.spec.js --browser chrome --record --key 3c997bd0-22e4-49b8-a81f-c5dbdb3b3364",
     "10travlr": "npm run smoke-test",
 
     "cypressio": "npx cypress run --spec cypress/integration/cypress.io/**/*.spec.js --browser chrome --record --key 3c997bd0-22e4-49b8-a81f-c5dbdb3b3364 --parallel",
