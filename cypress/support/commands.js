@@ -175,7 +175,7 @@ Cypress.Commands.add('activities10travlr', () => {
 
 })
 
-Cypress.Commands.add('dealsoffers10travlr', () => {
+Cypress.Commands.add('dealsandoffers10travlr', () => {
     cy
 
     .visit('https://www.10travlr.com.au/deals-and-offers/').location('pathname')
@@ -294,7 +294,6 @@ Cypress.Commands.add('bookingsanddeals10travlr', () => {
 
     
     .visit('https://www.10travlr.com.au/booking-management').location('pathname')
-    .should('eq','/booking-management')
     
     .get('#email').type('julian.travlr@gmail.com')
     
@@ -316,7 +315,6 @@ Cypress.Commands.add('myshortlists10travlr', () => {
     cy
 
     .visit('https://www.10travlr.com.au/my/shortlist').location('pathname')
-    .should('eq', '/my/shortlist')
 
     .get('#email').type('julian.travlr@gmail.com')
     
