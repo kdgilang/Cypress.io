@@ -81,7 +81,7 @@ Cypress.Commands.add('homepage10travlr', () => {
 })
       
 
-Cypress.Commands.add('shortlist10travlr',() => {
+Cypress.Commands.add('shortlists10travlr',() => {
     cy
 
     .visit('https://www.10travlr.com.au/shortlists').location('pathname')
@@ -124,9 +124,10 @@ Cypress.Commands.add('discover10travlr', () => {
 
 Cypress.Commands.add('trips10travlr', () => {
     cy
-    
-    .visit('https://www.10travlr.com.au/trips').location('pathname')
-    .should('eq','/trips')
+
+    cy.visit('https://www.10travlr.com.au/trips').location('pathname')
+    should('eq','/trips')
+    .get('h1.pb--10')
     .should('have.text', 'All Trips')
     
     .get('.form__search')
@@ -137,44 +138,37 @@ Cypress.Commands.add('trips10travlr', () => {
 
 })
 
-Cypress.Commands.add('Articles', () => {
+Cypress.Commands.add('articles10travlr', () => {
     cy
 
-    .visit('https://www.10travlr.com.au/').location('pathname')
-    .should('eq','/')
+    .visit('https://www.10travlr.com.au/articles').location('pathname')
+    .should('eq','/articles')
+    
     // .get('.privy-dismiss-content').click()
-    .wait(5000)
-    .get('.intercom-tour-frame').then ( $element => {
-        const $body = $element.contents().find('body')
-        let stripe = cy.wrap($body)
-        stripe.find('.intercom-1o29jst').click()
-    .get('.t-btn-inverted').click()
-    .get('.c-home-articles').scrollIntoView()
-    .should('be.visible')
-    .get('.t-btn-default[data-gtm-event="ev_homepage_article_seemore"]').click()
+    
     .get('h1.pb--10')
     .should('have.text', 'News & Articles')
+    
     .get('.form__search')
     .should('be.visible')
 
-    })
 })
 
-Cypress.Commands.add('Activities', () => {
+Cypress.Commands.add('activities10travlr', () => {
     cy
 
-    .get('.mobile__menuButton')
-    .should('be.visible').click()
-    .get('.mobile__accordion__menu > :nth-child(4) > label')
-    .should('be.visible').click()
     .visit('https://www.10travlr.com.au/activities').location('pathname')
     .should('eq', '/activities')
+
     .get('h1.t-heading-2')
     .should('have.text','Make the most of your travel')
+    
     .get('p.t-body-text.t-mobile-m-t-8')
     .should('have.text', 'Book from thousands of activities, tours and things to do for you and your mates')
+    
     .get('#activitiesSearchDestination')
     .should('exist')
+    
     .get('button[type="submit"]')
     .should('be.visible')
 
