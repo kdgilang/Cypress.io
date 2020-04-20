@@ -1,3 +1,4 @@
+/// <reference types="Cypress"/>
 
 describe('10Travlr-Production', () => {
 
@@ -17,73 +18,75 @@ describe('10Travlr-Production', () => {
             const $body = $element.contents().find('body')
             let stripe = cy.wrap($body)
             stripe.find('.intercom-1o29jst').click()
-
-            .get('.t-btn-inverted').click()
-
-            .get('.t-navbar-top-left-logo-image')
-            .should('have.attr', 'src')
-
-            .get('.t-navbar-top-right-menus-list-item-link')
-            .should('be.visible').and('contain', 'Login')
-
-            .get('.t-hero-main-content-list-title-wrapper > .t-btn')
-            .should('be.visible').and('contain', 'Take a look')
-
-            .get('#headerSearchSuggestion')
-            .should('be.visible').and('have.attr', 'type')
-
-            .get(':nth-child(1) > .t-w-100 > .link-wrapper > .link-item')
-            .should('contain', 'Mix & Match Flights')
-
-            .get(':nth-child(2) > .t-w-100 > .link-wrapper > .link-item')
-            .should('contain', 'Accommodation')
-
-            .get(':nth-child(3) > .t-w-100 > .link-wrapper > .link-item')
-            .should('contain', 'Activities')
-
-            .get(':nth-child(4) > .t-w-100 > .link-wrapper > .link-item')
-            .should('contain', 'Deals & Offers')
-
-            .get('.t-navbar-top-left-burger > .t-icon').click()
-
-            .get(':nth-child(1) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
-            .should('be.visible').click() 
-        
-            .get(':nth-child(2) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
-            .should('be.visible').click() 
-        
-            .get(':nth-child(3) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
-            .should('be.visible').click() 
-        
-            .get(':nth-child(4) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
-            .scrollIntoView()
-            .should('be.visible').click() 
-        
-            .get(':nth-child(5) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
-            .scrollIntoView()
-            .should('be.visible').click() 
-        
-            .get(':nth-child(6) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
-            .scrollIntoView()
-            .should('be.visible').click()
-        
-            .get('.t-navbar-sidebar-header-icon > .t-icon')
-            .scrollIntoView()
-        
-            .get('.t-navbar-sidebar-header-icon > .t-icon').click()
-
-            .get('footer').scrollIntoView({ easing: 'linear' })
-        
-            .get('h6.t-heading-5.t-m-b-26')
-            .should('have.text', '\n            Explore by location\n          \n            Other stuff\n          Subscribe')
-        
-            .get('button[type="submit"]')
-            .should('be.visible')
-        
-            .get('select[data-gtm-event="ev_footer_multicurrency"]')
-            .should('be.visible')
-
         })
+
+        cy
+
+        .get('.t-btn-inverted').click()
+
+        .get('.t-navbar-top-left-logo-image')
+        .should('have.attr', 'src')
+
+        .get('.t-navbar-top-right-menus-list-item-link')
+        .should('be.visible').and('contain', 'Login')
+
+        .get('.t-hero-main-content-list-title-wrapper > .t-btn')
+        .should('be.visible').and('contain', 'Take a look')
+
+        .get('#headerSearchSuggestion')
+        .should('be.visible').and('have.attr', 'type')
+
+        .get(':nth-child(1) > .t-w-100 > .link-wrapper > .link-item')
+        .should('contain', 'Mix & Match Flights')
+
+        .get(':nth-child(2) > .t-w-100 > .link-wrapper > .link-item')
+        .should('contain', 'Accommodation')
+
+        .get(':nth-child(3) > .t-w-100 > .link-wrapper > .link-item')
+        .should('contain', 'Activities')
+
+        .get(':nth-child(4) > .t-w-100 > .link-wrapper > .link-item')
+        .should('contain', 'Deals & Offers')
+
+        .get('.t-navbar-top-left-burger > .t-icon').click()
+
+        .get(':nth-child(1) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
+        .should('be.visible').click() 
+        
+        .get(':nth-child(2) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
+        .should('be.visible').click() 
+        
+        .get(':nth-child(3) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
+        .should('be.visible').click() 
+        
+        .get(':nth-child(4) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
+        .scrollIntoView()
+        .should('be.visible').click() 
+        
+        .get(':nth-child(5) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
+        .scrollIntoView()
+        .should('be.visible').click() 
+        
+        .get(':nth-child(6) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
+        .scrollIntoView()
+        .should('be.visible').click()
+        
+        .get('.t-navbar-sidebar-header-icon > .t-icon')
+        .scrollIntoView()
+        
+        .get('.t-navbar-sidebar-header-icon > .t-icon').click()
+
+        .get('footer')
+        .scrollIntoView({ easing: 'linear' })
+        
+        .get('h6.t-heading-5.t-m-b-26')
+        .should('have.text', '\n            Explore by location\n          \n            Other stuff\n          Subscribe')
+        
+        .get('button[type="submit"]')
+        .should('be.visible')
+        
+        .get('select[data-gtm-event="ev_footer_multicurrency"]')
+        .should('be.visible')
 
     })
       
@@ -225,15 +228,16 @@ describe('10Travlr-Production', () => {
     })
 
     Cypress.Commands.add('venue10travlr', () => {
+        cy
     
-        cy.visit('https://www.10travlr.com.au/venue').location('pathname')
+        .visit('https://www.10travlr.com.au/venue').location('pathname')
         .should('eq', '/venue')
     
-        cy.get('#email').type('julian.travlr@gmail.com')
+        .get('#email').type('julian.travlr@gmail.com')
     
-        cy.get('#password').type('qwertyuiop1234567890', {log:false})
+        .get('#password').type('qwertyuiop1234567890', {log:false})
     
-        cy.get('#btn-submit').click()
+        .get('#btn-submit').click()
         Cypress.on('uncaught:exception', (err, runnable) => {
             throw err
         })
@@ -262,33 +266,36 @@ describe('10Travlr-Production', () => {
             const $body = $element.contents().find('body')
             let stripe = cy.wrap($body)
             stripe.find('.intercom-1o29jst').click()
-    
-            .get('.t-btn-inverted').click()
-    
-            .get('.t-navbar-top-right-menus-list-item-link').click()
-    
-            .get('#email').type('julian.travlr@gmail.com')
-    
-            .get('#password').type('qwertyuiop1234567890', {log:false})
-    
-            .get('img')
-            .should('have.attr','src')
-    
-            .get('#email')
-            .should('be.visible')
-    
-            .get('#password')
-            .should('be.visible')
-    
-            .get(':nth-child(3) > .small')
-            .should('contain','Email')
-    
-            .get(':nth-child(4) > .small')
-            .should('contain','Password')
-        
-            .get('#btn-submit').click()
 
         })
+
+        cy
+    
+        .get('.t-btn-inverted').click()
+    
+        .get('.t-navbar-top-right-menus-list-item-link').click()
+    
+        .get('#email').type('julian.travlr@gmail.com')
+    
+        .get('#password').type('qwertyuiop1234567890', {log:false})
+    
+        .get('img')
+        .should('have.attr','src')
+    
+        .get('#email')
+        .should('be.visible')
+    
+        .get('#password')
+        .should('be.visible')
+    
+        .get(':nth-child(3) > .small')
+        .should('contain','Email')
+    
+        .get(':nth-child(4) > .small')
+        .should('contain','Password')
+        
+        .get('#btn-submit').click()
+
     })
 
     Cypress.Commands.add('bookingsanddeals10travlr', () => {
@@ -341,7 +348,196 @@ describe('10Travlr-Production', () => {
         .should('be.visible')
     
     })
+
+    Cypress.Commands.add('mytrip10travlr', () => {
+        cy
+
+        .visit('https://www.10travlr.com.au/my/trip').location('pathname')
+        .should('eq','/login/a/49')
+
+        .get('#email').type('julian.travlr@gmail.com')
+    
+        .get('#password').type('qwertyuiop1234567890', {log:false})
+    
+        .get('#btn-submit').click()
+
+        .visit('https://www.10travlr.com.au/my/trip').location('pathname')
+        .should('eq','/my/trip')
+
+        .get(':nth-child(1) > :nth-child(1) > .block__title__left > h2')
+        .should('contain.text','My Trips').and('exist')
+        
+        .get(':nth-child(1) > .block-empty-state-my-account > .empty__box > .link > .t-button-primary')
+        .should('be.visible').and('contain.text','Create one')
+        
+        .get(':nth-child(2) > .block-empty-state-my-account > .empty__box > .link > .t-button-primary')
+        .should('be.visible').and('contain.text','Browse Popular Trips')
+
+    })
+
+    Cypress.Commands.add('myarticle10travlr', () => {
+        cy
+
+        .visit('https://www.10travlr.com.au/my/article').location('pathname')
+        .should('eq','/login/a/49')
+
+        .get('#email').type('julian.travlr@gmail.com')
+    
+        .get('#password').type('qwertyuiop1234567890', {log:false})
+    
+        .get('#btn-submit').click()
+
+        .visit('https://www.10travlr.com.au/my/article').location('pathname')
+        .should('eq','/my/article')
+
+        .get(':nth-child(1) > :nth-child(1) > .block__title__left > h2')
+        .should('contain.text','My Articles').and('exist')
+
+        .get(':nth-child(1) > .block-empty-state-my-account > .empty__box > .link > .t-button-primary')
+        .should('be.visible').and('contain.text','Create one')
+    
+    })
+    
+    Cypress.Commands.add('notification10travlr', () => {
+        cy
+
+        .visit('https://www.10travlr.com.au/my/notification').location('pathname')
+        .should('eq','/login/a/49')
+
+        .get('#email').type('julian.travlr@gmail.com')
+    
+        .get('#password').type('qwertyuiop1234567890', {log:false})
+    
+        .get('#btn-submit').click()
+
+        .visit('https://www.10travlr.com.au/my/notification').location('pathname')
+        .should('eq','/my/notification')
+
+        .get('h1')
+        .should('exist').and('contain.text','Notifications')
+
+    })
+
+    Cypress.Commands.add('createlist10travlr', () => {
+        cy
+
+        .visit('https://www.10travlr.com.au/').location('pathname')
+        .should('eq','/')
+        
+        .get('.intercom-tour-frame').then ( $element => {
+            const $body = $element.contents().find('body')
+            let stripe = cy.wrap($body)
+            stripe.find('.intercom-1o29jst').click()
+        })
+
+        cy
+
+        .get('.t-navbar-top-right-menus-list-item-link').click()
+
+        .get('#email').type('julian.travlr@gmail.com')
+    
+        .get('#password').type('qwertyuiop1234567890', {log:false})
+    
+        .get('#btn-submit').click()
+
+        .visit('https://www.10travlr.com.au/').location('pathname')
+        .should('eq','/')
+
+        .get('.intercom-tour-frame').then ( $element => {
+            const $body = $element.contents().find('body')
+            let stripe = cy.wrap($body)
+            stripe.find('.intercom-1o29jst').click()
+        })
+
+        cy
+
+        .get('.t-navbar-top-right-menus-list-item-link-myaccount').click()
+        .should('be.visible')
+
+        .get(':nth-child(6) > .t-navbar-top-right-menus-list-item-child-item-link').click()
+        
+        .get('#listName').type('QA TESTING')
+        .should('be.visible')
+
+        .get('#description').type('Just For Testing')
+        .should('be.visible')
+        
+        .get('#create').click()
+        .should('be.visible')
+
+        .get('.wrap__box__item > :nth-child(1) > .modal-button > .caption')
+        .scrollIntoView()
+
+        // .get('.wrap__box__item > #sh-2360 > .btn__actions > .action__edit__article > .a__link').click()
+        // .should('be.visible')
+
+        // .get('#updateShortlist > .modal-dialog > .modal-content > .modal-body > .form--material--design > .my__profile__form__field > .mt--10 > .form-group > .form-control').clear()
+        // .type('Update Testing')
+        // .should('be.visible')
+        
+        // .get('#updateShortlist > .modal-dialog > .modal-content > .modal-body > .form--material--design > .my__profile__form__field > .order__3 > .Btns > .btn__submit').click()
+        // .should('be.visible')
+
+    })
+    
+    Cypress.Commands.add('businessportal10travlr', () => {
+        cy
+
+        .visit('https://www.10travlr.com.au/business_premium/test-test-test-1282692/overview')
+        .location('pathname')
+        .should('eq','/accommodation/detail/test-test-test-1282692')
+
+        .get('.mobile__header > .container-Common > .common__shortcut > .common__login > .common__login__link').click()
+
+        .get('#email').type('julian.travlr@gmail.com')
+    
+        .get('#password').type('qwertyuiop1234567890', {log:false})
+    
+        .get('#btn-submit').click()
+
+        .get('.mobile__header > .container-Common > .common__shortcut > .common__shortcut__profile > .dropdown > #shortcut__profile > .my__account__text').click()
+        
+        .get('.mobile__header > .container-Common > .common__shortcut > .common__shortcut__profile > .dropdown > .dropdown-menu > [href="https://www.10travlr.com.au/business_premium/test-test-test-1282692/overview"]').click()
+        
+    })
+    Cypress.Commands.add('', () => {
+        
+    })
+    Cypress.Commands.add('', () => {
+        
+    })
+    Cypress.Commands.add('', () => {
+        
+    })
+    Cypress.Commands.add('', () => {
+        
+    })
+    Cypress.Commands.add('', () => {
+        
+    })
+    Cypress.Commands.add('', () => {
+        
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 })
+
+
 
 // End-10Travlr-Production-Smoke-Testing
 
