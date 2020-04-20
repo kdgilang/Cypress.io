@@ -442,15 +442,7 @@ describe('10Travlr-Production', () => {
 
         .visit('https://www.10travlr.com.au/').location('pathname')
         .should('eq','/')
-
-        .get('.intercom-tour-frame').then ( $element => {
-            const $body = $element.contents().find('body')
-            let stripe = cy.wrap($body)
-            stripe.find('.intercom-1o29jst').click()
-        })
-
-        cy
-
+        
         .get('.t-navbar-top-right-menus-list-item-link-myaccount').click()
         .should('be.visible')
 
@@ -496,9 +488,7 @@ describe('10Travlr-Production', () => {
         .get('#btn-submit').click()
 
         .get('.mobile__header > .container-Common > .common__shortcut > .common__shortcut__profile > .dropdown > #shortcut__profile > .my__account__text').click()
-        
-        .get('.mobile__header > .container-Common > .common__shortcut > .common__shortcut__profile > .dropdown > .dropdown-menu > [href="https://www.10travlr.com.au/business_premium/test-test-test-1282692/overview"]').click()
-        
+
     })
     Cypress.Commands.add('', () => {
         
