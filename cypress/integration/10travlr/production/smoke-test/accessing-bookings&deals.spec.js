@@ -1,4 +1,4 @@
-context('Smoke-Test-10Travlr', () => {
+context('Smoke-Test', () => {
     it('Accessing Booking & Deals', () => {
         cy.bookingsanddeals10travlr()
     })
