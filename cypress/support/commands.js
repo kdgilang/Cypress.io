@@ -33,6 +33,17 @@ describe('10Travlr-Production', () => {
         .get('.t-hero-main-content-list-title-wrapper > .t-btn')
         .should('be.visible').and('contain', 'Take a look')
 
+
+
+    })
+
+    Cypress.Commands.add('headerandfooter10travlr', () => {
+        cy
+
+        .visit('https://www.10travlr.com.au/')
+        .title()
+        .should('eq', '10 Travlr - Experience the difference')
+
         .get('#headerSearchSuggestion')
         .should('be.visible').and('have.attr', 'type')
 
@@ -490,22 +501,105 @@ describe('10Travlr-Production', () => {
         .get('.mobile__header > .container-Common > .common__shortcut > .common__shortcut__profile > .dropdown > #shortcut__profile > .my__account__text').click()
 
     })
-    Cypress.Commands.add('', () => {
+
+    Cypress.Commands.add('logout10travlr', () => {
+        cy
+
+        .visit('https://www.10travlr.com.au/').location('pathname')
+        .should('eq','/')
+        
+        .get('.intercom-tour-frame').then ( $element => {
+            const $body = $element.contents().find('body')
+            let stripe = cy.wrap($body)
+            stripe.find('.intercom-1o29jst').click()
+        })
+
+        cy
+
+        .get('.t-navbar-top-right-menus-list-item-link').click()
+
+        .get('#email').type('julian.travlr@gmail.com')
+    
+        .get('#password').type('qwertyuiop1234567890', {log:false})
+    
+        .get('#btn-submit').click()
+
+        .visit('https://www.10travlr.com.au/').location('pathname')
+        .should('eq','/')
+
+        .get('.t-navbar-top-right-menus-list-item-link-myaccount').click()
+
+        .get(':nth-child(8) > .t-navbar-top-right-menus-list-item-child-item-link').click()
+
         
     })
-    Cypress.Commands.add('', () => {
+    
+    Cypress.Commands.add('accessingcontactus10travlr', () => {
+        cy
+
+        .visit('https://www.10travlr.com.au/contact-us')
+        .location('pathname')
+        .should('eq','/contact-us')
+
+        cy.get('#mapThumb')
+        .should('be.visible').and('exist')
+
+        cy.get('h2')
+        .should('have.text','Let us help you with your next journey...')
+
+
         
     })
-    Cypress.Commands.add('', () => {
+    
+    Cypress.Commands.add('terms10travlr', () => {
+        cy
+
+        .visit('https://www.10travlr.com.au/pages/terms-3')
+        .location('pathname')
+        .should('eq','/pages/terms-3')
+
+        .get('h1 > span')
+        .should('contain.text','TERMS')
         
     })
-    Cypress.Commands.add('', () => {
+    
+    Cypress.Commands.add('dmca10travlr', () => {
+        cy
+
+        .visit('https://www.10travlr.com.au/pages/dmca-4')
+        .location('pathname')
+        .should('eq','/pages/dmca-4')
+
+        .get('.t-heading-1')
+        .should('have.text','DMCA')
+
+        
+
+
         
     })
-    Cypress.Commands.add('', () => {
+    Cypress.Commands.add('refundpolici10travlr', () => {
+        cy
+
+        .visit('https://www.10travlr.com.au/pages/refund-policy-5')
+        .location('pathname')
+        .should('eq','/pages/refund-policy-5')
+
+        .get('.t-heading-1 > strong')
+        .should('have.text','REFUND POLICY')
+
+
         
     })
-    Cypress.Commands.add('', () => {
+    Cypress.Commands.add('privacypolicy10travlr', () => {
+        cy
+
+        .visit('https://www.10travlr.com.au/pages/privacy-policy-1')
+        .location('pathname')
+        .should('eq','/pages/privacy-policy-1')
+
+        .get('.t-heading-1')
+        .should('have.text','PRIVACY POLICY')
         
     })
 
