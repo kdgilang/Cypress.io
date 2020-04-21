@@ -50,6 +50,8 @@ describe('10Travlr-Production', () => {
             stripe.find('.intercom-1o29jst').click()
         })
 
+        .get('.t-btn-inverted').click()
+
         .get('#headerSearchSuggestion')
         .should('be.visible').and('have.attr', 'type')
 
@@ -258,8 +260,6 @@ describe('10Travlr-Production', () => {
         Cypress.on('uncaught:exception', (err, runnable) => {
             throw err
         })
-    
-        cy
 
         .get('h3.m-t-0')
         .should('have.text','Add a venue')
@@ -285,8 +285,6 @@ describe('10Travlr-Production', () => {
             stripe.find('.intercom-1o29jst').click()
 
         })
-
-        cy
     
         .get('.t-btn-inverted').click()
     
@@ -447,8 +445,6 @@ describe('10Travlr-Production', () => {
             stripe.find('.intercom-1o29jst').click()
         })
 
-        cy
-
         .get('.t-navbar-top-right-menus-list-item-link').click()
 
         .get('#email').type('julian.travlr@gmail.com')
@@ -460,11 +456,11 @@ describe('10Travlr-Production', () => {
         .visit('https://www.10travlr.com.au/').location('pathname')
         .should('eq','/')
 
-        .get('.intercom-tour-frame').then ( $element => {
-            const $body = $element.contents().find('body')
-            let stripe = cy.wrap($body)
-            stripe.find('.intercom-1o29jst').click()
-        })
+        // .get('.intercom-tour-frame').then ( $element => {
+        //     const $body = $element.contents().find('body')
+        //     let stripe = cy.wrap($body)
+        //     stripe.find('.intercom-1o29jst').click()
+        // })
         
         .get('.t-navbar-top-right-menus-list-item-link-myaccount').click()
         .should('be.visible')
@@ -526,8 +522,6 @@ describe('10Travlr-Production', () => {
             stripe.find('.intercom-1o29jst').click()
         })
 
-        cy
-
         .get('.t-navbar-top-right-menus-list-item-link').click()
 
         .get('#email').type('julian.travlr@gmail.com')
@@ -553,10 +547,10 @@ describe('10Travlr-Production', () => {
         .location('pathname')
         .should('eq','/contact-us')
 
-        cy.get('#mapThumb')
+        .get('#mapThumb')
         .should('be.visible').and('exist')
 
-        cy.get('h2')
+        .get('h2')
         .should('have.text','Let us help you with your next journey...')
 
 
