@@ -7,7 +7,7 @@ jobs:
           ## this enables colors in the output
           TERM: xterm
     working_directory: ~/app
-    parallelism: 1
+    parallelism: 4
     steps:
       - checkout
       - restore_cache:

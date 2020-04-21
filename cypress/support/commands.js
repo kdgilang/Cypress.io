@@ -456,11 +456,13 @@ describe('10Travlr-Production', () => {
         .visit('https://www.10travlr.com.au/').location('pathname')
         .should('eq','/')
 
-        // .get('.intercom-tour-frame').then ( $element => {
-        //     const $body = $element.contents().find('body')
-        //     let stripe = cy.wrap($body)
-        //     stripe.find('.intercom-1o29jst').click()
-        // })
+        cy.wait(5000)
+
+        .get('.intercom-tour-frame').then ( $element => {
+            const $body = $element.contents().find('body')
+            let stripe = cy.wrap($body)
+            stripe.find('.intercom-1o29jst').click()
+        })
         
         .get('.t-navbar-top-right-menus-list-item-link-myaccount').click()
         .should('be.visible')
