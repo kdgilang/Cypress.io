@@ -1,12 +1,11 @@
 {
   "name": "ci",
-  "version": "4.4.0",
+  "version": "4.4.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "regression-test": "npx cypress run --group 10Travlr-Production-Regression-Test --spec cypress/integration/10travlr/production/regression-test/**/*.spec.js --browser chrome --record --key 3c997bd0-22e4-49b8-a81f-c5dbdb3b3364 --parallel",
     "10travlr-production-regression-test": "npm run regression-test"
-    
   },
   "author": "",
   "license": "ISC",
