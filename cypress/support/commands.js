@@ -317,6 +317,9 @@ describe('10Travlr-Production', () => {
         
         .get('#btn-submit').click()
 
+        .visit('https://www.10travlr.com.au/').location('pathname')
+        .should('eq', '/')
+
     })
 
     Cypress.Commands.add('bookingsanddealsproduction10travlr', () => {
