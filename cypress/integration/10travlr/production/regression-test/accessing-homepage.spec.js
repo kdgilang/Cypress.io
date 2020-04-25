@@ -397,6 +397,46 @@ context('Accessing Homepage', () => {
 
     });
 
+    describe('Footer', () => {
+        
+        it('Checking ID & Class of Footer', () => {
+            cy.get('footer')
+            .should('have.id', 'travlrFooter')
+            .scrollIntoView()
+            
+        });
+
+        it('Checking Explore by & Other Stuff', () => {
+            cy.get('footer .footer-list')
+            .find('li')
+            .should('have.length', '34')
+            cy.get('footer a.t-m-b-10')
+            .should('have.attr','href')
+            
+        });
+
+        it('Checking Subscribe Container', () => {
+            cy.get('footer p.t-body-text')
+            .should('contain', 'To get the latest deals, news & more')
+            cy.get('#footerSubscribeEmail')
+            .click()
+            .type('QA.test@gmail.com')
+            .clear()
+
+        });
+
+        it('Checking Social Media Logo', () => {
+            cy.get('footer ul.social-media')
+            .find('li')
+            .should('have.length','6')
+            .and('be.visible')
+            
+        });
+
+
+
+    });
+
 
 
 
