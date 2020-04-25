@@ -303,6 +303,98 @@ context('Accessing Homepage', () => {
     
     })
 
+    describe('Latest Articles Section', () => {
+        
+        it('Checking Title', () => {
+            cy.get('.c-home-articles h2.t-heading-2')
+            .should('contain', 'Latest Articles')
+            .and('exist')
+            .scrollIntoView()
+
+        });
+
+        it('Checking See more Button', () => {
+            cy.get('.c-home-articles a.t-btn-default')
+            .contains('See more')
+            .should('have.attr', 'data-gtm-event')
+            .and('equal', 'ev_homepage_article_seemore')
+            
+        });
+
+    });
+
+    describe('Mobile Banner', () => {
+        
+        it('Checking Banner', () => {
+            cy.get('.bg-banner')
+            .should('have.attr', 'style')
+            .and('exist')
+
+        })
+
+        it('Checking Banner Content', () => {
+            cy.get('.bg-banner .content-container')
+            .find('a')
+            .should('have.class', 'app-logo-link')
+            .find('img')
+            .and('have.attr', 'src')
+            cy.get('.content-container > h2')
+            .should('contain', 'Get our app')
+            .and('not.be.empty')
+            .scrollIntoView()
+
+        })
+
+        it('Checking Banner Buttons', () => {
+            cy.get('.bg-banner .download-wrapper')
+            .find('a')
+            .should('have.attr', 'href')
+            cy.get('.bg-banner a.pl-10')
+            .should('have.attr', 'href')
+        
+        })
+
+    });
+
+    describe('Home Social Media', () => {
+
+        it('Checking Instagram', () => {
+            cy.get('.c-home-social-media')
+            .find('a')
+            .should('have.attr', 'href')
+        
+        })
+
+        it('Checking 10Travlr', () => {
+            cy.get('.c-home-social-media img.image')
+            .should('have.attr', 'src')
+            cy.get('.account__content h3.title')
+            .should('contain', '10travlr')
+            cy.get('.account__content a.link')
+            .should('contain', 'Follow')
+            .and('have.attr', 'href')
+
+        })
+
+        it('Checking Text', () => {
+            cy.get('.social-media__content p.description')
+            .should('contain', 'Daily travel inspiration from around the world ')
+            .and('not.be.empty')
+
+        })
+
+        it('Checking Image Slider', () => {
+            cy.get('.c-image-slider .c-carousel')
+            .should('have.attr', 'tabindex')
+        
+        })
+        
+    });
+
+
+
+
+
 
 
 
