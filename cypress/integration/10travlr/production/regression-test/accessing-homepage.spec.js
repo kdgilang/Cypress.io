@@ -16,22 +16,22 @@ context('Accessing Homepage', () => {
                 let stripe = cy.wrap($body)
                 stripe.find('.intercom-1o29jst').click()
             
-            })
+            });
         
-        })
+        });
 
         it('Accepting Cookies', () => {
             cy.get('.t-btn-inverted').click()
         
-        })
+        });
 
         it('Checking Intercom Chat', () => {
             cy.get('.intercom-launcher-frame').click()
             .should('be.visible').and('exist')
         
-        })
+        });
 
-    })
+    });
     
     describe('Header', () => {
         
@@ -41,20 +41,20 @@ context('Accessing Homepage', () => {
             .and('not.be.empty')
             .scrollIntoView()
         
-        })
+        });
 
         it('Checking Top Left Button', () => {
             cy.get('.t-navbar-top-left-burger > .t-icon')
             .should('be.visible')
         
-        })
+        });
 
         it('Checking Header Travlr Logo', () => {
             cy.get('.t-navbar-top-left-logo-image')
             .should('have.attr', 'src')
             .and('not.be.empty')
         
-        })
+        });
         
         it('Checking Search Column', () => {
             cy.get('#headerSearchSuggestion')
@@ -62,7 +62,7 @@ context('Accessing Homepage', () => {
             .should('equal','ev_header_searchsuggestion')
             .and('not.be.empty')
         
-        })
+        });
 
         it('Checking Login Button', () => {
             cy.get('.t-navbar-top-right-menus-list-item-link')
@@ -71,9 +71,9 @@ context('Accessing Homepage', () => {
             .invoke('attr','data-gtm-event')
             .should('equal','ev_header_signin')
         
-        })
+        });
     
-    })
+    });
 
     describe('Jumbotron Section', () => {
 
@@ -83,7 +83,7 @@ context('Accessing Homepage', () => {
             .and('contain','Holiday here this year')
             .scrollIntoView()
 
-        })
+        });
 
         it('Checking Button Jumbotron', () => {
             cy.get('.t-hero-main-content-list-title-wrapper .t-btn')
@@ -92,9 +92,9 @@ context('Accessing Homepage', () => {
             .invoke('attr','data-gtm-event')
             .should('equal','ev_homepage_banner_header_button')
         
-        })
+        });
 
-    })
+    });
 
     describe('Shortcut Panel Section', ()=> {
 
@@ -105,7 +105,7 @@ context('Accessing Homepage', () => {
             .should('contain','Mix & Match Flights')
             .and('not.be.empty')
 
-        })
+        });
 
         it('Checking Accommodation', () => {
             cy.get(':nth-child(2) div.title')
@@ -114,7 +114,7 @@ context('Accessing Homepage', () => {
             .should('contain','Accommodation')
             .and('not.be.empty')
             
-        })
+        });
 
         it('Checking Activities', () => {
             cy.get(':nth-child(3) div.title')
@@ -123,7 +123,7 @@ context('Accessing Homepage', () => {
             .should('contain','Activities')
             .and('not.be.empty')
             
-        })
+        });
 
         it('Checking Deals & Offers', () => {
             cy.get(':nth-child(4) div.title')
@@ -133,9 +133,9 @@ context('Accessing Homepage', () => {
             .and('not.be.empty')
             .scrollIntoView()
             
-        })
+        });
 
-    })
+    });
 
     describe('Humm Section', () => {
 
@@ -144,9 +144,9 @@ context('Accessing Homepage', () => {
             .should('have.attr', 'src')
             .and('exist')
         
-        })
+        });
 
-    })
+    });
 
     describe('C-Card Section', () => {
         
@@ -163,8 +163,8 @@ context('Accessing Homepage', () => {
             .should('contain','Trips')
             .and('be.visible')
             .scrollIntoView()
-
-        })
+;
+        });
 
         it('Popular Activities', () => {
             cy.get('.c-home-activities :nth-child(1)')
@@ -176,9 +176,9 @@ context('Accessing Homepage', () => {
             .should('have.attr', 'data-gtm-event')
             .and('equal','ev_homepage_activities_seemore')
 
-        })
+        });
 
-    })
+    });
 
     describe('Sign Up Banner Section', () => {
 
@@ -187,7 +187,7 @@ context('Accessing Homepage', () => {
             .should('contain', 'Sign Up, it’s FREE')
             .and('be.visible')
 
-        })
+        });
 
         it('Checking Content Right', () => {
 
@@ -209,8 +209,9 @@ context('Accessing Homepage', () => {
             .invoke('attr','data-gtm-event')
             .should('equal', 'ev_homepage_bannerpromo_button')
 
-        })
-    })
+        });
+
+    });
 
     describe('Recommended Accommodation Section', ()=> {
 
@@ -219,16 +220,18 @@ context('Accessing Homepage', () => {
             .contains('Recommended Accommodation')
             .should('be.visible')
             .and('exist')
-        })
+        
+        });
 
         it('Checking Button See more', () => {
             cy.get('.c-home-accommodation a.t-btn-default')
             .contains('See more')
             .should('have.attr', 'data-gtm-event')
             .and('equal','ev_homepage_accommodation_seemore')
-        })
+        
+        });
 
-    })
+    });
 
     describe('Trending Destinations', () => {
 
@@ -238,7 +241,7 @@ context('Accessing Homepage', () => {
             .and('be.visible')
             .scrollIntoView()
         
-        })
+        });
 
         it('Checking Content', () => {
             cy.get('p.t-m-b-15')
@@ -246,9 +249,10 @@ context('Accessing Homepage', () => {
             
             cy.get('h3.t-heading-2')
             .should('contain', 'Melbourne')
-        })
+       
+        });
     
-    })
+    });
 
     describe('Mix and Match Flights Banner', () => {
         
@@ -257,14 +261,15 @@ context('Accessing Homepage', () => {
             .should('be.visible')
             .and('exist')
             .scrollIntoView()
-        })
+        
+        });
 
         it('Checking Banner Title', () => {
             cy.get('.c-home-holiday h3.title')
             .should('contain', 'Mix and Match Flights')
             .and('not.be.empty')
         
-        })
+        });
 
         it('Checking Banner Button', () => {
             cy.get('.t-card-title-content > .t-btn')
@@ -273,9 +278,9 @@ context('Accessing Homepage', () => {
             .and('equal', 'ev_homepage_holiday_button')
             .and('not.be.disabled')
 
-        })
+        });
     
-    })
+    });
 
     describe('Destination Guides Section', () => {
 
@@ -285,23 +290,24 @@ context('Accessing Homepage', () => {
             .and('not.be.empty')
             .scrollIntoView()
 
-        })
+        });
 
         it('Checking Button See more', () => {
             cy.get('.c-home-destinations a.t-btn-default')
             .contains('See more')
             .should('have.attr', 'data-gtm-event')
             .and('equal','ev_homepage_destination_seemore')
-        })
+        
+        });
 
         it('Checking All Contents', () => {
             cy.get('.c-home-destinations a.t-card-title')
             .should('have.attr','data-gtm-event')
             .and('equal','ev_homepage_destinations_item')
         
-        })
+        });
     
-    })
+    });
 
     describe('Latest Articles Section', () => {
         
@@ -330,7 +336,7 @@ context('Accessing Homepage', () => {
             .should('have.attr', 'style')
             .and('exist')
 
-        })
+        });
 
         it('Checking Banner Content', () => {
             cy.get('.bg-banner .content-container')
@@ -343,7 +349,7 @@ context('Accessing Homepage', () => {
             .and('not.be.empty')
             .scrollIntoView()
 
-        })
+        });
 
         it('Checking Banner Buttons', () => {
             cy.get('.bg-banner .download-wrapper')
@@ -352,7 +358,7 @@ context('Accessing Homepage', () => {
             cy.get('.bg-banner a.pl-10')
             .should('have.attr', 'href')
         
-        })
+        });
 
     });
 
@@ -363,7 +369,7 @@ context('Accessing Homepage', () => {
             .find('a')
             .should('have.attr', 'href')
         
-        })
+        });
 
         it('Checking 10Travlr', () => {
             cy.get('.c-home-social-media img.image')
@@ -374,21 +380,21 @@ context('Accessing Homepage', () => {
             .should('contain', 'Follow')
             .and('have.attr', 'href')
 
-        })
+        });
 
         it('Checking Text', () => {
             cy.get('.social-media__content p.description')
             .should('contain', 'Daily travel inspiration from around the world ')
             .and('not.be.empty')
 
-        })
+        });
 
         it('Checking Image Slider', () => {
             cy.get('.c-image-slider .c-carousel')
             .should('have.attr', 'tabindex')
         
-        })
-        
+        });
+
     });
 
 
