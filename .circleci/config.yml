@@ -25,7 +25,7 @@ jobs:
             - ~/.npm
             - ~/.cache
       - run: 
-          name:  10Travlr-Production-Regression-Testing
-          command:
+          name: 10Travlr-Production-Regression-Testing
+          command: npm run 10travlr-production-regression-test
 
 

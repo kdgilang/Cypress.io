@@ -418,6 +418,7 @@ context('Accessing Homepage', () => {
         it('Checking Subscribe Container', () => {
             cy.get('footer p.t-body-text')
             .should('contain', 'To get the latest deals, news & more')
+
             cy.get('#footerSubscribeEmail')
             .click()
             .type('QA.test@gmail.com')
@@ -425,12 +426,34 @@ context('Accessing Homepage', () => {
 
         });
 
-        it('Checking Social Media Logo', () => {
+        it('Checking Social Media Logo & Button', () => {
             cy.get('footer ul.social-media')
             .find('li')
             .should('have.length','6')
             .and('be.visible')
+
+            cy.get('#footerSubscribeSubmit')
+            .should('contain','Subscribe')
+            .and('have.value', 'Subscribe')
             
+        });
+
+        it('Checking Currency Option', () => {
+            cy.get('select')
+            .should('have.attr', 'data-gtm-event')
+            .and('equal','ev_footer_multicurrency')
+        });
+
+        it('Checking Footer Logo', () => {
+            cy.get('footer .t-navbar-bottom-main-left-logo-bb')
+            .should('have.attr', 'src')
+            .and('exist')
+        });
+
+        it('Checking Copyright Text', () => {
+            cy.get('footer .t-color-white')
+            .should('contain', '© Copyright 10 Travlr. All rights reserved.')
+            .and('exist')
         });
 
 
