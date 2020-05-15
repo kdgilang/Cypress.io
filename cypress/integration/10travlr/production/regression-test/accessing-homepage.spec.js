@@ -442,18 +442,21 @@ context('Accessing Homepage', () => {
             cy.get('select')
             .should('have.attr', 'data-gtm-event')
             .and('equal','ev_footer_multicurrency')
+
         });
 
         it('Checking Footer Logo', () => {
             cy.get('footer .t-navbar-bottom-main-left-logo-bb')
             .should('have.attr', 'src')
             .and('exist')
+
         });
 
         it('Checking Copyright Text', () => {
             cy.get('footer .t-color-white')
             .should('contain', '© Copyright 10 Travlr. All rights reserved.')
             .and('exist')
+            
         });
 
 
