@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "regression-test": "npx cypress run --group 10Travlr-Production-Regression-Test --spec cypress/integration/10travlr/production/regression-test/**/*accesing-headerandfooter.spec.js --browser chrome --record --key 8368f5b2-842d-4d6f-b6e9-f631879e3aa9 --parallel --tag 10Travlr,Production",
+    "regression-test": "npx cypress run --group 10Travlr-Production-Regression-Test --spec cypress/integration/10travlr/production/regression-test/**/* --browser chrome --record --key 8368f5b2-842d-4d6f-b6e9-f631879e3aa9 --parallel --tag 10Travlr,Production",
     "10travlr-production-regression-test": "npm run regression-test"
   },
   "author": "",
