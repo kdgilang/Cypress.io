@@ -106,11 +106,7 @@ context('Accessing Shortlist', () => {
             .scrollIntoView()
 
         });
-
-
-
-
-        
+    
     });
     
 });

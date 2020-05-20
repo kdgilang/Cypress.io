@@ -146,10 +146,9 @@ context('Accessing Discover', () => {
             .scrollIntoView()
             .should('have.attr', 'href')
             .and('contain', 'https://10travlr.zendesk.com/hc/en-us')
+
         });
-
-
-    
+        
     })
 
 });

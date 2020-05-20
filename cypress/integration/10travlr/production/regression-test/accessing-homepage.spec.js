@@ -163,7 +163,7 @@ context('Accessing Homepage', () => {
             .should('contain','Trips')
             .and('be.visible')
             .scrollIntoView()
-;
+
         });
 
         it('Popular Activities', () => {
@@ -459,27 +459,6 @@ context('Accessing Homepage', () => {
             
         });
 
-
-
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 })

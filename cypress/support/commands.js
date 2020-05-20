@@ -144,22 +144,22 @@ describe('10Travlr-Production', () => {
 
     })
 
-//  Cypress.Commands.add('tripsproduction10travlr', () => {
-//     cy
+ Cypress.Commands.add('tripsproduction10travlr', () => {
+    cy
 
-//     .visit('https://www.10travlr.com.au/trips').location('pathname')
-//     should('eq','/trips')
+    .visit('https://www.10travlr.com.au/trips').location('pathname')
+    should('eq','/trips')
     
-//     .get('h1.pb--10')
-//     .should('have.text', 'All Trips')
+    .get('h1.pb--10')
+    .should('have.text', 'All Trips')
     
-//     .get('.form__search')
-//     .should('exist').and('be.visible')
+    .get('.form__search')
+    .should('exist').and('be.visible')
     
-//     .get('div.block__title__left')
-//     .should('have.text', 'Most Popular Trips\n                \n            ')
+    .get('div.block__title__left')
+    .should('have.text', 'Most Popular Trips\n                \n            ')
 
-// })
+})
 
     Cypress.Commands.add('articlesproduction10travlr', () => {
         cy
