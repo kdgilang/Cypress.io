@@ -402,20 +402,20 @@
 //     Cypress.Commands.add('myarticleproduction10travlr', () => {
 //         cy
 
-//         .visit('https://www.10travlr.com.au/my/article').location('pathname')
-//         .should('eq','/login/a/49')
+        // .visit('https://www.10travlr.com.au/my/article').location('pathname')
+        // .should('eq','/login/a/49')
 
-//         .get('#email').type('julian.travlr@gmail.com')
+        // .get('#email').type('julian.travlr@gmail.com')
     
-//         .get('#password').type('qwertyuiop1234567890', {log:false})
+        // .get('#password').type('qwertyuiop1234567890', {log:false})
     
-//         .get('#btn-submit').click()
+        // .get('#btn-submit').click()
 
-//         .visit('https://www.10travlr.com.au/my/article').location('pathname')
-//         .should('eq','/my/article')
+        // .visit('https://www.10travlr.com.au/my/article').location('pathname')
+        // .should('eq','/my/article')
 
-//         .get(':nth-child(1) > :nth-child(1) > .block__title__left > h2')
-//         .should('contain.text','My Articles').and('exist')
+        // .get(':nth-child(1) > :nth-child(1) > .block__title__left > h2')
+        // .should('contain.text','My Articles').and('exist')
 
 //         .get(':nth-child(1) > .block-empty-state-my-account > .empty__box > .link > .t-button-primary')
 //         .should('be.visible').and('contain.text','Create one')
@@ -425,20 +425,20 @@
 //     Cypress.Commands.add('notificationproduction10travlr', () => {
 //         cy
 
-//         .visit('https://www.10travlr.com.au/my/notification').location('pathname')
-//         .should('eq','/login/a/49')
+        // .visit('https://www.10travlr.com.au/my/notification').location('pathname')
+        // .should('eq','/login/a/49')
 
-//         .get('#email').type('julian.travlr@gmail.com')
+        // .get('#email').type('julian.travlr@gmail.com')
     
-//         .get('#password').type('qwertyuiop1234567890', {log:false})
+        // .get('#password').type('qwertyuiop1234567890', {log:false})
     
-//         .get('#btn-submit').click()
+        // .get('#btn-submit').click()
 
-//         .visit('https://www.10travlr.com.au/my/notification').location('pathname')
-//         .should('eq','/my/notification')
+        // .visit('https://www.10travlr.com.au/my/notification').location('pathname')
+        // .should('eq','/my/notification')
 
-//         .get('h1')
-//         .should('exist').and('contain.text','Notifications')
+        // .get('h1')
+        // .should('exist').and('contain.text','Notifications')
 
 //     })
 
@@ -448,42 +448,42 @@
 //     //     .visit('https://www.10travlr.com.au/').location('pathname')
 //     //     .should('eq','/')
         
+        // .get('.intercom-tour-frame').then ( $element => {
+        //     const $body = $element.contents().find('body')
+        //     let stripe = cy.wrap($body)
+        //     stripe.find('.intercom-1o29jst').click()
+        // })
+
+        // .get('.t-navbar-top-right-menus-list-item-link').click()
+
+        // .get('#email').type('julian.travlr@gmail.com')
+    
+        // .get('#password').type('qwertyuiop1234567890', {log:false})
+    
+        // .get('#btn-submit').click()
+
+        // .visit('https://www.10travlr.com.au/').location('pathname')
+        // .should('eq','/')
+        
+        // .get('.t-navbar-top-right-menus-list-item-link-myaccount').click()
+        // .should('be.visible')
+
+        // .get(':nth-child(6) > .t-navbar-top-right-menus-list-item-child-item-link').click()
+        
+        // .get('#listName').type('QA TESTING')
+        // .should('be.visible')
+
 //     //     .get('.intercom-tour-frame').then ( $element => {
 //     //         const $body = $element.contents().find('body')
 //     //         let stripe = cy.wrap($body)
 //     //         stripe.find('.intercom-1o29jst').click()
 //     //     })
 
-//     //     .get('.t-navbar-top-right-menus-list-item-link').click()
-
-//     //     .get('#email').type('julian.travlr@gmail.com')
-    
-//     //     .get('#password').type('qwertyuiop1234567890', {log:false})
-    
-//     //     .get('#btn-submit').click()
-
-//     //     .visit('https://www.10travlr.com.au/').location('pathname')
-//     //     .should('eq','/')
+        // .get('#description').type('Just For Testing')
+        // .should('be.visible')
         
-//     //     .get('.t-navbar-top-right-menus-list-item-link-myaccount').click()
-//     //     .should('be.visible')
-
-//     //     .get(':nth-child(6) > .t-navbar-top-right-menus-list-item-child-item-link').click()
-        
-//     //     .get('#listName').type('QA TESTING')
-//     //     .should('be.visible')
-
-//     //     .get('.intercom-tour-frame').then ( $element => {
-//     //         const $body = $element.contents().find('body')
-//     //         let stripe = cy.wrap($body)
-//     //         stripe.find('.intercom-1o29jst').click()
-//     //     })
-
-//     //     .get('#description').type('Just For Testing')
-//     //     .should('be.visible')
-        
-//     //     .get('#create').click()
-//     //     .should('be.visible')
+        // .get('#create').click()
+        // .should('be.visible')
 
 //     //     .get('.wrap__box__item > :nth-child(1) > .modal-button > .caption')
 //     //     .scrollIntoView()
@@ -503,19 +503,19 @@
 //     Cypress.Commands.add('businessportalproduction10travlr', () => {
 //         cy
 
-//         .visit('https://www.10travlr.com.au/business_premium/test-test-test-1282692/overview')
-//         .location('pathname')
-//         .should('eq','/accommodation/detail/test-test-test-1282692')
+        // .visit('https://www.10travlr.com.au/business_premium/test-test-test-1282692/overview')
+        // .location('pathname')
+        // .should('eq','/accommodation/detail/test-test-test-1282692')
 
-//         .get('.mobile__header > .container-Common > .common__shortcut > .common__login > .common__login__link').click()
+        // .get('.mobile__header > .container-Common > .common__shortcut > .common__login > .common__login__link').click()
 
-//         .get('#email').type('julian.travlr@gmail.com')
+        // .get('#email').type('julian.travlr@gmail.com')
     
-//         .get('#password').type('qwertyuiop1234567890', {log:false})
+        // .get('#password').type('qwertyuiop1234567890', {log:false})
     
-//         .get('#btn-submit').click()
+        // .get('#btn-submit').click()
 
-//         .get('.mobile__header > .container-Common > .common__shortcut > .common__shortcut__profile > .dropdown > #shortcut__profile > .my__account__text').click()
+        // .get('.mobile__header > .container-Common > .common__shortcut > .common__shortcut__profile > .dropdown > #shortcut__profile > .my__account__text').click()
 
 //     })
 
