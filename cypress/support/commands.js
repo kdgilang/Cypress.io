@@ -48,8 +48,6 @@
 //             stripe.find('.intercom-1o29jst').click()
 //         })
 
-//         .get('.t-btn-inverted').click()
-
 //         .get('#headerSearchSuggestion')
 //         .should('be.visible').and('have.attr', 'type')
 
