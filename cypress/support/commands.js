@@ -520,29 +520,29 @@
 //     Cypress.Commands.add('logoutproduction10travlr', () => {
 //         cy
 
-//         .visit('https://www.10travlr.com.au/').location('pathname')
-//         .should('eq','/')
+        // .visit('https://www.10travlr.com.au/').location('pathname')
+        // .should('eq','/')
         
-//         .get('.intercom-tour-frame').then ( $element => {
-//             const $body = $element.contents().find('body')
-//             let stripe = cy.wrap($body)
-//             stripe.find('.intercom-1o29jst').click()
-//         })
+        // .get('.intercom-tour-frame').then ( $element => {
+        //     const $body = $element.contents().find('body')
+        //     let stripe = cy.wrap($body)
+        //     stripe.find('.intercom-1o29jst').click()
+        // })
 
-//         .get('.t-navbar-top-right-menus-list-item-link').click()
+        // .get('.t-navbar-top-right-menus-list-item-link').click()
 
-//         .get('#email').type('julian.travlr@gmail.com')
+        // .get('#email').type('julian.travlr@gmail.com')
     
-//         .get('#password').type('qwertyuiop1234567890', {log:false})
+        // .get('#password').type('qwertyuiop1234567890', {log:false})
     
-//         .get('#btn-submit').click()
+        // .get('#btn-submit').click()
 
-//         .visit('https://www.10travlr.com.au/').location('pathname')
-//         .should('eq','/')
+        // .visit('https://www.10travlr.com.au/').location('pathname')
+        // .should('eq','/')
 
-//         .get('.t-navbar-top-right-menus-list-item-link-myaccount').click()
+        // .get('.t-navbar-top-right-menus-list-item-link-myaccount').click()
 
-//         .get(':nth-child(8) > .t-navbar-top-right-menus-list-item-child-item-link').click()
+        // .get(':nth-child(8) > .t-navbar-top-right-menus-list-item-child-item-link').click()
 
         
 //     })
@@ -550,15 +550,15 @@
 //     Cypress.Commands.add('accessingcontactusproduction10travlr', () => {
 //         cy
 
-//         .visit('https://www.10travlr.com.au/contact-us')
-//         .location('pathname')
-//         .should('eq','/contact-us')
+        // .visit('https://www.10travlr.com.au/contact-us')
+        // .location('pathname')
+        // .should('eq','/contact-us')
 
-//         .get('#mapThumb')
-//         .should('be.visible').and('exist')
+        // .get('#mapThumb')
+        // .should('be.visible').and('exist')
 
-//         .get('h2')
-//         .should('have.text','Let us help you with your next journey...')
+        // .get('h2')
+        // .should('have.text','Let us help you with your next journey...')
 
 
         
@@ -567,24 +567,24 @@
 //     Cypress.Commands.add('termsproduction10travlr', () => {
 //         cy
 
-//         .visit('https://www.10travlr.com.au/pages/terms-3')
-//         .location('pathname')
-//         .should('eq','/pages/terms-3')
+        // .visit('https://www.10travlr.com.au/pages/terms-3')
+        // .location('pathname')
+        // .should('eq','/pages/terms-3')
 
-//         .get('h1 > span')
-//         .should('contain.text','TERMS')
+        // .get('h1 > span')
+        // .should('contain.text','TERMS')
         
 //     })
     
 //     Cypress.Commands.add('dmcaproduction10travlr', () => {
 //         cy
 
-//         .visit('https://www.10travlr.com.au/pages/dmca-4')
-//         .location('pathname')
-//         .should('eq','/pages/dmca-4')
+        // .visit('https://www.10travlr.com.au/pages/dmca-4')
+        // .location('pathname')
+        // .should('eq','/pages/dmca-4')
 
-//         .get('.t-heading-1')
-//         .should('have.text','DMCA')
+        // .get('.t-heading-1')
+        // .should('have.text','DMCA')
 
         
 
@@ -594,12 +594,12 @@
 //     Cypress.Commands.add('refundpoliciproduction10travlr', () => {
 //         cy
 
-//         .visit('https://www.10travlr.com.au/pages/refund-policy-5')
-//         .location('pathname')
-//         .should('eq','/pages/refund-policy-5')
+        // .visit('https://www.10travlr.com.au/pages/refund-policy-5')
+        // .location('pathname')
+        // .should('eq','/pages/refund-policy-5')
 
-//         .get('.t-heading-1 > strong')
-//         .should('have.text','REFUND POLICY')
+        // .get('.t-heading-1 > strong')
+        // .should('have.text','REFUND POLICY')
 
 
         
@@ -607,12 +607,12 @@
 //     Cypress.Commands.add('privacypolicyproduction10travlr', () => {
 //         cy
 
-//         .visit('https://www.10travlr.com.au/pages/privacy-policy-1')
-//         .location('pathname')
-//         .should('eq','/pages/privacy-policy-1')
+        // .visit('https://www.10travlr.com.au/pages/privacy-policy-1')
+        // .location('pathname')
+        // .should('eq','/pages/privacy-policy-1')
 
-//         .get('.t-heading-1')
-//         .should('have.text','PRIVACY POLICY')
+        // .get('.t-heading-1')
+        // .should('have.text','PRIVACY POLICY')
         
 //     })
 // })
