@@ -118,7 +118,7 @@
 //         .get('h1.t-heading-2.t-color-grey-darkest')
 //         .should('contain', 'All Favourite Lists')
     
-//         // .get('.privy-dismiss-content').click()
+        // .get('.privy-dismiss-content').click()
 
 //         .get('.c-dropdown-checkboxes')
 //         .should('exist')
