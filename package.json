@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "regression-test": "npx cypress run --group 10Travlr-Production-Regression-Test --spec cypress/integration/10travlr/production/regression-test/**/* --browser chrome --record --key e73f75bc-9ff2-4600-8eca-1f9570abf53e --parallel --tag 10Travlr,Production",
-    "10travlr-production-regression-test": "npm run regression-test"
+    "10travlr-production-regression-test": "npm run regression-test",
+    "10travlr":"npx cypress run 10Travlr-Production-Regression-Test --spec cypress/integration/10travlr/production/regression-test/**/* --browser chrome --headless",
+    "lokal":"npm run 10travlr"
   },
   "author": "",
   "license": "ISC",

@@ -24,7 +24,7 @@ context('Accessing Deals & Offers', () => {
 
         it('Checking Deals Text', () => {
             cy.get('h3.t-heading-3')
-            .should('contain', 'More Fiji accommodation offers')
+            .should('contain', 'Make the most of your Fiji holiday')
 
         });
 
