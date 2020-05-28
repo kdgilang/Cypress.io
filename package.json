@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "regression-test": "npx cypress run --group 10Travlr-Production-Regression-Test --spec cypress/integration/10travlr/production/regression-test/**/* --browser chrome --record --key 3c997bd0-22e4-49b8-a81f-c5dbdb3b3364 --parallel --tag 10Travlr,Production",
+    "regression-test": "npx cypress run --group 10Travlr-Production-Regression-Test --spec cypress/integration/10travlr/production/regression-test/**/* --browser chrome --record --key e73f75bc-9ff2-4600-8eca-1f9570abf53e --parallel --tag 10Travlr,Production",
     "10travlr-production-regression-test": "npm run regression-test"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "cypress": "^4.4.1"
+    "cypress": "^4.7.0"
   }
 }
