@@ -47,7 +47,7 @@ context('Accessing Create List', () => {
         });
 
         it('Go to Create List', () => {
-            cy.get('.t-navbar-top-right-menus-list-item-link-myaccount')
+            cy.get('.t-navbar-top-right-menus-list-item-link > .t-display-table-cell > .t-icon')
             .click()
             .should('be.visible')
 

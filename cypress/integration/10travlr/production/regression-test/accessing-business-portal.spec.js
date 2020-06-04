@@ -27,7 +27,7 @@ context('Accessing Business Portal', () => {
         });
 
         it('Visit Business Portal', () => {
-            cy.get('.mobile__header > .container-Common > .common__shortcut > .common__shortcut__profile > .dropdown > #shortcut__profile > .my__account__text')
+            cy.get('.mobile__header > .container-Common > .common__shortcut > .common__shortcut__profile > .dropdown > #shortcut__profile > .my__account__icon > .material-icons')
             .click()
 
             cy.get('.mobile__header > .container-Common > .common__shortcut > .common__shortcut__profile > .dropdown > .dropdown-menu > [href="https://www.10travlr.com.au/business_premium/test-test-test-1282692/overview"]')

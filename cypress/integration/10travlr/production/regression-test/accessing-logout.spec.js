@@ -51,7 +51,7 @@ context('Logout', () => {
 
             })
 
-            cy.get('.t-navbar-top-right-menus-list-item-link-myaccount')
+            cy.get('.t-navbar-top-right-menus-list-item-link > .t-display-table-cell > .t-icon')
             .click()
 
             cy.get(':nth-child(8) > .t-navbar-top-right-menus-list-item-child-item-link')
