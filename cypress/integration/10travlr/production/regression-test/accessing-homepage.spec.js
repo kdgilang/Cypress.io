@@ -80,7 +80,7 @@ context('Accessing Homepage', () => {
         it('Checking Jumbotron Main Text', () => {
             cy.get('.t-hero-main-content-list-title-wrapper .t-heading-1')
             .should('be.visible')
-            .and('contain','Holiday here this year')
+            .and('contain','Have your say...')
             .scrollIntoView()
 
         });
@@ -88,7 +88,7 @@ context('Accessing Homepage', () => {
         it('Checking Button Jumbotron', () => {
             cy.get('.t-hero-main-content-list-title-wrapper .t-btn')
             .should('be.visible')
-            .and('contain','Take a look')
+            .and('contain','Complete survey')
             .invoke('attr','data-gtm-event')
             .should('equal','ev_homepage_banner_header_button')
         
@@ -174,7 +174,7 @@ context('Accessing Homepage', () => {
             cy.get('.section-title-button__action')
             .contains('See more')
             .should('have.attr', 'data-gtm-event')
-            .and('equal','ev_homepage_activities_seemore')
+            .and('equal','ev_homepage_deals_seemore')
 
         });
 
@@ -409,7 +409,7 @@ context('Accessing Homepage', () => {
         it('Checking Explore by & Other Stuff', () => {
             cy.get('footer .footer-list')
             .find('li')
-            .should('have.length', '34')
+            .should('have.length', '33')
             cy.get('footer a.t-m-b-10')
             .should('have.attr','href')
             

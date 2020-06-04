@@ -29,7 +29,7 @@
   "requestTimeout": 5000,
   "viewportHeight": 660,
   "responseTimeout": 30000,
-  "video": true,
+  "video": false,
   "taskTimeout": 60000,
   "videoCompression": 32,
   "videoUploadOnPasses": false,

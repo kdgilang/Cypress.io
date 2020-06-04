@@ -5,7 +5,8 @@ context('Accessing Deals & Offers', () => {
     describe('Visit Deals & Offers', () => {
         
         it('Checking Deals & Offers URL', () => {
-            cy.visit('https://www.10travlr.com.au/deals-and-offers/').location('pathname')
+            cy.visit('https://www.10travlr.com.au/deals-and-offers/')
+            .location('pathname')
             .should('eq', '/deals-and-offers/')
         
         });
@@ -24,7 +25,7 @@ context('Accessing Deals & Offers', () => {
 
         it('Checking Deals Text', () => {
             cy.get('h3.t-heading-3')
-            .should('contain', 'Make the most of your Fiji holiday')
+            .should('contain', 'Travel Safe Australia')
 
         });
 

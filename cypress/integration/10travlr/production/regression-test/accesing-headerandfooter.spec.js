@@ -70,7 +70,7 @@ context('Header & Footer Details', () => {
         it('Checking Total Menu', () => {
             cy.get('.t-navbar-sidebar-body')
             .find('li')
-            .should('have.length', '36')
+            .should('have.length', '34')
             .and('be.visible')
 
         });
@@ -94,10 +94,6 @@ context('Header & Footer Details', () => {
             .scrollIntoView()
             .should('be.visible').click() 
         
-            cy.get(':nth-child(6) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
-            .scrollIntoView()
-            .should('be.visible').click()
-
             cy.get('.t-navbar-sidebar-header-icon > .t-icon')
             .scrollIntoView()
             .click()
@@ -118,7 +114,7 @@ context('Header & Footer Details', () => {
         it('Checking Explore by & Other Stuff', () => {
             cy.get('footer .footer-list')
             .find('li')
-            .should('have.length', '34')
+            .should('have.length', '33')
             cy.get('footer a.t-m-b-10')
             .should('have.attr','href')
                
