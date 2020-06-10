@@ -1,7 +1,7 @@
 version: 2
 
 jobs:
-  "regression-1.0":
+  "regression-10Travlr":
     docker:
       - image: cypress/included:4.3.0
         environment:
@@ -30,7 +30,7 @@ jobs:
           command: npm run 10travlr-regression
 
   
-  "regression-2.0":
+  "regression-TBB":
     docker:
       - image: cypress/included:4.3.0
         environment:
