@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "10travlr-production": "npx cypress run --spec 'cypress/integration/10travlr/production/regression-test/**/*' --browser chrome --record --key 3c997bd0-22e4-49b8-a81f-c5dbdb3b3364 --tag 10Travlr,Production",
+    "10travlr-production": "npx cypress run --spec 'cypress/integration/10travlr/production/regression-test/**/*' --browser chrome --record --key e73f75bc-9ff2-4600-8eca-1f9570abf53e --tag 10Travlr,Production",
     "10travlr-regression": "npm run 10travlr-production",
-    "tbb-production": "npx cypress run --spec 'cypress/integration/TBB/Production/Regression/**/*' --browser chrome --record --key 3c997bd0-22e4-49b8-a81f-c5dbdb3b3364 --tag TBB,Production",
+    "tbb-production": "npx cypress run --spec 'cypress/integration/TBB/Production/Regression/**/*' --browser chrome --record --key e73f75bc-9ff2-4600-8eca-1f9570abf53e --tag TBB,Production",
     "tbb-regression": "npm run tbb-production"
   },
   "author": "",
