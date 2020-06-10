@@ -1,4 +1,5 @@
 version: 2
+
 jobs:
   build:
     docker:
@@ -28,8 +29,6 @@ jobs:
           name: Regression-10Travlr
           command: npm run 10travlr-regression
 
-version: 2
-jobs:
   build:
     docker:
       - image: cypress/included:4.3.0
@@ -54,12 +53,16 @@ jobs:
           paths:
             - ~/.npm
             - ~/.cache
-       - run: 
-          name: Regression-TBB
+      - run: 
+          name: Regression-10Travlr
           command: npm run tbb-regression
 
-      
-
-
+workflows:
+  version: 2
+  build:
+    jobs:
+      - "ruby-2.2"
+      - "ruby-2.3"
+      - "ruby-2.4"
 
 
