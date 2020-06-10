@@ -62,7 +62,7 @@ workflows:
   version: 2
   build:
     jobs:
-      - "regression-1.0"
-      - "regression-2.0"
+      - "regression-10Travlr"
+      - "regression-TBB"
 
 
