@@ -4,15 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "regression-test": "npx cypress run --group 10Travlr-Production-Regression-Test --spec cypress/integration/10travlr/production/regression-test/**/* --browser chrome --record --key aaf7e43d-2d32-428c-bcb6-b7549de98359 --parallel --tag 10Travlr,Production",
+    "regression-test": "npx cypress run --group --spec cypress/integration/10Travlr/production/regression-test/**/* --browser chrome --record --key 8368f5b2-842d-4d6f-b6e9-f631879e3aa9 --parallel --tag 10Travlr,Production",
     "10travlr-production-regression-test": "npm run regression-test",
-    "10travlr": "npx cypress run 10Travlr-Production-Regression-Test --spec cypress/integration/10travlr/production/regression-test/**/* --browser chrome --headless",
-    "lokal": "npm run 10travlr"
+    "10travlr": "npx cypress run --spec cypress/integration/10Travlr/production/regression-test/**/* --browser chrome --headless",
+    "10-lokal": "npm run 10travlr",
+    "tbb": "npx cypress run --spec cypress/integration/TBB/Production/Regression/**/* --browser chrome --headless",
+    "tbb-lokal": "npm run tbb",
+    "tbb-10travlr": "npx cypress run --spec 'cypress/integration/10Travlr/production/regression-test/**/*,cypress/integration/TBB/Production/Regression/**/*' --browser chrome  --record --key 8368f5b2-842d-4d6f-b6e9-f631879e3aa9 --parallel --tag 10Travlr & TBB,Production",
+    "tbb-10travlr-lokal": "npm run tbb-10travlr"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "cypress": "^4.7.0"
+    "cypress": "^4.8.0"
   }
 }
