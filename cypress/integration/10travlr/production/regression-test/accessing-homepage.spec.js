@@ -77,20 +77,10 @@ context('Accessing Homepage', () => {
 
     describe('Jumbotron Section', () => {
 
-        it('Checking Jumbotron Main Text', () => {
-            cy.get('.t-hero-main-content-list-title-wrapper .t-heading-1')
-            .should('be.visible')
-            .and('contain','Have your say...')
-            .scrollIntoView()
-
-        });
-
         it('Checking Button Jumbotron', () => {
             cy.get('.t-hero-main-content-list-title-wrapper .t-btn')
-            .should('be.visible')
-            .and('contain','Complete survey')
-            .invoke('attr','data-gtm-event')
-            .should('equal','ev_homepage_banner_header_button')
+            .should('have.attr','data-gtm-event')
+            .and('equal','ev_homepage_banner_header_button')
         
         });
 
