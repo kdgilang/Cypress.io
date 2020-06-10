@@ -25,7 +25,15 @@ jobs:
             - ~/.npm
             - ~/.cache
       - run: 
-          name: 10Travlr-Production-Regression-Testing
-          command: npm run tbb-10travlr-lokal
+          name: Regression-10Travlr
+          command: npm run 10travlr-regression
+
+       - run: 
+          name: Regression-TBB
+          command: npm run tbb-regression
+
+      
+
+
 
 
