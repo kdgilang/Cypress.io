@@ -1,5 +1,5 @@
 # Cypress.io
-Software Automation Testing
+Fast, easy and reliable testing for anything that runs in a browser.
 
 
 Cypress is a next generation front end testing tool built for the modern web. We address the key pain points developers and QA engineers face when testing modern applications.
