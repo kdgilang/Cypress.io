@@ -25,4 +25,4 @@ jobs:
             - ~/.cache
       - run: 
           name: Regression-10Travlr
-          command: npm run 10travlr-regression
+          command: npm run 10travlr-production
