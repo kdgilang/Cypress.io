@@ -17,12 +17,6 @@ context('Accessing Homepage', () => {
         
         });
 
-        it('Checking Intercom Chat', () => {
-            cy.get('.intercom-launcher-frame').click()
-            .should('be.visible').and('exist')
-        
-        });
-
     });
     
     describe('Header', () => {
@@ -65,47 +59,6 @@ context('Accessing Homepage', () => {
         
         });
     
-    });
-
-    describe('Shortcut Panel Section', ()=> {
-
-        it('Checking Mix & Match Flights', () => {
-            cy.get(':nth-child(1) div.title')
-            .should('be.visible')
-            .and('not.be.empty')
-            .should('contain','Mix & Match Flights')
-            .and('not.be.empty')
-
-        });
-
-        it('Checking Accommodation', () => {
-            cy.get(':nth-child(2) div.title')
-            .should('be.visible')
-            .and('not.be.empty')
-            .should('contain','Accommodation')
-            .and('not.be.empty')
-            
-        });
-
-        it('Checking Activities', () => {
-            cy.get(':nth-child(3) div.title')
-            .should('be.visible')
-            .and('not.be.empty')
-            .should('contain','Activities')
-            .and('not.be.empty')
-            
-        });
-
-        it('Checking Deals & Offers', () => {
-            cy.get(':nth-child(4) div.title')
-            .should('be.visible')
-            .and('not.be.empty')
-            .should('contain','Deals & Offers')
-            .and('not.be.empty')
-            .scrollIntoView()
-            
-        });
-
     });
 
     describe('Humm Section', () => {
@@ -184,26 +137,6 @@ context('Accessing Homepage', () => {
 
     });
 
-    describe('Recommended Accommodation Section', ()=> {
-
-        it('Checking Title', () => {
-            cy.get('h2.t-color-grey-darkest')
-            .contains('Recommended Accommodation')
-            .should('be.visible')
-            .and('exist')
-        
-        });
-
-        it('Checking Button See more', () => {
-            cy.get('.c-home-accommodation a.t-btn-default')
-            .contains('See more')
-            .should('have.attr', 'data-gtm-event')
-            .and('equal','ev_homepage_accommodation_seemore')
-        
-        });
-
-    });
-
     describe('Trending Destinations', () => {
 
         it('Checking Title', () => {
@@ -263,14 +196,6 @@ context('Accessing Homepage', () => {
 
         });
 
-        it('Checking Button See more', () => {
-            cy.get('.c-home-destinations a.t-btn-default')
-            .contains('See more')
-            .should('have.attr', 'data-gtm-event')
-            .and('equal','ev_homepage_destination_seemore')
-        
-        });
-
         it('Checking All Contents', () => {
             cy.get('.c-home-destinations a.t-card-title')
             .should('have.attr','data-gtm-event')
@@ -288,14 +213,6 @@ context('Accessing Homepage', () => {
             .and('exist')
             .scrollIntoView()
 
-        });
-
-        it('Checking See more Button', () => {
-            cy.get('.c-home-articles a.t-btn-default')
-            .contains('See more')
-            .should('have.attr', 'data-gtm-event')
-            .and('equal', 'ev_homepage_article_seemore')
-            
         });
 
     });
@@ -407,13 +324,6 @@ context('Accessing Homepage', () => {
             .should('contain','Subscribe')
             .and('have.value', 'Subscribe')
             
-        });
-
-        it('Checking Currency Option', () => {
-            cy.get('select')
-            .should('have.attr', 'data-gtm-event')
-            .and('equal','ev_footer_multicurrency')
-
         });
 
         it('Checking Footer Logo', () => {

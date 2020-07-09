@@ -9,13 +9,6 @@ context('Accessing Create List', () => {
             .location('pathname')
             .should('eq','/')
 
-            cy.get('.intercom-tour-frame').then ( $element => {
-                const $body = $element.contents().find('body')
-                let stripe = cy.wrap($body)
-                stripe.find('.intercom-1o29jst')
-                .click()
-            })
-
         });
 
         it('Login', () => {
@@ -35,14 +28,6 @@ context('Accessing Create List', () => {
             .should('eq','/')
 
             cy.wait(3000)
-
-
-            cy.get('.intercom-tour-frame').then ( $element => {
-                const $body = $element.contents().find('body')
-                let stripe = cy.wrap($body)
-                stripe.find('.intercom-1o29jst')
-                .click()
-            })
             
         });
 

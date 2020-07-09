@@ -11,17 +11,6 @@ context('Logout', () => {
 
         });
 
-        it('Close Intercom', () => {
-            cy.get('.intercom-tour-frame').then ( $element => {
-                const $body = $element.contents().find('body')
-                let stripe = cy.wrap($body)
-                stripe.find('.intercom-1o29jst')
-                .click()
-
-            })
-            
-        });
-
         it('Go to Login Form', () => {
             cy.get('.t-navbar-top-right-menus-list-item-link')
             .click()
@@ -42,14 +31,6 @@ context('Logout', () => {
             cy.visit('https://www.10travlr.com.au/')
             .location('pathname')
             .should('eq','/')
-
-            cy.get('.intercom-tour-frame').then ( $element => {
-                const $body = $element.contents().find('body')
-                let stripe = cy.wrap($body)
-                stripe.find('.intercom-1o29jst')
-                .click()
-
-            })
 
             cy.get('.t-navbar-top-right-menus-list-item-link > .t-display-table-cell > .t-icon')
             .click()

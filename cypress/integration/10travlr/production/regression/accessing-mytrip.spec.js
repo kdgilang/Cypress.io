@@ -28,17 +28,6 @@ context('Accessing My Trips', () => {
 
         });
 
-        it('Checking Create one & Browse Popular list Button', () => {
-            cy.get(':nth-child(1) > .block-empty-state-my-account > .empty__box > .link > .t-button-primary')
-            .should('be.visible')
-            .and('contain.text','Create one')
-            
-            cy.get(':nth-child(2) > .block-empty-state-my-account > .empty__box > .link > .t-button-primary')
-            .should('have.attr','href')
-            .and('contain','https://www.10travlr.com.au/trips')
-
-        });
-
     });
 
 });

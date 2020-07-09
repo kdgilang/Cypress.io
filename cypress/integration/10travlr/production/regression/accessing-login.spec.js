@@ -3,25 +3,6 @@
 context('Login', () => {
     
     describe('Login to URL', () => {
-        
-        it('Visit URL', () => {
-            cy.visit('https://www.10travlr.com.au/')
-            cy.wait(3000)
-            cy.get('.intercom-tour-frame').then ( $element => {
-                const $body = $element.contents().find('body')
-                let stripe = cy.wrap($body)
-                stripe.find('.intercom-1o29jst')
-                .click()
-                
-            })
-    
-        });
-
-        it('Accept Cookies', () => {
-            cy.get('.t-btn-inverted')
-            .click()
-
-        });
 
         it('Click Login', () => {
             cy.get('.t-navbar-top-right-menus-list-item-link')
