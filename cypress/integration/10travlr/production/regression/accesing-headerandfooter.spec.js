@@ -4,30 +4,16 @@ context('Header & Footer Details', () => {
     
     describe('Load 10Travlr Production', () => {
         
-        it('Closing Intercome Tour Frame', () => {
+        it('Visit 10Travlr', () => {
             cy.visit('https://www.10travlr.com.au/')
             .location('pathname')
             .should('equal', '/')
-            
-            cy.wait(3000)
-            
-            cy.get('.intercom-tour-frame').then ( $element => {
-                const $body = $element.contents().find('body')
-                let stripe = cy.wrap($body)
-                stripe.find('.intercom-1o29jst').click()
-            
-            });
-        
-        });
+
+        }); 
 
         it('Accepting Cookies', () => {
-            cy.get('.t-btn-inverted').click()
-        
-        });
-
-        it('Checking Intercom Chat', () => {
-            cy.get('.intercom-launcher-frame').click()
-            .should('be.visible').and('exist')
+            cy.get('.t-v-align-middle > .t-btn-inverted')
+            .click()
         
         });
 
@@ -139,13 +125,6 @@ context('Header & Footer Details', () => {
             .should('contain','Subscribe')
             .and('have.value', 'Subscribe')
                 
-        });
-    
-        it('Checking Currency Option', () => {
-            cy.get('select')
-            .should('have.attr', 'data-gtm-event')
-            .and('equal','ev_footer_multicurrency')
-    
         });
     
         it('Checking Footer Logo', () => {

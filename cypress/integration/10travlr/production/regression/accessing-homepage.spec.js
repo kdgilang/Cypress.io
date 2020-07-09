@@ -4,24 +4,16 @@ context('Accessing Homepage', () => {
     
     describe('Load 10Travlr Production', () => {
         
-        it('Closing Intercome Tour Frame', () => {
+        it('Visit 10Travlr', () => {
             cy.visit('https://www.10travlr.com.au/')
             .location('pathname')
             .should('equal', '/')
-            
-            cy.wait(3000)
-            
-            cy.get('.intercom-tour-frame').then ( $element => {
-                const $body = $element.contents().find('body')
-                let stripe = cy.wrap($body)
-                stripe.find('.intercom-1o29jst').click()
-            
-            });
         
         });
 
         it('Accepting Cookies', () => {
-            cy.get('.t-btn-inverted').click()
+            cy.get('.t-v-align-middle > .t-btn-inverted')
+            .click()
         
         });
 
@@ -73,17 +65,6 @@ context('Accessing Homepage', () => {
         
         });
     
-    });
-
-    describe('Jumbotron Section', () => {
-
-        it('Checking Button Jumbotron', () => {
-            cy.get('.t-hero-main-content-list-title-wrapper .t-btn')
-            .should('have.attr','data-gtm-event')
-            .and('equal','ev_homepage_banner_header_button')
-        
-        });
-
     });
 
     describe('Shortcut Panel Section', ()=> {
