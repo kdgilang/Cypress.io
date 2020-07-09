@@ -1,7 +1,6 @@
 version: 2
 
 jobs:
-  "production-10Travlr":
     docker:
       - image: cypress/included:4.3.0
         environment:
