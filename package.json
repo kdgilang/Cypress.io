@@ -5,11 +5,7 @@
   "main": "index.js",
   "scripts": {
     "10travlr-production": "npx cypress run --spec 'cypress/integration/10travlr/production/regression/**/*' --browser chrome --record --key e73f75bc-9ff2-4600-8eca-1f9570abf53e --tag 10Travlr,Production",
-    "10travlr-regression": "npm run 10travlr-production",
-    "tbb-production": "npx cypress run --spec 'cypress/integration/tbb/production/regression/**/*' --browser chrome --record --key e73f75bc-9ff2-4600-8eca-1f9570abf53e --tag TBB,Production",
-    "tbb-regression": "npm run tbb-production",
-    "tbb-10travlr": "npx cypress run --spec 'cypress/integration/10travlr/production/regression/**/*,cypress/integration/tbb/production/regression/**/*' --browser chrome --headless",
-    "regression-tbb-10travlr": "npm run tbb-10travlr"
+    "10travlr-regression": "npm run 10travlr-production"
   },
   "author": "",
   "license": "ISC",
