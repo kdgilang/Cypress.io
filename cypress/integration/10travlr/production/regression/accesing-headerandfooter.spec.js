@@ -97,15 +97,6 @@ context('Header & Footer Details', () => {
                 
         });
     
-        it('Checking Explore by & Other Stuff', () => {
-            cy.get('footer .footer-list')
-            .find('li')
-            .should('have.length', '33')
-            cy.get('footer a.t-m-b-10')
-            .should('have.attr','href')
-               
-        });
-    
         it('Checking Subscribe Container', () => {
             cy.get('footer p.t-body-text')
             .should('contain', 'To get the latest deals, news & more')
