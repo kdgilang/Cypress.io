@@ -3,6 +3,12 @@
 context('Login', () => {
     
     describe('Login to URL', () => {
+        
+        it('Visit URL', () => {
+            cy.visit('https://www.10travlr.com.au/')
+            cy.wait(3000)
+    
+        });
 
         it('Click Login', () => {
             cy.get('.t-navbar-top-right-menus-list-item-link')

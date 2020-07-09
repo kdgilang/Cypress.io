@@ -158,34 +158,6 @@ context('Accessing Homepage', () => {
     
     });
 
-    describe('Mix and Match Flights Banner', () => {
-        
-        it('Checking Banner', () => {
-            cy.get('.c-home-holiday > .t-container > .c-card')
-            .should('be.visible')
-            .and('exist')
-            .scrollIntoView()
-        
-        });
-
-        it('Checking Banner Title', () => {
-            cy.get('.c-home-holiday h3.title')
-            .should('contain', 'Mix and Match Flights')
-            .and('not.be.empty')
-        
-        });
-
-        it('Checking Banner Button', () => {
-            cy.get('.t-card-title-content > .t-btn')
-            .contains('Find flights')
-            .should('have.attr', 'data-gtm-event')
-            .and('equal', 'ev_homepage_holiday_button')
-            .and('not.be.disabled')
-
-        });
-    
-    });
-
     describe('Destination Guides Section', () => {
 
         it('Checking Title', () => {
