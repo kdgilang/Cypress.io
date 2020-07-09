@@ -1,8 +1,8 @@
 version: 2
-
 jobs:
+  build:
     docker:
-      - image: cypress/included:4.3.0
+      - image: cypress/included:4.10.0
         environment:
           ## this enables colors in the output
           TERM: xterm
@@ -23,6 +23,4 @@ jobs:
           paths:
             - ~/.npm
             - ~/.cache
-      - run: 
-          name: Regression-10Travlr
-          command: npm run 10travlr-production
+      - run: npm run 10travlr-production
