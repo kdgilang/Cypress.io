@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "10travlr-production": "npx cypress run --spec 'cypress/integration/10travlr/production/regression/**/*' --browser chrome --record --key 8368f5b2-842d-4d6f-b6e9-f631879e3aa9 --tag 10Travlr,Production",
-    "10travlr-regression": "npm run 10travlr-production"
+    "10travlr-production": "npx cypress run --spec 'cypress/integration/10travlr/production/regression/**/*' --headless --browser chrome --record --key 8368f5b2-842d-4d6f-b6e9-f631879e3aa9 --tag 10Travlr,Production",
+    "10travlr-regression": "npm run 10travlr-production",
+    "10travlr-lokal": "npx cypress run --spec 'cypress/integration/10travlr/production/regression/**/*' --headless --browser chrome",
+    "10travlr": "npm run 10travlr-lokal"
   },
   "author": "",
   "license": "ISC",
