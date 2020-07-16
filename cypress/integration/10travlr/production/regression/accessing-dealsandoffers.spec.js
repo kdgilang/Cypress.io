@@ -23,12 +23,6 @@ context('Accessing Deals & Offers', () => {
 
         });
 
-        it('Checking Deals Text', () => {
-            cy.get('h3.t-heading-3')
-            .should('contain', 'Travel Safe Australia')
-
-        });
-
         it('Checking Humm Banner', () => {
             cy.get('.c-banner-humm')
             .should('exist')
