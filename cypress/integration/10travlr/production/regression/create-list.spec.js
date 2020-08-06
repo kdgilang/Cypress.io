@@ -12,7 +12,8 @@ context('Accessing Create List', () => {
         });
 
         it('Login', () => {
-            cy.get('.t-navbar-top-right-menus-list-item-link').click()
+            cy.get('.t-navbar-top-right-menus-list-item-link')
+            .click()
 
             cy.get('#email')
             .type('julian.travlr@gmail.com')

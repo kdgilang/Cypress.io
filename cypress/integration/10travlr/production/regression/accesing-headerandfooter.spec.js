@@ -8,8 +8,15 @@ context('Header & Footer Details', () => {
             cy.visit('https://www.10travlr.com.au/')
             .location('pathname')
             .should('equal', '/')
+            cy.wait(5000)
 
-        }); 
+        });
+
+        it('Close Privy Content', () => {
+            cy.get('.privy-dismiss-content')
+            .click()
+            
+        });
 
         it('Accepting Cookies', () => {
             cy.get('.t-v-align-middle > .t-btn-inverted')
