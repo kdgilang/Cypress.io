@@ -21,13 +21,6 @@ context('Accessing Health & Beauty', () => {
             .should('be.visible')
 
         });
-
-        it('Checking Humm Banner', () => {
-            cy.get('.c-banner-humm')
-            .should('exist')
-            .and('be.visible')
-
-        });
         
     });
 
