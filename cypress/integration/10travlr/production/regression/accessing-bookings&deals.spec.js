@@ -16,7 +16,8 @@ context('Accessing My Bookings & Deals', () => {
     
             cy.get('#btn-submit').click()
 
-            cy.visit('https://www.10travlr.com.au/booking-management').location('pathname')
+            cy.visit('https://www.10travlr.com.au/booking-management')
+            .location('pathname')
             .should('eq','/booking-management')
 
         });
