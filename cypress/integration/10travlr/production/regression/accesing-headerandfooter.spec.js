@@ -12,11 +12,11 @@ context('Header & Footer Details', () => {
 
         });
 
-        it('Close Privy Content', () => {
-            cy.get('.privy-dismiss-content')
-            .click()
+        // it('Close Privy Content', () => {
+        //     cy.get('.privy-dismiss-content')
+        //     .click()
             
-        });
+        // });
 
         it('Accepting Cookies', () => {
             cy.get('.t-v-align-middle > .t-btn-inverted')
@@ -63,7 +63,7 @@ context('Header & Footer Details', () => {
         it('Checking Total Menu', () => {
             cy.get('.t-navbar-sidebar-body')
             .find('li')
-            .should('have.length', '34')
+            .should('have.length', '35')
             .and('be.visible')
 
         });

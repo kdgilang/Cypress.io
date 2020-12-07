@@ -1,7 +1,7 @@
 {
   "name": "ci",
   "version": "4.4.1",
-  "description": "",
+  "description": "Cypress is a next generation front end testing tool built for the modern web. We address the key pain points developers and QA engineers face when testing modern applications.",
   "main": "index.js",
   "scripts": {
     "10travlr-production": "npx cypress run --spec 'cypress/integration/10travlr/production/regression/**/*' --headless --browser chrome --record --key 8368f5b2-842d-4d6f-b6e9-f631879e3aa9 --tag 10Travlr,Production",
@@ -11,8 +11,19 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
-    "cypress": "^5.6.0"
-  }
+    "cypress": "^6.0.1"
+  },
+  "dependencies": {
+    "ansi-styles": "^4.3.0",
+    "onetime": "^5.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/july-nym/Cypress.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/july-nym/Cypress.io/issues"
+  },
+  "homepage": "https://github.com/july-nym/Cypress.io#readme"
 }

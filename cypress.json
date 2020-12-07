@@ -11,7 +11,7 @@
   "pluginsFile": "cypress/plugins",
   "hosts": null,
   "screenshotsFolder": "cypress/screenshots",
-  "numTestsKeptInMemory": 50,
+  "numTestsKeptInMemory": 1,
   "supportFile": "cypress/support",
   "port": null,
   "projectId": "gfhvad",
