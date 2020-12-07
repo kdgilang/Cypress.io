@@ -77,7 +77,7 @@ context('Header & Footer Details', () => {
             .should('be.visible').click() 
         
             cy.get(':nth-child(3) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
-            .should('be.visible').click() 
+            
         
             cy.get(':nth-child(4) > .c-accordion-item > .t-accordion-item-list > .t-accordion-item-header > .t-accordion-icon')
             .scrollIntoView()

@@ -42,7 +42,7 @@ context('Accessing My Bookings & Deals', () => {
 
         it('Checking Active & History Button', () => {
             cy.get('.dropdown-sort-btn > .t-icon')
-            .click()
+            .should('be.visible')
 
             cy.get('a > .toggle-cap-desktop')
             .should('contain','History')
