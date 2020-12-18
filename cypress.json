@@ -3,7 +3,6 @@
   "fileServerFolder": "",
   "baseUrl": null,
   "fixturesFolder": "cypress/fixtures",
-  "blockHosts": null,
   "chromeWebSecurity": false,
   "modifyObstructiveCode": true,
   "integrationFolder": "cypress/integration",
