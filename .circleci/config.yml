@@ -1,7 +1,6 @@
-version: 2.1
-  orbs:
-    slack: circleci/slack@4.1
-  docker:
+version: 2
+  build:
+    docker:
       - image: cypress/included:4.10.0
         environment:
           ## this enables colors in the output
@@ -24,31 +23,3 @@ version: 2.1
             - ~/.npm
             - ~/.cache
       - run: npm run 10travlr-production
-jobs:
-  notify:
-    docker:
-      - image: 'cimg/base:stable'
-    steps:
-      - slack/notify:
-          custom: |
-            {
-              "blocks": [
-                {
-                  "type": "section",
-                  "fields": [
-                    {
-                      "type": "plain_text",
-                      "text": "*This is a text notification*",
-                      "emoji": true
-                    }
-                  ]
-                }
-              ]
-            }
-          event: always
-workflows:
-  send-notification:
-    jobs:
-      - notify:
-          context: test-context
-            
