@@ -9,6 +9,7 @@ docker:
       TERM: xterm
 working_directory: ~/app
 steps:
+  - checkout
   - restore_cache:
           keys:
             - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
@@ -24,8 +25,20 @@ steps:
             - ~/.npm
             - ~/.cache
   - run: npm run 10travlr-production
-
-  workflows:
+      
+jobs:
+  deploy:
+    executor:
+      name: node/default
+    steps:
+      - slack/notify:
+          event: fail
+          mentions: '@EngineeringTeam'
+          template: basic_fail_1
+      - slack/notify:
+          event: pass
+          template: success_tagged_deploy_1
+workflows:
   deploy_and_notify:
     jobs:
       - deploy:
