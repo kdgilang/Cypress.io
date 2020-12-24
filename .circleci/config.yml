@@ -1,11 +1,7 @@
 version: 2.1
 orbs:
-  cypress: cypress/included:4.10.0
+  cypress: cypress-io/cypress@1
   slack: circleci/slack@4.1.1
-  environment:
-          ## this enables colors in the output
-          TERM: xterm
-    working_directory: ~/app
 jobs:
   build-test-and-notify:
     executor:
