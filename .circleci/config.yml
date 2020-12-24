@@ -1,14 +1,5 @@
 version: 2.1
-orbs:
-  cypress: cypress-io/cypress@1
-  slack: circleci/slack@4.1.1
-
-workflows:
-  build-test-and-notify:
-    executor:
-      name: cypress/base-14
-
-  jobs:
+jobs:
   build:
     docker:
       - image: cypress/included:4.10.0
@@ -16,7 +7,6 @@ workflows:
           ## this enables colors in the output
           TERM: xterm
     working_directory: ~/app
-    
     steps:
       - checkout
       - restore_cache:
@@ -34,6 +24,14 @@ workflows:
             - ~/.npm
             - ~/.cache
       - run: npm run 10travlr-production
+  orbs:
+  cypress: cypress-io/cypress@1
+  slack: circleci/slack@4.1.1
+jobs:
+  build-test-and-notify:
+    executor:
+      name: cypress/base-14
+    steps:
       - checkout
       - slack/notify:
           color: "#42e2f4"
@@ -42,3 +40,14 @@ workflows:
       - slack/status:
           fail_only: true
           mentions: "hola"
+workflows:
+  build-and-notify:
+    jobs:
+      - cypress/run:
+          yarn: true
+          cache-key: 'yarn-packages-{{ arch }}-{{ checksum "yarn.lock" }}'
+          post-steps:
+            - store_test_results:
+                path: cypress/results
+      - build-test-and-notify
+  
