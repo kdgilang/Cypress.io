@@ -4,7 +4,7 @@ jobs:
   orbs:
   slack: circleci/slack@4.1.4
     docker:
-      - image: cypress/included:4.10.0
+    - image: 'cimg/base:stable'
         environment:
           ## this enables colors in the output
           TERM: xterm
