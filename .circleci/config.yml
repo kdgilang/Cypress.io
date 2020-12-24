@@ -9,7 +9,6 @@ docker:
       TERM: xterm
 working_directory: ~/app
 steps:
-  - checkout
   - restore_cache:
           keys:
             - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
