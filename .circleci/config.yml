@@ -26,6 +26,7 @@ jobs:
       - run: npm run 10travlr-production
 
 version: '2.1'
+jobs:
 orbs:
   node: 'circleci/node:4.1'
   slack: circleci/slack@4.1
