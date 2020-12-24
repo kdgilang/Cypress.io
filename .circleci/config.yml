@@ -29,7 +29,7 @@ jobs:
               - ~/.cache
         - run: npm run 10travlr-production
 
-jobs:
+usage:
 
 orbs:
   node: 'circleci/node:4.1'
