@@ -4,7 +4,6 @@ jobs:
   orbs:
   slack: circleci/slack@4.1.4
     docker:
-    - image: 'cimg/base:stable'
       - image: cypress/included:4.10.0
         environment:
           ## this enables colors in the output
