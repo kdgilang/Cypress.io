@@ -25,7 +25,6 @@ jobs:
             - ~/.cache
       - run: npm run 10travlr-production
 
-usage:
 version: '2.1'
 orbs:
   slack: circleci/slack@4.1
@@ -55,4 +54,5 @@ workflows:
   send-notification:
     jobs:
       - notify:
-          context: slack-secrets
+          context: test-context
+            
