@@ -4,10 +4,6 @@ orbs:
 jobs:
   deploy:
     docker:
-    - image: cypress/included:4.10.0
-        environment:
-          ## this enables colors in the output
-          TERM: xterm
       - image: 'cimg/base:stable'
     steps:
       - run: echo "deploy my app"
