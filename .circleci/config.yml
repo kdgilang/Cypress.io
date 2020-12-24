@@ -1,4 +1,4 @@
-version: 2.1
+version: 2
 
 
 jobs:
@@ -28,6 +28,8 @@ jobs:
               - ~/.npm
               - ~/.cache
         - run: npm run 10travlr-production
+
+version: 2.1
 
 build:
 
