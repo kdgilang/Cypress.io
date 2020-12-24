@@ -29,12 +29,12 @@ jobs:
               - ~/.cache
         - run: npm run 10travlr-production
 
-usage:
+build:
 
 orbs:
   node: 'circleci/node:4.1'
   slack: circleci/slack@4.1
-  
+
   deploy:
     executor:
       name: node/default
