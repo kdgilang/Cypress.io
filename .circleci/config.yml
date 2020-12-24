@@ -1,36 +1,12 @@
 version: '2.1'
 orbs:
-  node: circleci/node@4.1
   slack: circleci/slack@4.1
-docker:
-  - image: cypress/included:4.10.0
-    environment:
-      ## this enables colors in the output
-      TERM: xterm
-working_directory: ~/app
-steps:
-  - checkout
-  - restore_cache:
-          keys:
-            - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
-            - v1-deps-{{ .Branch }}
-            - v1-deps
-  - run:
-    name: Install Dependencies
-    command: npm ci
-  - save_cache:
-          key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
-          # cache NPM modules and the folder with the Cypress binary
-          paths:
-            - ~/.npm
-            - ~/.cache
-  - run: npm run 10travlr-production
-      
 jobs:
   deploy:
-    executor:
-      name: node/default
+    docker:
+      - image: 'cimg/base:stable'
     steps:
+      - run: echo "deploy my app"
       - slack/notify:
           event: fail
           mentions: '@EngineeringTeam'
@@ -38,8 +14,33 @@ jobs:
       - slack/notify:
           event: pass
           template: success_tagged_deploy_1
+  test:
+    docker:
+      - image: 'cimg/base:stable'
+    steps:
+      - run: echo "test my app"
 workflows:
-  deploy_and_notify:
+  test-and-deploy:
     jobs:
+      - test
+      - slack/on-hold:
+          context: slack-secrets
+          filters:
+            tags:
+              only: /^v.*/
+          requires:
+            - test
+      - pause_workflow:
+          filters:
+            tags:
+              only: /^v.*/
+          requires:
+            - test
+            - slack/on-hold
+          type: approval
       - deploy:
-          context: test-context
+          filters:
+            tags:
+              only: /^v.*/
+          requires:
+            - pause_workflow
