@@ -1,21 +1,29 @@
-version: 2.1
-orbs:
-  slack: circleci/slack@4.1
+version: 2
 jobs:
-  deploy:
-    executor:
-      name: node/default
+  build:
+  orbs:
+  slack: circleci/slack@4.1.4
+    docker:
+    - image: 'cimg/base:stable'
+      - image: cypress/included:4.10.0
+        environment:
+          ## this enables colors in the output
+          TERM: xterm
+    working_directory: ~/app
     steps:
       - checkout
-      - node/install-packages
+      - restore_cache:
+          keys:
+            - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+            - v1-deps-{{ .Branch }}
+            - v1-deps
       - run:
-          command: npm run deploy
-      - slack/notify:
-          channel: ABCXYZ
-          event: fail
-          template: basic_fail_1
-workflows:
-  deploy_and_notify:
-    jobs:
-      - deploy:
-          context: slack-secrets
+          name: Install Dependencies
+          command: npm ci
+      - save_cache:
+          key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+          # cache NPM modules and the folder with the Cypress binary.
+          paths:
+            - ~/.npm
+            - ~/.cache
+      - run: npm run 10travlr-production
