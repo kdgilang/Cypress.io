@@ -32,7 +32,7 @@ jobs:
 build:
 
 orbs:
-  node: 'circleci/node:4.1'
+  node: 'circleci/node@4.1'
   slack: circleci/slack@4.1
 
   deploy:
