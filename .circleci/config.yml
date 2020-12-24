@@ -31,8 +31,6 @@ jobs:
 
 version: 2.1
 
-jobs:
-build:
 orbs:
   node: 'circleci/node:4.1'
   slack: circleci/slack@4.1
