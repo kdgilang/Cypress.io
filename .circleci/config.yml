@@ -30,14 +30,6 @@ workflows:
               only: /^v.*/
           requires:
             - test
-      - pause_workflow:
-          filters:
-            tags:
-              only: /^v.*/
-          requires:
-            - test
-            - slack/on-hold
-          type: approval
       - deploy:
           filters:
             tags:
