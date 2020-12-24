@@ -12,12 +12,7 @@ steps:
   - run:
     name: Install Dependencies
     command: npm ci
-  - save_cache:
-    key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
-      # cache NPM modules and the folder with the Cypress binary
-      paths:
-        - ~/.npm
-        - ~/.cache
+  
   - run: npm run 10travlr-production
       
 jobs:
