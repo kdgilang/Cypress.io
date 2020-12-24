@@ -9,21 +9,9 @@ jobs:
       name: node/default
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
-            - v1-deps-{{ .Branch }}
-            - v1-deps
+      - node/install-packages
       - run:
-          name: Install Dependencies
-          command: npm ci
-      - save_cache:
-          key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
-          # cache NPM modules and the folder with the Cypress binary
-          paths:
-            - ~/.npm
-            - ~/.cache
-      - run: npm run 10travlr-production
+          command: npm run 10travlr-production
       - slack/notify:
           event: fail
           mentions: '@EngineeringTeam'
