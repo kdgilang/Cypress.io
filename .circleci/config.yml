@@ -20,4 +20,4 @@ workflows:
     jobs:
       - deploy:
           context:
-            - text-context
+            - test-context
