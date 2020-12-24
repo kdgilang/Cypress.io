@@ -10,7 +10,6 @@ docker:
 working_directory: ~/app
 steps:
   - run:
-  - checkout
     name: Install Dependencies
     command: npm ci
   - save_cache:
