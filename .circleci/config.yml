@@ -15,21 +15,13 @@ jobs:
       - slack/status:
           fail_only: true
           mentions: "hola"
-
-    workflow:
-      - checkout
-      - restore_cache:
-          keys:
-            - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
-            - v1-deps-{{ .Branch }}
-            - v1-deps
-      - run:
-          name: Install Dependencies
-          command: npm ci
-      - save_cache:
-          key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
-          # cache NPM modules and the folder with the Cypress binary.
-          paths:
-            - ~/.npm
-            - ~/.cache
-      - run: npm run 10travlr-production
+workflows:
+  build-and-notify:
+    jobs:
+      - cypress/run: npm run 10travlr-production
+          yarn: true
+          cache-key: 'yarn-packages-{{ arch }}-{{ checksum "yarn.lock" }}'
+          post-steps:
+            - store_test_results:
+                path: cypress/results
+      - build-test-and-notify
