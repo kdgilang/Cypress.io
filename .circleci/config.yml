@@ -3,6 +3,7 @@ orbs:
   cypress: cypress-io/cypress@1
   slack: circleci/slack@4.1.1
 jobs:
+workflows:
   build-test-and-notify:
     executor:
       name: cypress/base-14
