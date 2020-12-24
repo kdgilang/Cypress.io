@@ -1,4 +1,4 @@
-version: 2.1
+version: 2
 jobs:
   build:
     docker:
@@ -26,6 +26,7 @@ jobs:
       - run: npm run 10travlr-production
 
 
+version: 2.1
 orbs:
   slack: circleci/slack@4.1
 jobs:
