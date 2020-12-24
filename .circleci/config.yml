@@ -1,9 +1,8 @@
-version: 2.1
+version: '2.1'
 jobs:
   orbs:
     slack: circleci/slack@4.1
-  build:
-    docker:
+  docker:
       - image: cypress/included:4.10.0
         environment:
           ## this enables colors in the output
