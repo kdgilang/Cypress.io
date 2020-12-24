@@ -1,26 +1,27 @@
-version: 2
+version: 2.1
+orbs:
+  cypress: cypress-io/cypress@1
+  slack: circleci/slack@4.1.1
 jobs:
-  build:
-    docker:
-      - image: cypress/included:4.10.0
-        environment:
-          ## this enables colors in the output
-          TERM: xterm
-    working_directory: ~/app
+  build-test-and-notify:
+    executor:
+      name: cypress/base-14
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
-            - v1-deps-{{ .Branch }}
-            - v1-deps
-      - run:
-          name: Install Dependencies
-          command: npm ci
-      - save_cache:
-          key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
-          # cache NPM modules and the folder with the Cypress binary.
-          paths:
-            - ~/.npm
-            - ~/.cache
-      - run: npm run 10travlr-production
+      - slack/notify:
+          color: "#42e2f4"
+          mentions: "hola,"
+          message: A custom message to notify the channel about the latest build
+      - slack/status:
+          fail_only: true
+          mentions: "hola"
+workflows:
+  build-and-notify:
+    jobs:
+      - cypress/run:
+          yarn: true
+          cache-key: 'yarn-packages-{{ arch }}-{{ checksum "yarn.lock" }}'
+          post-steps:
+            - store_test_results:
+                path: cypress/results
+      - build-test-and-notify
