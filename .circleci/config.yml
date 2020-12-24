@@ -1,4 +1,4 @@
-version: 2.1
+version: 2
 jobs:
   build:
     docker:
@@ -24,30 +24,3 @@ jobs:
             - ~/.npm
             - ~/.cache
       - run: npm run 10travlr-production
-  orbs:
-  cypress: cypress-io/cypress@1
-  slack: circleci/slack@4.1.1
-jobs:
-  build-test-and-notify:
-    executor:
-      name: cypress/base-14
-    steps:
-      - checkout
-      - slack/notify:
-          color: "#42e2f4"
-          mentions: "hola,"
-          message: A custom message to notify the channel about the latest build
-      - slack/status:
-          fail_only: true
-          mentions: "hola"
-workflows:
-  build-and-notify:
-    jobs:
-      - cypress/run:
-          yarn: true
-          cache-key: 'yarn-packages-{{ arch }}-{{ checksum "yarn.lock" }}'
-          post-steps:
-            - store_test_results:
-                path: cypress/results
-      - build-test-and-notify
-  
