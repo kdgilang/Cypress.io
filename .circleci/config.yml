@@ -34,7 +34,7 @@ usage:
 orbs:
   node: 'circleci/node:4.1'
   slack: circleci/slack@4.1
-jobs:
+  
   deploy:
     executor:
       name: node/default
