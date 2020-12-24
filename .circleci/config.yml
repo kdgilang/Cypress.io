@@ -25,3 +25,9 @@ steps:
             - ~/.npm
             - ~/.cache
   - run: npm run 10travlr-production
+
+  workflows:
+  deploy_and_notify:
+    jobs:
+      - deploy:
+          context: test-context
