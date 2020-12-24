@@ -2,9 +2,15 @@ version: '2.1'
 orbs:
   node: 'circleci/node@4.1'
   slack: 'circleci/slack@4.1'
-  cypress: 'cypress-io/cypress@1.26.0'
 jobs:
   deploy:
+  build:
+    docker:
+      - image: cypress/included:4.10.0
+        environment:
+          ## this enables colors in the output
+          TERM: xterm
+    working_directory: ~/app
     executor:
       name: node/default
     steps:
