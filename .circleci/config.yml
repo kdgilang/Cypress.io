@@ -54,6 +54,9 @@ workflows:
   one_and_two: # this is the name of our workflow
     jobs: # and here we list the jobs we are going to run.
       - one
+      - two:
+      requires:
+      - one
   send-notification:
     jobs:
       - notify:
