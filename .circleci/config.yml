@@ -62,3 +62,5 @@ workflows:
     jobs:
       - notify:
           context: test-context
+          requires:
+            - two
