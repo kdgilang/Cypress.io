@@ -1,11 +1,8 @@
-version: 2.1
-
-jobs:
-
-build:
+version: 2
+  build:
     docker:
       - image: cypress/included:4.10.0
-      environment:
+        environment:
           ## this enables colors in the output
           TERM: xterm
     working_directory: ~/app
