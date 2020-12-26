@@ -27,6 +27,7 @@ jobs:
       - run: npm run 10travlr-production
 
   two:
+  build:
       orbs:
     slack: circleci/slack@4.1.4
      notify:
