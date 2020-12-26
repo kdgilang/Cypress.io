@@ -2,7 +2,11 @@ version: 2
 jobs: # we now have TWO jobs, so that a workflow can coordinate them!
   one: # This is our first job.
     docker: # it uses the docker executor
-      - image: cypress/included:4.10.0 # specifically, a docker image with ruby 2.4.1
+      - image: cypress/included:4.10.0
+      environment:
+          ## this enables colors in the output
+          TERM: xterm
+    working_directory: ~/app # specifically, a docker image with ruby 2.4.1
         
     # Steps are a list of commands to run inside the docker container above.
      steps:
@@ -17,7 +21,7 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
           command: npm ci
       - save_cache:
           key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
-          # cache NPM modules and the folder with the Cypress binary
+          # cache NPM modules and the folder with the Cypress binary.
           paths:
             - ~/.npm
             - ~/.cache
