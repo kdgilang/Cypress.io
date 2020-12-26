@@ -1,26 +1,23 @@
-version: 2
-build:
-  jobs:
-    docker:
-      - image: cypress/included:4.10.0
-        environment:
-          ## this enables colors in the output
-          TERM: xterm
-    working_directory: ~/app
+version: '2.1'
+orbs:
+  node: 'circleci/node:4.1'
+  slack: circleci/slack@4.1
+jobs:
+  deploy:
+    executor:
+      name: node/default
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
-            - v1-deps-{{ .Branch }}
-            - v1-deps
+      - node/install-packages
       - run:
-          name: Install Dependencies
-          command: npm ci
-      - save_cache:
-          key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
-          # cache NPM modules and the folder with the Cypress binary
-          paths:
-            - ~/.npm
-            - ~/.cache
-      - run: npm run 10travlr-production
+          command: npm run deploy
+      - slack/notify:
+          channel: ABCXYZ
+          event: pass
+          template: basic_fail_1
+workflows:
+  deploy_and_notify:
+    jobs:
+      - deploy:
+          context:
+            - test-context
