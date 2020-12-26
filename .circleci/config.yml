@@ -6,11 +6,6 @@ version: 2
     working_directory: ~/app
   jobs:
   one: 
-    docker:
-      - image: cypress/included:4.10.0
-      environment:
-          TERM: xterm
-    working_directory: ~/app
      steps:
       - checkout
       - restore_cache:
