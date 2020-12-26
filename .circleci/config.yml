@@ -22,14 +22,6 @@ docker:
             - ~/.cache
       - run: npm run 10travlr-production
 jobs:
-  deploy:
-    executor:
-      name: node/default
-    steps:
-      - checkout
-      - node/install-packages
-      - run:
-          command: npm run deploy
       - slack/notify:
           channel: ABCXYZ
           event: pass
