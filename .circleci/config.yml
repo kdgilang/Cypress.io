@@ -58,7 +58,7 @@ workflows:
       - two:
           requires:
              - one
-  send-notification-slack:
+  send-notification:
     jobs:
       - notify:
           context: test-context
