@@ -63,4 +63,4 @@ workflows:
       - notify:
           context: test-context
           requires:
-            - two
+            - one_and_two
