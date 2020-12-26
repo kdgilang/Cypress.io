@@ -24,3 +24,8 @@ jobs:
             - ~/.npm
             - ~/.cache
       - run: npm run 10travlr-production
+
+  two:
+    orbs:
+    slack: circleci/slack@4.1.4
+    
