@@ -1,12 +1,12 @@
 version: 2
-  docker:
+  build:
+    docker:
       - image: cypress/included:4.10.0
-      environment:
+        environment:
+          ## this enables colors in the output
           TERM: xterm
     working_directory: ~/app
-  jobs:
-  one: 
-     steps:
+    steps:
       - checkout
       - restore_cache:
           keys:
@@ -18,45 +18,8 @@ version: 2
           command: npm ci
       - save_cache:
           key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+          # cache NPM modules and the folder with the Cypress binary
           paths:
             - ~/.npm
             - ~/.cache
       - run: npm run 10travlr-production
-
-jobs:
-  two:
-    orbs:
-    slack: circleci/slack@4.1.4
-     notify:
-    docker:
-      - image: 'cimg/base:stable'
-    steps:
-      - slack/notify:
-          custom: |
-            {
-              "blocks": [
-                {
-                  "type": "section",
-                  "fields": [
-                    {
-                      "type": "plain_text",
-                      "text": "*This is a text notification*",
-                      "emoji": true
-                    }
-                  ]
-                }
-              ]
-            }
-          event: always
-workflows:
-  send-notification:
-    jobs:
-      - notify:
-          context: slack-secrets
-
-workflows:
-  version: 2
-  one_and_two: # this is the name of our workflow
-    jobs: # and here we list the jobs we are going to run.
-      - one
-      - two
