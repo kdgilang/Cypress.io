@@ -28,4 +28,6 @@ jobs:
   two:
     orbs:
     slack: circleci/slack@4.1.4
-    
+    notify:
+    docker:
+      - image: 'cimg/base:stable'
