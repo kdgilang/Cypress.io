@@ -2,6 +2,8 @@ version: '2.1'
 orbs:
   node: 'circleci/node@4.1'
   slack: circleci/slack@4.1
+  
+build:
 docker:
   image: cypress/included:4.10.0
   steps:
