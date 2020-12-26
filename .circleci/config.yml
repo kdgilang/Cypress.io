@@ -1,5 +1,6 @@
 version: 2
 jobs: 
+  build:
   one: 
     docker:
       - image: cypress/included:4.10.0
@@ -23,11 +24,11 @@ jobs:
             - ~/.cache
       - run: npm run 10travlr-production
 
-  jobs:
-    two:
-      orbs:
-  slack: circleci/slack@4.1.4
-  notify:
+jobs:
+  two:
+    orbs:
+    slack: circleci/slack@4.1.4
+     notify:
     docker:
       - image: 'cimg/base:stable'
     steps:
