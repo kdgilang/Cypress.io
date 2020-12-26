@@ -1,5 +1,10 @@
 version: 2
   build:
+  docker:
+      - image: cypress/included:4.10.0
+      environment:
+          TERM: xterm
+    working_directory: ~/app
   jobs:
   one: 
     docker:
