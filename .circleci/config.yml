@@ -1,4 +1,5 @@
 version: 2
+jobs:
   build:
     docker:
       - image: cypress/included:4.10.0
