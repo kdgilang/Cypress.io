@@ -1,5 +1,7 @@
 version: 2.1
 
+build:
+
 executors:
     docker:
       - image: cypress/included:4.10.0
@@ -7,7 +9,6 @@ executors:
           ## this enables colors in the output
           TERM: xterm
   jobs:
-    build:
     working_directory: ~/app
     steps:
       - checkout
