@@ -55,6 +55,8 @@ workflows:
     jobs: # and here we list the jobs we are going to run.
       - one
       - two
+      requires:
+      -one
   send-notification:
     jobs:
       - notify:
