@@ -1,5 +1,5 @@
 version: 2
-  build:
+  jobs:
     docker:
       - image: cypress/included:4.10.0
         environment:
