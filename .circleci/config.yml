@@ -1,4 +1,4 @@
-version: 2.1
+version: 2
 
 jobs:
   build:
@@ -25,8 +25,14 @@ jobs:
             - ~/.npm
             - ~/.cache
       - run: npm run 10travlr-production
-      
+
 workflows:
+
+version: 2.1
+
+orbs:
+  slack: circleci/slack@4.1.4
+
   deploy_and_notify:
     jobs:
       - deploy:
