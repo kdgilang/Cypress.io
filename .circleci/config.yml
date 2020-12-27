@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   slack: circleci/slack@4.1
 jobs:
-  regression-test:
+  build:
     docker:
       - image: cypress/included:4.10.0
         environment:
@@ -46,8 +46,9 @@ jobs:
 workflows:
   test-and-deploy:
     jobs:
-      - regression-test
+      - build
       - deploy:
-          requires: regression-test
+        requires:
+          - build
       - slack/on-hold:
           context: test-context
