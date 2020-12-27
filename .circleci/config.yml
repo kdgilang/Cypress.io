@@ -33,7 +33,7 @@ jobs:
       docker:
         - image: 'cimg/base:stable'
 
-      steps:
+    steps:
         - run: echo "deploy my app"
         - slack/notify:
           event: fail
