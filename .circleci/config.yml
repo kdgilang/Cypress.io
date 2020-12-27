@@ -52,10 +52,8 @@ jobs:
 
 workflows:
 version: 2.1
-  build-deploy-and-notify: # this is the name of our workflow
+  build-test-deploy-and-notify: # this is the name of our workflow
     jobs: # and here we list the jobs we are going to run.
       - build-regression-test
-      - build-slack-notification:
-                          requires:
-                              - build-regression-test
+      - build-slack-notification
   
