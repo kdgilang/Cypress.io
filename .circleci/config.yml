@@ -29,9 +29,9 @@ jobs:
     orbs:
       node: 'circleci/node:4.1'
       slack: circleci/slack@4.1
-    deploy:
-      executor:
-        name: node/default
+      deploy:
+        executor:
+          name: node/default
     steps:
       - checkout
       - node/install-packages
