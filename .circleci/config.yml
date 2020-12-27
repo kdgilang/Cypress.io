@@ -57,7 +57,7 @@ workflows:
             - test
             - slack/on-hold
           type: approval
-      - deploy:
+      - test:
           filters:
             tags:
               only: /^v.*/
