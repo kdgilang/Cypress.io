@@ -28,7 +28,7 @@ jobs:
   build-slack-notification:
     orbs:
     slack: circleci/slack@4.1.4
-    notify:
+    notify-to-slack:
     docker:
       - image: 'cimg/base:stable'
     steps:
@@ -58,7 +58,7 @@ workflows:
       - build-slack-notification:
           requires:
              - build-regresssion-test
-      - notify:
+      - notify-to-slack:
           context: test-context
           requires:
           - build-slack-notification
