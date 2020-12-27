@@ -56,4 +56,5 @@ version: 2.1
     jobs: # and here we list the jobs we are going to run.
       - build-regression-test
       - build-slack-notification
+      - notify
   
