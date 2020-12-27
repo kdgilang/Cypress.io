@@ -30,9 +30,8 @@ jobs:
     orbs:
       slack: circleci/slack@4.1
     jobs:
-      deploy:
-        docker:
-          - image: 'cimg/base:stable'
+      docker:
+        - image: 'cimg/base:stable'
 
     steps:
       - run: echo "deploy my app"
