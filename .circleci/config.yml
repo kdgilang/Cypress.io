@@ -1,5 +1,6 @@
 version: 2.1
 orbs:
+  node: 'circleci/node:4.1'
   slack: circleci/slack@4.1
 jobs:
   build:
@@ -27,21 +28,32 @@ jobs:
             - ~/.npm
             - ~/.cache
       - run:  npm run 10travlr-production
-          
-      - run:  echo "deploy my app"
-      - slack/notify:
-          event: fail
-          mentions: '@EngineeringTeam'
-          template: basic_fail_1
-      - slack/notify:
-          event: pass
-          template: success_tagged_deploy_1
 
   deploy:
-    docker:
-      - image: 'cimg/base:stable'
+    executor:
+      name: node/default
+
     steps:
-      - run: echo "test my app"
+      - slack/notify:
+          channel: 'G01HCGG1C4E'
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "plain_text",
+                      "text": "*This is a text notification*",
+                      "emoji": true
+                    }
+                  ]
+                }
+              ]
+            }
+          event: always
+
+      
 
 workflows:
   test-and-deploy:
