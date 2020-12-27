@@ -44,10 +44,6 @@ jobs:
       - run: echo "test my app"
 
 workflows:
-  version: 2.1
   test-and-deploy:
     jobs:
       - build
-      - deploy:
-        requires:
-          - build
