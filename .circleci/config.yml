@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   slack: circleci/slack@4.1
 jobs:
-  build:
+  regression-test:
     docker:
       - image: cypress/included:4.10.0
         environment:
@@ -37,8 +37,19 @@ jobs:
           event: pass
           template: success_tagged_deploy_1
 
+  test:
+    docker:
+      - image: 'cimg/base:stable'
+    steps:
+      - run: echo "test my app"
+
 workflows:
   test-and-deploy:
     jobs:
-      - build
+      - regression-test
+      - test:
+          requires:
+            - regression-test
+              context:
+                 - test-context
       
