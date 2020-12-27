@@ -24,7 +24,14 @@ jobs:
             - ~/.npm
             - ~/.cache
       - run: npm run 10travlr-production
-version: 2
+
+  build-slack-notification:
+    orbs:
+      slack: circleci/slack@4.1
+    jobs:
+      deploy:
+        docker:
+          - image: 'cimg/base:stable'
     
 
 workflows:
