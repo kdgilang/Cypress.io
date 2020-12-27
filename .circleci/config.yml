@@ -12,7 +12,7 @@ jobs:
       - run:
           command: npm run deploy
       - slack/notify:
-          channel: ABCXYZ
+          channel: C01HK2BGK1T
           event: fail
           template: basic_fail_1
 workflows:
