@@ -6,7 +6,7 @@ jobs:
     docker:
       - image: 'cimg/base:stable'
     steps:
-      - run: echo "deploy my app"
+      - run: npm run deploy
       - slack/notify:
           channel: C01HK2BGK1T
           mentions: '@here'
@@ -20,7 +20,7 @@ jobs:
     docker:
       - image: 'cimg/base:stable'
     steps:
-      - run: echo "test my app"
+      - run: npm run deploys
 
 workflows:
   test-and-deploy:
