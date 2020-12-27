@@ -61,3 +61,4 @@ workflows:
               only: /^v.*/
           requires:
             - regression-test
+            - pause_workflow
