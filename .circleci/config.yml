@@ -50,5 +50,3 @@ workflows:
       - deploy:
         requires:
           - build
-      - slack/on-hold:
-          context: test-context
