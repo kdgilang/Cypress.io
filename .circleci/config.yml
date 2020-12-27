@@ -60,3 +60,6 @@ workflows:
              - one
       - notify:
           context: test-context
+          requires:
+          - one
+          - two
