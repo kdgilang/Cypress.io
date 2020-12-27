@@ -1,11 +1,11 @@
 version: 2
 jobs:
   build-regression-test:
-     docker:
-      - image: cypress/included:4.10.0
-        environment:
-          ## this enables colors in the output
-          TERM: xterm
+    docker:
+    - image: cypress/included:4.10.0
+      environment:
+      ## this enables colors in the output
+      TERM: xterm
       working_directory: ~/app
       steps:
       - checkout
@@ -25,11 +25,11 @@ jobs:
             - ~/.cache
       - run: npm run 10travlr-production
 
-    build-slack-notification:
-      orbs:
-        slack: circleci/slack@4.1.4
-      docker:
-        image: 'cimg/base:stable'
+  build-slack-notification:
+    orbs:
+      slack: circleci/slack@4.1.4
+    docker:
+      image: 'cimg/base:stable'
       steps:
         - slack/notify:
           custom: |
@@ -50,9 +50,9 @@ jobs:
           event: always
 
 workflows:
-  version: 2.1
-    build-test-deploy: # this is the name of our workflow
-      jobs: # and here we list the jobs we are going to run.
-        - build-regression-test
-        - build-slack-notification
+version: 2.1
+  build-test-deploy: # this is the name of our workflow
+    jobs: # and here we list the jobs we are going to run.
+      - build-regression-test
+      - build-slack-notification
   
