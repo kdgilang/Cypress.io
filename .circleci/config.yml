@@ -46,7 +46,6 @@ workflows:
     jobs:
       - build
       - deploy:
-          requires:
-            - build
+          context: test-context
 
       
