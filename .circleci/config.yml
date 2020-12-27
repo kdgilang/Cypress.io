@@ -2,29 +2,13 @@ version: '2.1'
 orbs:
   slack: circleci/slack@4.1
 jobs:
-  deploy_and_notify:
-    docker:
-      - image: 'cimg/base:stable'
-    
-    steps:
-      - slack/notify:
-          channel: C01HK2BGK1T
-          mentions: '@here'
-          event: fail
-          template: basic_fail_1
-      - slack/notify:
-          channel: C01HK2BGK1T
-          event: pass
-          template: success_tagged_deploy_1
-          
-          
   regression-test:
-      docker:
-        - image: cypress/included:4.10.0
-          environment:
-            ## this enables colors in the output
-            TERM: xterm
-            working_directory: ~/app
+    docker:
+      - image: cypress/included:4.10.0
+        environment:
+          ## this enables colors in the output
+          TERM: xterm
+    working_directory: ~/app
 
     steps:
       - checkout
@@ -44,10 +28,17 @@ jobs:
             - ~/.cache
       - run:  npm run 10travlr-production
 
+      - slack/notify:
+          channel: C01HK2BGK1T
+          mentions: '@here'
+          event: fail
+          template: basic_fail_1
+      - slack/notify:
+          channel: C01HK2BGK1T
+          event: pass
+          template: success_tagged_deploy_1
+
 workflows:
   test-and-deploy:
     jobs:
       - regression-test
-      - deploy_and_notify:
-          requires:
-            - regression-test
