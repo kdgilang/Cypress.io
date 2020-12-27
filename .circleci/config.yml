@@ -56,7 +56,3 @@ workflows:
     jobs: # and here we list the jobs we are going to run.
       - build-regression-test
       - build-slack-notification
-      - notify-to-slack:
-          context: test-context
-          requires:
-          - build-slack-notification
