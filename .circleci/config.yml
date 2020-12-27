@@ -40,7 +40,7 @@ jobs:
       - run:
           command: npm run deploy
       - slack/notify:
-          channel: ABCXYZ
+          channel: G01HKFZTB9R
           event: fail
           template: basic_fail_1
 
@@ -50,8 +50,13 @@ workflows:
     jobs: # and here we list the jobs we are going to run.
       - build-regression-test
       - build-slack-notification:
-          context: test-context
           requires:
             - build-regression-test
+      - deploy:
+          context: test-context
+          requires:
+            - build-slack-notification
+
+
           
   
