@@ -50,6 +50,6 @@ workflows:
       - deploy:
           requires:
             - regression-test
-              context:
-                 - test-context
+                context:
+                  - test-context
       
