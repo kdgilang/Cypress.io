@@ -43,9 +43,10 @@ jobs:
           event: pass
           template: success_tagged_deploy_1
 
-  test:
-    docker:
-      - image: 'cimg/base:stable'
+    test:
+      docker:
+        - image: 'cimg/base:stable'
+
     steps:
       - run: echo "test my app"
     
@@ -54,12 +55,28 @@ workflows:
   version: 2
   build_deploy_and_notify: # this is the name of our workflow
     jobs: # and here we list the jobs we are going to run.
-      - build-regression-test
-      - build-slack-notification
-      - deploy:
-          context: test-context
+      - test
+      - slack/on-hold:
+          context: slack-secrets
+          filters:
+            tags:
+              only: /^v.*/
           requires:
-            - build-slack-notification
+            - test
+      - pause_workflow:
+          filters:
+            tags:
+              only: /^v.*/
+          requires:
+            - test
+            - slack/on-hold
+          type: approval
+      - deploy:
+          filters:
+            tags:
+              only: /^v.*/
+          requires:
+            - pause_workflow
 
 
           
