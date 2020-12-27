@@ -49,5 +49,3 @@ workflows:
       - regression-test
       - deploy:
           requires: regression-test
-            context: test-context
-      
