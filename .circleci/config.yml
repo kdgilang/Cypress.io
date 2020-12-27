@@ -24,7 +24,7 @@ jobs:
           paths:
             - ~/.npm
             - ~/.cache
-      - run: npm run 10travlr-production
+      
 
   build-slack-notification:
     docker:
@@ -33,7 +33,7 @@ jobs:
       slack: circleci/slack@4.1
 
     steps:
-      - run: echo "deploy my app"
+      - run: npm run 10travlr-production
       - slack/notify:
           event: fail
           mentions: '@EngineeringTeam'
