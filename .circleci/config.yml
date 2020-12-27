@@ -3,8 +3,6 @@ orbs:
   slack: circleci/slack@4.1
 jobs:
   deploy_and_notify:
-
-    steps:
       - slack/notify:
           channel: C01HK2BGK1T
           mentions: '@here'
@@ -16,7 +14,7 @@ jobs:
           template: success_tagged_deploy_1
           
           
-    regression-test:
+  regression-test:
       docker:
         - image: cypress/included:4.10.0
           environment:
