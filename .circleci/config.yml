@@ -27,12 +27,12 @@ jobs:
 
   build-slack-notification:
     orbs:
-    slack: circleci/slack@4.1.4
-    notify-to-slack:
-    docker:
-      - image: 'cimg/base:stable'
-    steps:
-      - slack/notify:
+      slack: circleci/slack@4.1.4
+    notify:
+      docker:
+        - image: 'cimg/base:stable'
+      steps:
+        - slack/notify:
           custom: |
             {
               "blocks": [
