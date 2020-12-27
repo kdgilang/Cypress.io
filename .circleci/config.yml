@@ -25,7 +25,6 @@ version: 2
             - ~/.cache
       - run: npm run 10travlr-production
       
-  jobs:
     build-slack-notification:
       orbs:
         slack: circleci/slack@4.1.4
