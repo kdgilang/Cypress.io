@@ -27,6 +27,7 @@ jobs:
       - run: npm run 10travlr-production
 
   build-slack-notification:
+  version: 2.1
     docker:
       - image: 'cimg/base:stable'
     orbs:
