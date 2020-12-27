@@ -28,6 +28,11 @@ jobs:
             - ~/.cache
       - run:  npm run 10travlr-production
 
+  deploy:
+    docker:
+      - image: 'cimg/base:stable'
+
+    steps:
       - slack/notify:
           channel: C01HK2BGK1T
           mentions: '@here'
