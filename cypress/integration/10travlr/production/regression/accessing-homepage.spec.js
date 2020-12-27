@@ -90,17 +90,17 @@ context('Accessing Homepage', () => {
 
         });
 
-        it('Popular Activities', () => {
-            cy.get('.c-home-activities :nth-child(1)')
-            .should('contain', 'Popular Activities')
-            .and('be.visible')
+        // it('Popular Activities', () => {
+        //     cy.get('.c-home-activities :nth-child(1)')
+        //     .should('contain', 'Popular Activities')
+        //     .and('be.visible')
 
-            cy.get('.section-title-button__action')
-            .contains('See more')
-            .should('have.attr', 'data-gtm-event')
-            .and('equal','ev_homepage_deals_seemore')
+        //     cy.get('.section-title-button__action')
+        //     .contains('See more')
+        //     .should('have.attr', 'data-gtm-event')
+        //     .and('equal','ev_homepage_deals_seemore')
 
-        });
+        // });
 
     });
 
