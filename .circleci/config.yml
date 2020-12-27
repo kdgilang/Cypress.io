@@ -28,8 +28,7 @@ jobs:
             - ~/.npm
             - ~/.cache
       - run:  npm run 10travlr-production
-            
-    steps:
+          
       - run:  echo "deploy my app"
       - slack/notify:
           event: fail
