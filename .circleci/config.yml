@@ -2,28 +2,28 @@ version: 2
 jobs:
   build-regression-test:
     docker:
-        - image: cypress/included:4.10.0
+       - image: cypress/included:4.10.0
         environment:
         ## this enables colors in the output
         TERM: xterm
         working_directory: ~/app
-      steps:
-        - checkout
-        - restore_cache:
+    steps:
+      - checkout
+      - restore_cache:
           keys:
             - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
             - v1-deps-{{ .Branch }}
             - v1-deps
-        - run:
+       - run:
           name: Install Dependencies
           command: npm ci
-        - save_cache:
+      - save_cache:
           key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
           # cache NPM modules and the folder with the Cypress binary
           paths:
             - ~/.npm
             - ~/.cache
-        - run: npm run 10travlr-production
+      - run: npm run 10travlr-production
 
   build-slack-notification:
     orbs:
