@@ -29,6 +29,8 @@ jobs:
     orbs:
       node: 'circleci/node:4.1'
       slack: circleci/slack@4.1
+    docker:
+      - image: 'cimg/base:stable'
       deploy:
         executor:
           name: node/default
