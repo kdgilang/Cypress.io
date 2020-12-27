@@ -49,3 +49,5 @@ workflows:
       - regression-test
       - deploy:
           requires: regression-test
+      - slack/on-hold:
+          context: test-context
