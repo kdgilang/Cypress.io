@@ -58,6 +58,4 @@ version: 2.1
       - build-slack-notification:
                           requires:
                               - build-regression-test
-      - notify
-          context: test-context
   
