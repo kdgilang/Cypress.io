@@ -1,9 +1,9 @@
 version: 2.1
 orbs:
-  node: 'circleci/node:4.1'
+  node: 'circleci/node@4.1'
   slack: circleci/slack@4.1
 jobs:
-  build:
+  test:
     docker:
       - image: cypress/included:4.10.0
         environment:
@@ -58,7 +58,7 @@ jobs:
 workflows:
   test-and-deploy:
     jobs:
-      - build
+      - test
       - deploy:
           requires:
-            - build
+            - test
