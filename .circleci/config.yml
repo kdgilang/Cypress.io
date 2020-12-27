@@ -51,6 +51,7 @@ jobs:
           event: always
 
 workflows:
+version: 2.1
   build: # this is the name of our workflow
     jobs: # and here we list the jobs we are going to run.
       - build-regression-test
