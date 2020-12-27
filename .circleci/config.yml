@@ -3,6 +3,10 @@ orbs:
   slack: circleci/slack@4.1
 jobs:
   deploy_and_notify:
+    docker:
+      - image: 'cimg/base:stable'
+    
+    steps:
       - slack/notify:
           channel: C01HK2BGK1T
           mentions: '@here'
