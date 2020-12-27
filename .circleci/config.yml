@@ -1,5 +1,5 @@
-jobs:
-  version: 2
+version: 2
+  jobs:
     build-regression-test:
      docker:
       - image: cypress/included:4.10.0
