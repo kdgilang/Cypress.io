@@ -48,9 +48,9 @@ workflows:
     jobs:
       - regression-test
       - deploy_and_notify:
-        context: test-context
-        filters:
-          tags:
-            only: /^v.*/
-        requires:
-          - regression-test
+          context: test-context
+          filters:
+            tags:
+              only: /^v.*/
+          requires:
+            - regression-test
