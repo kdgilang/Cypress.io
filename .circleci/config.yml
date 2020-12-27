@@ -57,7 +57,7 @@ workflows:
       - build-regression-test
       - build-slack-notification:
           requires:
-             - build-regresssion-test
+             - build-regression-test
       - notify-to-slack:
           context: test-context
           requires:
