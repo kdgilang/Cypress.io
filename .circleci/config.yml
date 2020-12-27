@@ -51,10 +51,12 @@ jobs:
           event: always
 
 workflows:
-  version: 2
-  build-deploy: # this is the name of our workflow
+  build: # this is the name of our workflow
     jobs: # and here we list the jobs we are going to run.
       - build-regression-test
       - build-slack-notification
-      - notify:
-          context: test-context
+  send-notification:
+    jobs:
+    notify:
+      context: test-context
+  
