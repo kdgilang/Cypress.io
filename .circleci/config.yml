@@ -58,11 +58,5 @@ workflows:
       - two:
           requires:
              - one
-workflows:
-  version: 2
-  send-notification:
-    jobs:
       - notify:
           context: test-context
-          requires:
-            - one_and_two
