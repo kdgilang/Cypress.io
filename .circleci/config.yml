@@ -2,45 +2,29 @@ version: '2.1'
 orbs:
   slack: circleci/slack@4.1
 jobs:
-  deploy:
+  notify:
     docker:
       - image: 'cimg/base:stable'
     steps:
-      - run: echo "deploy my app"
       - slack/notify:
-          event: fail
-          mentions: '@EngineeringTeam'
-          template: basic_fail_1
-      - slack/notify:
-          event: pass
-          template: success_tagged_deploy_1
-  test:
-    docker:
-      - image: 'cimg/base:stable'
-    steps:
-      - run: echo "test my app"
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "plain_text",
+                      "text": "*This is a text notification*",
+                      "emoji": true
+                    }
+                  ]
+                }
+              ]
+            }
+          event: always
 workflows:
-  test-and-deploy:
+  send-notification:
     jobs:
-      - test
-      - slack/on-hold:
+      - notify:
           context: test-context
-          filters:
-            tags:
-              only: /^v.*/
-          requires:
-            - test
-      - pause_workflow:
-          filters:
-            tags:
-              only: /^v.*/
-          requires:
-            - test
-            - slack/on-hold
-          type: approval
-      - deploy:
-          filters:
-            tags:
-              only: /^v.*/
-          requires:
-            - pause_workflow
