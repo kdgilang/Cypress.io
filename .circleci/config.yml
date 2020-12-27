@@ -8,7 +8,7 @@ jobs:
       name: node/default
     steps:
       - slack/notify:
-          channel: 'ABCXYZ, ZXCVBN'
+          channel: 'G01HKFZTB9R, G01HCGG1C4E'
           custom: |
             {
               "blocks": [
