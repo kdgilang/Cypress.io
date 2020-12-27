@@ -42,24 +42,3 @@ workflows:
   test-and-deploy:
     jobs:
       - test
-      - slack/on-hold:
-          context: test-context
-          filters:
-            tags:
-              only: /^v.*/
-          requires:
-            - test
-      - pause_workflow:
-          filters:
-            tags:
-              only: /^v.*/
-          requires:
-            - test
-            - slack/on-hold
-          type: approval
-      - test:
-          filters:
-            tags:
-              only: /^v.*/
-          requires:
-            - pause_workflow
