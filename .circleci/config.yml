@@ -28,9 +28,8 @@ jobs:
   build-slack-notification:
     orbs:
       slack: circleci/slack@4.1.4
-    notify:
-      docker:
-        - image: 'cimg/base:stable'
+    docker:
+      image: 'cimg/base:stable'
       steps:
         - slack/notify:
           custom: |
@@ -56,5 +55,4 @@ version: 2.1
     jobs: # and here we list the jobs we are going to run.
       - build-regression-test
       - build-slack-notification
-      - notify
   
