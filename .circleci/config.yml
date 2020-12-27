@@ -26,32 +26,34 @@ jobs:
       - run: npm run 10travlr-production
 
   build-slack-notification:
+    orbs:
+      slack: circleci/slack@4.1
+jobs:
+  deploy:
     docker:
       - image: 'cimg/base:stable'
-    orbs:
-      node: 'circleci/node:4.1'
-      slack: circleci/slack@4.1
-      deploy:
-        executor:
-          name: node/default
     steps:
-      - checkout
-      - node/install-packages
-      - run:
-          command: npm run deploy
+      - run: echo "deploy my app"
       - slack/notify:
-          channel: G01HKFZTB9R
           event: fail
+          mentions: '@EngineeringTeam'
           template: basic_fail_1
+      - slack/notify:
+          event: pass
+          template: success_tagged_deploy_1
+  test:
+    docker:
+      - image: 'cimg/base:stable'
+    steps:
+      - run: echo "test my app"
+    
 
 workflows:
   version: 2
   build_deploy_and_notify: # this is the name of our workflow
     jobs: # and here we list the jobs we are going to run.
       - build-regression-test
-      - build-slack-notification:
-          requires:
-            - build-regression-test
+      - build-slack-notification
       - deploy:
           context: test-context
           requires:
