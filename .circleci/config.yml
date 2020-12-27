@@ -1,4 +1,6 @@
 version: 2.1
+orbs:
+      slack: circleci/slack@4.1
 jobs:
   build-regression-test:
     docker:
@@ -29,8 +31,6 @@ jobs:
   build-slack-notification:
     docker:
       - image: 'cimg/base:stable'
-    orbs:
-      slack: circleci/slack@4.1
 
     steps:
       - run: echo "deploy my app"
