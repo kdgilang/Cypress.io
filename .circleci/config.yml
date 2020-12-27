@@ -24,7 +24,7 @@ jobs:
           paths:
             - ~/.npm
             - ~/.cache
-      
+      - run: npm run 10travlr-production
 
   build-slack-notification:
     docker:
@@ -33,7 +33,7 @@ jobs:
       slack: circleci/slack@4.1
 
     steps:
-      - run: npm run 10travlr-production
+      - run: echo "deploy my app"
       - slack/notify:
           event: fail
           mentions: '@EngineeringTeam'
@@ -41,6 +41,12 @@ jobs:
       - slack/notify:
           event: pass
           template: success_tagged_deploy_1
+
+  test:
+    docker:
+      - image: 'cimg/base:stable'
+    steps:
+      - run: echo "test my app"
     
 
 workflows:
