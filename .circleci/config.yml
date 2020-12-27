@@ -29,8 +29,9 @@ jobs:
       - run: npm run 10travlr-production
 
   build-slack-notification:
-    docker:
-      - image: 'cimg/base:stable'
+    deploy:
+      docker:
+        - image: 'cimg/base:stable'
 
     steps:
       - run: echo "deploy my app"
