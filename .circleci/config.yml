@@ -51,6 +51,6 @@ workflows:
         context: test-context
         filters:
           tags:
-          only: /^v.*/
+            only: /^v.*/
         requires:
           - regression-test
