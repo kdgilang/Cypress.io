@@ -33,13 +33,13 @@ jobs:
       docker:
         - image: 'cimg/base:stable'
 
-    steps:
-      - run: echo "deploy my app"
-      - slack/notify:
+      steps:
+        - run: echo "deploy my app"
+        - slack/notify:
           event: fail
           mentions: '@EngineeringTeam'
           template: basic_fail_1
-      - slack/notify:
+        - slack/notify:
           event: pass
           template: success_tagged_deploy_1
 
@@ -47,8 +47,8 @@ jobs:
       docker:
         - image: 'cimg/base:stable'
 
-    steps:
-      - run: echo "test my app"
+      steps:
+        - run: echo "test my app"
     
 
 workflows:
