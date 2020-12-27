@@ -29,26 +29,19 @@ jobs:
     orbs:
       node: 'circleci/node:4.1'
       slack: circleci/slack@4.1
-      name: node/default
+    jobs:
+      deploy:
+        executor:
+          name: node/default
     steps:
+      - checkout
+      - node/install-packages
+      - run:
+          command: npm run deploy
       - slack/notify:
-          channel: 'G01HKFZTB9R'
-          custom: |
-            {
-              "blocks": [
-                {
-                  "type": "section",
-                  "fields": [
-                    {
-                      "type": "plain_text",
-                      "text": "*This is a text notification*",
-                      "emoji": true
-                    }
-                  ]
-                }
-              ]
-            }
-          event: always
+          channel: ABCXYZ
+          event: fail
+          template: basic_fail_1
 
 workflows:
   version: 2
