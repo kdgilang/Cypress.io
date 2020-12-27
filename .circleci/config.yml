@@ -28,7 +28,6 @@ jobs:
             - ~/.cache
       - run:  npm run 10travlr-production
             
-  deploy:
     docker:
       - image: 'cimg/base:stable'
     steps:
@@ -45,7 +44,4 @@ workflows:
   test-and-deploy:
     jobs:
       - build
-      - deploy:
-          context: test-context
-
       
