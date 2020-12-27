@@ -19,10 +19,10 @@ jobs:
     regression-test:
       docker:
         - image: cypress/included:4.10.0
-              environment:
-              ## this enables colors in the output
-              TERM: xterm
-              working_directory: ~/app
+          environment:
+            ## this enables colors in the output
+            TERM: xterm
+            working_directory: ~/app
 
     steps:
       - checkout
