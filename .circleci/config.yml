@@ -54,7 +54,7 @@ workflows:
   version: 2
   build-deploy: # this is the name of our workflow
     jobs: # and here we list the jobs we are going to run.
-      - build-regression-tes
+      - build-regression-test
       - build-slack-notification
       - notify:
           context: test-context
