@@ -26,12 +26,13 @@ jobs:
           paths:
             - ~/.npm
             - ~/.cache
+      - run:  npm run 10travlr-production
             
   deploy:
     docker:
       - image: 'cimg/base:stable'
     steps:
-      - run:  npm run 10travlr-production
+      - run:  echo "deploy my app"
       - slack/notify:
           event: fail
           mentions: '@EngineeringTeam'
