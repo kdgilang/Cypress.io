@@ -37,7 +37,7 @@ jobs:
           event: pass
           template: success_tagged_deploy_1
 
-  test:
+  deploy:
     docker:
       - image: 'cimg/base:stable'
     steps:
@@ -47,7 +47,7 @@ workflows:
   test-and-deploy:
     jobs:
       - regression-test
-      - test:
+      - deploy:
           requires:
             - regression-test
               context:
