@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 jobs:
   build-regression-test:
     docker:
@@ -30,7 +30,6 @@ jobs:
     docker:
       - image: 'cimg/base:stable'
       
-version: '2.1'
     orbs:
       slack: circleci/slack@4.1
 
