@@ -34,11 +34,11 @@ jobs:
 
     steps:
       - run: echo "deploy my app"
-      - slack/notify:
+      - notify:
           event: fail
           mentions: '@EngineeringTeam'
           template: basic_fail_1
-      - slack/notify:
+      - notify:
           event: pass
           template: success_tagged_deploy_1
 
