@@ -1,6 +1,6 @@
 version: 2
-  jobs:
-    build-regression-test:
+jobs:
+  build-regression-test:
      docker:
       - image: cypress/included:4.10.0
         environment:
@@ -24,7 +24,7 @@ version: 2
             - ~/.npm
             - ~/.cache
       - run: npm run 10travlr-production
-      
+
     build-slack-notification:
       orbs:
         slack: circleci/slack@4.1.4
