@@ -29,7 +29,6 @@ jobs:
   build-slack-notification:
     docker:
       - image: 'cimg/base:stable'
-      
     orbs:
       slack: circleci/slack@4.1
 
