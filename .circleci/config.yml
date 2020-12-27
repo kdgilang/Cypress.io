@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  one:
+  build-regression-test:
     docker:
       - image: cypress/included:4.10.0
         environment:
@@ -25,14 +25,14 @@ jobs:
             - ~/.cache
       - run: npm run 10travlr-production
 
-  two:
+  build-slack-notification:
     orbs:
     slack: circleci/slack@4.1.4
     notify:
     docker:
       - image: 'cimg/base:stable'
     steps:
-      - slack/notify:
+      - slack-notify:
           custom: |
             {
               "blocks": [
@@ -52,14 +52,13 @@ jobs:
 
 workflows:
   version: 2
-  one_and_two: # this is the name of our workflow
+  build-deploy: # this is the name of our workflow
     jobs: # and here we list the jobs we are going to run.
-      - one
-      - two:
+      - build-regresssion-test
+      - build-slack-notification:
           requires:
-             - one
+             - build-regresssion-test
       - notify:
           context: test-context
           requires:
-          - one
-          - two
+          - build-slack-notification
