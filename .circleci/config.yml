@@ -28,7 +28,7 @@ jobs:
             - ~/.cache
       - run:  npm run 10travlr-production
 
-  deploy:
+  deploy_and_notify:
     docker:
       - image: 'cimg/base:stable'
 
@@ -47,3 +47,6 @@ workflows:
   test-and-deploy:
     jobs:
       - regression-test
+      - deploy_and_notify:
+          requires:
+            - regression-test
