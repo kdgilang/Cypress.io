@@ -33,7 +33,7 @@ jobs:
 
   regression-test:
     docker:
-      - image: cypress/browsers:node14.7.0-chrome84
+      - image: cypress/included:4.10.0
     environment:
       TERM: xterm
     working_directory: ~/app
