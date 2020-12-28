@@ -64,6 +64,9 @@ workflows:
   test-and-deploy:
     jobs:
       - build
+      - regression-test:
+          requires: 
+            - build
       - pause_workflow:
           filters:
             tags:
@@ -71,9 +74,6 @@ workflows:
           requires:
             - build
           type: approval
-      - regression-test:
-          requires: 
-            - build
       - deploy:
           context: test-context
           filters:
