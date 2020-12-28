@@ -1,3 +1,5 @@
+ version: 2.1
+ 
 jobs:
   # a single job that installs dependencies (NPM and Cypress)
   build:
@@ -65,7 +67,6 @@ jobs:
           template: success_tagged_deploy_1
 
 workflows:
-  version: 2.1
   test-and-deploy:
     jobs:
       - regression-test
