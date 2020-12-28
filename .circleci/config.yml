@@ -1,34 +1,55 @@
-version: 2.1
-orbs:
-  slack: circleci/slack@4.1
 jobs:
-  regression-test:
-    docker:
-      - image: cypress/included:4.10.0
-        environment:
-          ## this enables colors in the output
-          TERM: xterm
+  # a single job that installs dependencies (NPM and Cypress)
+  build:
     working_directory: ~/app
-
+    docker:
+      - image: cypress/browsers:node14.7.0-chrome84
+    environment:
+      TERM: xterm
     steps:
       - checkout
       - restore_cache:
-          keys:
-            - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
-            - v1-deps-{{ .Branch }}
-            - v1-deps
-      - run:
-          name: Install Dependencies
-          command: npm ci
+          key: cache-dirs-{{ .Branch }}-{{ checksum "package.json" }}-{{ checksum "circle.yml" }}
+      - run: npm ci
+
+      # Use Git commit message to install any pre-release versions of Cypress
+      - run: npm i -g @cypress/commit-message-install
+      # if there is no special JSON comment in the current commit body
+      # then this command does nothing
+      - run: commit-message-install --else "echo nothing custom to install"
+
+      # run verify and then save cache.
+      # this ensures that the Cypress verified status is cached too
+      - run: npm run cypress:verify
+      - run: npm run cypress:info
+      - run: npm run stop-only
       - save_cache:
-          key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
-          # cache NPM modules and the folder with the Cypress binary
+          key: cache-dirs-{{ .Branch }}-{{ checksum "package.json" }}-{{ checksum "circle.yml" }}
           paths:
             - ~/.npm
             - ~/.cache
-      - run:  npm run 10travlr-production
+      # all other test jobs will run AFTER this build job finishes
+      # to avoid reinstalling dependencies, we persist the source folder "app"
+      # and the Cypress binary to workspace, which is the fastest way
+      # for Circle jobs to pass files
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - app
+            - .cache/Cypress
 
-  deploy_and_notify:
+  regression-test:
+    working_directory: ~/app
+    docker:
+      - image: cypress/browsers:node14.7.0-chrome84
+    environment:
+      TERM: xterm
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run: npm run 10travlr-production
+
+  deploy:
     docker:
       - image: 'cimg/base:stable'
 
@@ -55,11 +76,10 @@ workflows:
           requires:
             - regression-test
           type: approval
-      - deploy_and_notify:
+      - deploy:
           context: test-context
           filters:
             tags:
               only: /^v.*/
           requires:
             - pause_workflow
-            #
