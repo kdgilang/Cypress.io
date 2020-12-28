@@ -1,7 +1,7 @@
  version: 2.1
- 
+
 jobs:
-  # a single job that installs dependencies (NPM and Cypress)
+
   build:
     working_directory: ~/app
     docker:
