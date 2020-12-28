@@ -8,8 +8,8 @@ jobs:
   build:
     docker:
       - image: cypress/included:4.10.0
-        environment:
-          TERM: xterm
+    environment:
+      TERM: xterm
     working_directory: ~/app
 
     steps:
@@ -28,15 +28,24 @@ jobs:
           paths:
             - ~/.npm
             - ~/.cache
+      
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - app
+            - .cache/Cypress
+ 
 
   regression-test:
     docker:
       - image: cypress/included:4.10.0
-        environment:
-          TERM: xterm
+    environment:
+        TERM: xterm
     working_directory: ~/app
 
     steps:
+      - attach_workspace:
+          at: ~/
       - run: npm run 10travlr-production
 
   deploy:
