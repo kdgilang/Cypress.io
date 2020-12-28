@@ -1,6 +1,7 @@
- version: 2.1
+version: 2.1
 
 jobs:
+
   build:
     docker:
       - image: cypress/browsers:node14.7.0-chrome84
@@ -85,3 +86,4 @@ workflows:
               only: /^v.*/
           requires:
             - pause_workflow
+            #
