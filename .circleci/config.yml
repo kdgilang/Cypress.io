@@ -1,14 +1,13 @@
  version: 2.1
 
 jobs:
-
   build:
     docker:
       - image: cypress/browsers:node14.7.0-chrome84
     environment:
       TERM: xterm
   working_directory: ~/app
-  
+
     steps:
       - checkout
       - restore_cache:
@@ -70,6 +69,7 @@ jobs:
 workflows:
   test-and-deploy:
     jobs:
+      - build
       - regression-test
       - pause_workflow:
           filters:
