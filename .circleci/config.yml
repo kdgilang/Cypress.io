@@ -45,7 +45,7 @@ jobs:
           template: success_tagged_deploy_1
 
   version-release:
-    docker: circleci/docker@1.5.0
+    orbs: circleci/docker@1.5.0
     
     steps:
       - run:
