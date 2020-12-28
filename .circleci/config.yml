@@ -1,7 +1,6 @@
 version: 2.1
 orbs:
   slack: circleci/slack@4.1
-  release-tag: opensimsim/release-tag@1.1.0
 jobs:
   regression-test:
     docker:
@@ -44,12 +43,8 @@ jobs:
           event: pass
           template: success_tagged_deploy_1
 
-  version-release:
-  description: Orb to create a tag on master branch depends on hotfix/release
-  orbs:
-    docker: circleci/docker@1.5.0
-
 workflows:
+  version: 2.1
   test-and-deploy:
     jobs:
       - regression-test
@@ -67,10 +62,3 @@ workflows:
               only: /^v.*/
           requires:
             - pause_workflow
-      - version-release:
-          filters:
-            tags:
-              only: /^v.*/
-          requires:
-            - pause_workflow
-            - regression-test
