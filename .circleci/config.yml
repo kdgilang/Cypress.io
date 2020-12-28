@@ -36,13 +36,15 @@ jobs:
     environment:
       TERM: xterm
     working_directory: ~/app
-    
+
     steps:
       - attach_workspace:
           at: ~/
       - run: npm run 10travlr-production
 
   deploy:
+    orbs:
+      slack: circleci/slack@4.1
     docker:
       - image: 'cimg/base:stable'
 
