@@ -9,7 +9,6 @@ jobs:
     docker:
       - image: cypress/included:4.10.0
         environment:
-          ## this enables colors in the output
           TERM: xterm
     working_directory: ~/app
 
@@ -26,7 +25,6 @@ jobs:
 
       - save_cache:
           key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
-          # cache NPM modules and the folder with the Cypress binary
           paths:
             - ~/.npm
             - ~/.cache
@@ -40,7 +38,7 @@ jobs:
 
     steps:
       - attach_workspace:
-          at: ~/app
+          at: cypress/integration/10travlr/production/regression/**/*
       - run: npm run 10travlr-production
 
   deploy:
@@ -71,6 +69,7 @@ workflows:
               only: /^v.*/
           requires:
             - build
+            - regression-test
           type: approval
       - deploy:
           context: test-context
