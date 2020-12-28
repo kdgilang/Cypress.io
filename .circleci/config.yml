@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  slack: circleci/slack@4.1
+
 jobs:
 
   build:
@@ -43,8 +46,6 @@ jobs:
       - run: npm run 10travlr-production
 
   deploy:
-    orbs:
-      slack: circleci/slack@4.1
     docker:
       - image: 'cimg/base:stable'
 
