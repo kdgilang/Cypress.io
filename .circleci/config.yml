@@ -45,9 +45,9 @@ jobs:
           template: success_tagged_deploy_1
 
   version-release:
-    description: Orb to create a tag on master branch depends on hotfix/release
-    orbs:
-  docker: circleci/docker@1.5.0
+  description: Orb to create a tag on master branch depends on hotfix/release
+  orbs:
+    docker: circleci/docker@1.5.0
 
 workflows:
   test-and-deploy:
