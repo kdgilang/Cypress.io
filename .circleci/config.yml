@@ -38,7 +38,7 @@ jobs:
 
     steps:
       - attach_workspace:
-          at: cypress/integration/10travlr/production/regression/**/*
+          at: /cypress/integration/10travlr/production/regression/**/*
       - run: npm run 10travlr-production
 
   deploy:
