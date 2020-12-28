@@ -47,8 +47,7 @@ jobs:
   version-release:
     description: Orb to create a tag on master branch depends on hotfix/release
     orbs:
-  docker: circleci/docker@x.y.z
-    version: 2.1
+  docker: circleci/docker@1.5.0
 
 workflows:
   test-and-deploy:
