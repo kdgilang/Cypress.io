@@ -47,21 +47,8 @@ jobs:
   version-release:
     description: Orb to create a tag on master branch depends on hotfix/release
     orbs:
-      docker: circleci/docker@1.5.0
-    
-    steps:
-      - run:
-          name: "Pushing git tag"
-          command: |
-               if [[ $(echo ${CIRCLE_BRANCH} | awk -F'/' '{ print $1}') == "master" ]]
-               then
-                    source ${BASH_ENV}
-                    git config user.email "nym.july@gmail.com"
-                    git config user.name "nym.july"
-                    git tag -a ${NEW_TAG} -m "Updated master tag with version ${NEW_TAG}"
-                    git push -u origin $NEW_TAG
-                    echo "Updated master tag with version ${NEW_TAG}"
-               fi
+  docker: circleci/docker@x.y.z
+    version: 2.1
 
 workflows:
   test-and-deploy:
