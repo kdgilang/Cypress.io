@@ -74,6 +74,9 @@ workflows:
           requires:
             - regression-test
           type: approval
+      - regression-test:
+          requires: 
+            - build
       - deploy:
           context: test-context
           filters:
