@@ -32,13 +32,11 @@ jobs:
   regression-test:
     docker:
       - image: cypress/included:4.10.0
-    environment:
-      TERM: xterm
+        environment:
+          TERM: xterm
     working_directory: ~/app
 
     steps:
-      - attach_workspace:
-          at: /cypress/integration/10travlr/production/regression/**/*
       - run: npm run 10travlr-production
 
   deploy:
