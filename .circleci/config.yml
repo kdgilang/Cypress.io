@@ -9,7 +9,7 @@ jobs:
       TERM: xterm
   working_directory: ~/app
 
-    steps:
+  steps:
       - checkout
       - restore_cache:
           key: cache-dirs-{{ .Branch }}-{{ checksum "package.json" }}-{{ checksum "circle.yml" }}
@@ -39,7 +39,7 @@ jobs:
           root: ~/
           paths:
             - app
-            - .cache/Cypress
+            - .cache/Cypress  
 
   regression-test:
     working_directory: ~/app
