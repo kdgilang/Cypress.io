@@ -40,7 +40,7 @@ jobs:
 
     steps:
       - attach_workspace:
-          at: ~/
+          at: ~/app
       - run: npm run 10travlr-production
 
   deploy:
