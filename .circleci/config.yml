@@ -45,9 +45,9 @@ jobs:
           template: success_tagged_deploy_1
 
   version-release:
-    orbs:
-      release-tag: opensimsim/release-tag@1.1.0
     description: Orb to create a tag on master branch depends on hotfix/release
+      docker: 
+        - image: circleci/docker@1.5.0
     
     steps:
       - run:
