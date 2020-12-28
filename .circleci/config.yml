@@ -69,7 +69,7 @@ workflows:
             tags:
               only: /^v.*/
           requires:
-            - regression-test
+            - build
           type: approval
       - regression-test:
           requires: 
