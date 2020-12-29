@@ -16,7 +16,7 @@ k6_performance_tests: &k6_performance_tests
       npm run k6-performance-test
 
 jobs:
-  run_performance_tests:
+  performance_tests:
     <<: *defaults
     # Use `machine` executor because the Docker executor cannot mount volumes
     machine: true
@@ -92,7 +92,7 @@ workflows:
   test-and-deploy:
     jobs:
       - build
-      - run_performance_tests:
+      - performance_tests:
           requires:
             - build
       - api-test:
@@ -100,6 +100,7 @@ workflows:
             - build
       - regression-test:
           requires: 
+            - performance_tests
             - api-test
       - pause_workflow:
           filters:
