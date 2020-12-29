@@ -12,7 +12,7 @@ jobs:
        - checkout
        - run: npm run api-test
        
-  npm-build:
+  build:
     docker:
       - image: cypress/included:4.10.0
     environment:
@@ -73,10 +73,10 @@ jobs:
 workflows:
   test-and-deploy:
     jobs:
-      - npm-build
+      - build
       - api-test:
           requires:
-            - npm-build
+            - build
       - regression-test:
           requires: 
             - api-test
