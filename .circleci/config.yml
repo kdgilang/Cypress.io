@@ -8,15 +8,3 @@ jobs:
           susTime: 30
           targetHostUrl: 'https://www.10travlr.com.au'
 version: 2.1
-
-workflows:
-  build_and_test:
-    jobs:
-      - build
-      - loadtest/loadtest:
-          nWorkers: 2
-          requires:
-            - build
-          susTime: 30
-          targetHostUrl: 'https://www.10travlr.com.au'
-  version: 2
