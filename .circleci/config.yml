@@ -1,8 +1,7 @@
 version: 2.1
 
-  jobs:
-  
-    build:
+jobs:
+  build:
       docker:
       - image: cypress/included:4.10.0
       environment:
