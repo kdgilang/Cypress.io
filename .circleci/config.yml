@@ -79,7 +79,7 @@ workflows:
             - npm-build
       - regression-test:
           requires: 
-            - npm-build
+            - api-test
       - pause_workflow:
           filters:
             tags:
