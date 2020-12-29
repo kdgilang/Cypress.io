@@ -21,10 +21,6 @@ jobs:
           name: Install Dependencies
           command: npm ci
           
-      - run:
-          name: Install k6
-          command: docker pull loadimpact/k6:latest
-
       - save_cache:
           key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
@@ -39,7 +35,7 @@ jobs:
 
   regression-test:
     docker:
-      - image: cypress/included:4.10.0
+      - image: loadimpact/k6:latest
     environment:
         TERM: xterm
     working_directory: ~/app
