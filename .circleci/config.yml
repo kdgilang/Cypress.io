@@ -6,7 +6,7 @@ jobs:
       executor: newman/postman-newman-docker
       steps:
        - checkout
-       - run: npm run api-test
+       - run: npm run 10travlr-production
 
 workflows:
   build:
