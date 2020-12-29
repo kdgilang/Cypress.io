@@ -9,7 +9,7 @@ k6_performance_tests: &k6_performance_tests
       # Download the k6 docker image. Alternatively, download the k6 release binary
       docker pull loadimpact/k6:latest
       # Mount a volume to access the folder and run the test
-      docker run -i -v $HOME/my-project:/ci/ loadimpact/k6:latest run cypress/integration/10travlr/production/k6-load-test/script.js
+      npm run k6-performance-test
 version: 2
 jobs:
   run_performance_tests:
