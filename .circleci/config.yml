@@ -2,8 +2,13 @@ version: 2.1
 orbs:
   newman: postman/newman@0.0.2
 jobs:
-  build:
+  newman-collection-run:
     executor: newman/postman-newman-docker
     steps:
       - checkout
       - newman/newman-run: npm run api-test
+
+workflows:
+  build-postman:
+    jobs:
+      - newman-collection-run
