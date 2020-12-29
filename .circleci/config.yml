@@ -86,7 +86,6 @@ workflows:
               only: /^v.*/
           requires:
             - regression-test
-            - api-test
           type: approval
       - deploy:
           context: test-context
