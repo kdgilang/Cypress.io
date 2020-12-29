@@ -49,4 +49,12 @@ jobs:
           at: ~/
       - run: 
         - npm run k6-performance-test
+
+workflows:
+  test-and-deploy:
+    jobs:
+      - build
+      - regression-test:
+          requires:
+            - build
     
