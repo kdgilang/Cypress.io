@@ -8,7 +8,8 @@
     "10travlr-regression": "npm run 10travlr-production",
     "10travlr-lokal": "npx cypress run --spec 'cypress/integration/10travlr/production/regression/**/*' --headless --browser chrome",
     "10travlr": "npm run 10travlr-lokal",
-    "api-test": "newman run 'cypress/integration/10travlr/production/api-test/10travlr-prod-api-testing.postman_collection.json' "
+    "api-test": "newman run 'cypress/integration/10travlr/production/api-test/10travlr-prod-api-testing.postman_collection.json' ",
+    "k6-performance-test": "k6 run 'cypress/integration/10travlr/production/k6-load-test/script.js' "
 
   },
   "author": "",
