@@ -3,7 +3,6 @@ orbs:
   newman: postman/newman@0.0.2
 jobs:
   build-postman:
-    newman-collection-run:
       executor: newman/postman-newman-docker
       steps:
        - checkout
