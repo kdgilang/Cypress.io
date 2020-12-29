@@ -9,7 +9,7 @@ k6_performance_tests: &k6_performance_tests
     # Mount a volume to access the folder and run the test
     command: |
       docker pull loadimpact/k6:latest
-      docker run -i -v $HOME/my-project:/ci/ loadimpact/k6:latest run /ci/loadtests/performance-test.js
+      docker run -i -v $HOME/my-project:/ci/ loadimpact/k6:latest run /Users/reposado/Cypress.io/cypress/integration/10travlr/production/k6-load-test/script.js
 
 version: 2
 jobs:
