@@ -20,6 +20,8 @@ jobs:
       - run:
           name: Install Dependencies
           command: npm ci
+          
+      - run:
           name: Install k6
           command: docker pull loadimpact/k6:latest
 
