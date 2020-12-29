@@ -6,13 +6,14 @@ orbs:
 
 default: &defaults
   parallelism: 1
-  working_directory: ~/my-project
+  working_directory: ~/app
 
 k6_performance_tests: &k6_performance_tests
   run:
     name: Running k6 tests
     command: |
       docker pull loadimpact/k6:latest
+      docker run -i -v $HOME/my-project:/ci/ loadimpact/k6:latest
       npm run k6-performance-test
 
 jobs:
@@ -71,7 +72,7 @@ jobs:
           at: ~/
       - run: npm run 10travlr-production
 
-  deploy:
+  deploy-notify:
     docker:
       - image: 'cimg/base:stable'
 
@@ -87,7 +88,7 @@ jobs:
           template: success_tagged_deploy_1
 
 workflows:
-  test-and-deploy:
+  build-test-and-deploy:
     jobs:
       - build
       - performance_tests:
@@ -107,7 +108,7 @@ workflows:
           requires:
             - regression-test
           type: approval
-      - deploy:
+      - deploy-notify:
           context: test-context
           filters:
             tags:
