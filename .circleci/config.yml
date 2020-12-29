@@ -1,15 +1,9 @@
 version: 2.1
-
 orbs:
   newman: postman/newman@0.0.2
-  slack: circleci/slack@4.1
-
 jobs:
-
-  postman-build:
+  newman-collection-run:
     executor: newman/postman-newman-docker
     steps:
       - checkout
       - newman/newman-run: npm run api-test
-
- 
