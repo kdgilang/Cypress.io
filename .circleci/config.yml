@@ -85,7 +85,6 @@ workflows:
             tags:
               only: /^v.*/
           requires:
-            - npm-build
             - regression-test
             - api-test
           type: approval
