@@ -1,4 +1,5 @@
 version: 2.1
+
 orbs:
   newman: postman/newman@0.0.2
   slack: circleci/slack@4.1
@@ -95,8 +96,3 @@ workflows:
               only: /^v.*/
           requires:
             - pause_workflow
-
-workflows:
-  build:
-    jobs:
-      - build-postman
