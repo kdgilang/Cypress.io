@@ -1,13 +1,13 @@
 version: 2.1
 
-jobs:
+  jobs:
   
-  build:
-    docker:
+    build:
+      docker:
       - image: cypress/included:4.10.0
-    environment:
-      TERM: xterm
-    working_directory: ~/app
+      environment:
+        TERM: xterm
+      working_directory: ~/app
 
     steps:
       - checkout
@@ -32,7 +32,7 @@ jobs:
             - app
             - .cache/Cypress
 
-k6_performance_tests: &k6_performance_tests
+  k6_performance_tests: &k6_performance_tests
   run:
     name: Running k6 tests
     command: |
@@ -41,7 +41,6 @@ k6_performance_tests: &k6_performance_tests
       # Mount a volume to access the folder and run the test
       npm run k6-performance-test
 
-jobs:
   run_performance_tests:
     machine: true
     steps:
