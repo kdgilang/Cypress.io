@@ -24,8 +24,6 @@ jobs:
       - checkout
       - *k6_performance_tests
 
-jobs:
-
   api-test:
       executor: newman/postman-newman-docker
       steps:
