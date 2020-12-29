@@ -7,7 +7,9 @@
     "10travlr-production": "npx cypress run --spec 'cypress/integration/10travlr/production/regression/**/*' --headless --browser chrome --record --key e73f75bc-9ff2-4600-8eca-1f9570abf53e --tag 10TRAVLR, PRODUCTION",
     "10travlr-regression": "npm run 10travlr-production",
     "10travlr-lokal": "npx cypress run --spec 'cypress/integration/10travlr/production/regression/**/*' --headless --browser chrome",
-    "10travlr": "npm run 10travlr-lokal"
+    "10travlr": "npm run 10travlr-lokal",
+    "api-test": "newman run /Users/reposado/Cypress.io/cypress/integration/10travlr/production/10travlr-prod-api-testing.postman_collection.json"
+
   },
   "author": "",
   "license": "ISC",
