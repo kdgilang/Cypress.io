@@ -12,7 +12,7 @@ jobs:
     steps:
       - checkout
       - newman/newman-run:
-          collection: /Users/reposado/Documents/10Travlr-Prod-API Testing.postman_collection.json
+          collection: /Users/reposado/Documents/10travlr-prod-api-testing.postman_collection.json
 
 
   npm-build:
