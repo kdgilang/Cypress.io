@@ -1,28 +1,50 @@
-default: &defaults
-  parallelism: 1
-  working_directory: ~/my-project
-
-k6_performance_tests: &k6_performance_tests
-  run:
-    name: Running k6 tests
-    # Download the k6 docker image. Alternatively, download the k6 release binary
-    # Mount a volume to access the folder and run the test
-    command: |
-      docker pull loadimpact/k6:latest
-      docker run -i -v $HOME/my-project:/ci/ loadimpact/k6:latest run /Users/reposado/Cypress.io/cypress/integration/10travlr/production/k6-load-test/script.js
-
-version: 2
+version: 2.1
+  
+  
 jobs:
-  run_performance_tests:
-    <<: *defaults
-    # Use `machine` executor because the Docker executor cannot mount volumes
-    machine: true
+
+  build:
+    docker:
+      - image: cypress/included:4.10.0
+    environment:
+      TERM: xterm
+    working_directory: ~/app
+
     steps:
       - checkout
-      - *k6_performance_tests
+      - restore_cache:
+          keys:
+            - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+            - v1-deps-{{ .Branch }}
+            - v1-deps
+      - run:
+          name: Install Dependencies
+          command: npm ci
+          name: Install k6
+          command: docker pull loadimpact/k6:latest
 
-workflows:
-  version: 2
-  build-and-test:
-    jobs:
-      - run_performance_tests
+      - save_cache:
+          key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+            - ~/.npm
+            - ~/.cache
+      
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - app
+            - .cache/Cypress
+
+  regression-test:
+    docker:
+      - image: cypress/included:4.10.0
+    environment:
+        TERM: xterm
+    working_directory: ~/app
+
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run: 
+        - npm run k6-performance-test
+    
