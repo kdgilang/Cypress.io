@@ -4,6 +4,8 @@ orbs:
   newman: postman/newman@0.0.2
   slack: circleci/slack@4.1
 
+jobs:
+
   postman-build:
     newman-collection-run:
     executor: newman/postman-newman-docker
@@ -12,7 +14,6 @@ orbs:
       - newman/newman-run:
           collection: /Users/reposado/Documents/10Travlr-Prod-API Testing.postman_collection.json
 
-jobs:
 
   npm-build:
     docker:
