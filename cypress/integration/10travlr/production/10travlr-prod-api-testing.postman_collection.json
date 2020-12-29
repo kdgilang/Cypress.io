@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "4b42ca2f-2488-4491-a2a2-4f440d199c57",
+		"name": "10travlr-prod-api-testing",
+		"description": "This is the api testing for 10travlr production",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "STATUS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d984c466-b976-4be0-9962-5415d23d388c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response is OK\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 2000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.10travlr.com.au/",
+					"protocol": "https",
+					"host": [
+						"www",
+						"10travlr",
+						"com",
+						"au"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

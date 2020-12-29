@@ -12,7 +12,7 @@ jobs:
     steps:
       - checkout
       - newman/newman-run:
-          collection: /Users/reposado/Documents/10travlr-prod-api-testing.postman_collection.json
+          collection: /Users/reposado/Cypress.io/cypress/integration/10travlr/production/10travlr-prod-api-testing.postman_collection.json
 
 
   npm-build:
