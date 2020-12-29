@@ -1,11 +1,14 @@
 jobs:
   build:
     docker:
-      - image: 'circleci/node:10'
+      - image: 'circleci/python:3.6'
     steps:
-      - checkout
-      - run: echo your BUILD code here
+      - loadtest/loadtest:
+          nWorkers: 2
+          susTime: 30
+          targetHostUrl: 'https://www.10travlr.com.au'
 version: 2.1
+
 workflows:
   build_and_test:
     jobs:
