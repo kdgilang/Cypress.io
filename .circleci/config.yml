@@ -15,7 +15,6 @@ k6_performance_tests: &k6_performance_tests
       docker pull loadimpact/k6:latest
       npm run k6-performance-test
 
-version: 2
 jobs:
   run_performance_tests:
     <<: *defaults
