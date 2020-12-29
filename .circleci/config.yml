@@ -17,8 +17,6 @@ k6_performance_tests: &k6_performance_tests
 
 jobs:
   performance_tests:
-    <<: *defaults
-    # Use `machine` executor because the Docker executor cannot mount volumes
     machine: true
     steps:
       - checkout
