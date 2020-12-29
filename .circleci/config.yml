@@ -96,8 +96,8 @@ workflows:
     jobs:
       - build
       - run_performance_tests
-        requires:
-          - build
+          requires:
+            - build
       - api-test:
           requires:
             - build
