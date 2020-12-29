@@ -1,11 +1,20 @@
 version: 2.1
 
 orbs:
+  newman: postman/newman@0.0.2
   slack: circleci/slack@4.1
+
+  postman-build:
+    newman-collection-run:
+    executor: newman/postman-newman-docker
+    steps:
+      - checkout
+      - newman/newman-run:
+          collection: /Users/reposado/Documents/10Travlr-Prod-API Testing.postman_collection.json
 
 jobs:
 
-  build:
+  npm-build:
     docker:
       - image: cypress/included:4.10.0
     environment:
@@ -66,16 +75,17 @@ jobs:
 workflows:
   test-and-deploy:
     jobs:
-      - build
+      - npm-build
+      - postman-build
       - regression-test:
           requires: 
-            - build
+            - npm-build
       - pause_workflow:
           filters:
             tags:
               only: /^v.*/
           requires:
-            - build
+            - npm-build
             - regression-test
           type: approval
       - deploy:
