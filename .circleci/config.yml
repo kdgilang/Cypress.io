@@ -31,14 +31,18 @@ jobs:
             - app
             - .cache/Cypress
 
+  default: &defaults
+  parallelism: 1
+  working_directory: ~/my-project
+
   k6_performance_tests: &k6_performance_tests
-  run:
-    name: Running k6 tests
-    command: |
-      # Download the k6 docker image. Alternatively, download the k6 release binary
-      docker pull loadimpact/k6:latest
-      # Mount a volume to access the folder and run the test
-      npm run k6-performance-test
+    run:
+      name: Running k6 tests
+      command: |
+        # Download the k6 docker image. Alternatively, download the k6 release binary
+        docker pull loadimpact/k6:latest
+        # Mount a volume to access the folder and run the test
+        npm run k6-performance-test
 
   run_performance_tests:
     machine: true
