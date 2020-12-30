@@ -12,7 +12,6 @@ k6_performance_tests: &k6_performance_tests
       docker pull loadimpact/k6:latest
       docker run -i -v loadimpact/k6:latest run - < /Users/reposado/k6/script.js
 
-version: 2
 jobs:
   run_performance_tests:
     machine: true
