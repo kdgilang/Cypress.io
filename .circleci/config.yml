@@ -1,3 +1,8 @@
+version: 2.1
+
+orbs:
+  docker: circleci/docker@1.5.0
+
 k6_performance_tests: &k6_performance_tests
   run:
     name: Running k6 tests
@@ -5,7 +10,7 @@ k6_performance_tests: &k6_performance_tests
     # Mount a volume to access the folder and run the test
     command: |
       docker pull loadimpact/k6:latest
-      docker run -i loadimpact/k6:latest run - < /Users/reposado/k6/script.js
+      docker run -i -v loadimpact/k6:latest run - < /Users/reposado/k6/script.js
 
 version: 2
 jobs:
