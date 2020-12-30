@@ -1,7 +1,3 @@
-default: &defaults
-  parallelism: 1
-  working_directory: ~/app
-
 k6_performance_tests: &k6_performance_tests
   run:
     name: Running k6 tests
@@ -14,8 +10,6 @@ k6_performance_tests: &k6_performance_tests
 version: 2
 jobs:
   run_performance_tests:
-    <<: *defaults
-    # Use `machine` executor because the Docker executor cannot mount volumes
     machine: true
     steps:
       - checkout
